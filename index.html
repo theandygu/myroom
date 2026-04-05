@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andy Gu | Studio</title>
+
+  <!-- CDN Dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Local Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ════ SPLASH SCREEN ════ -->
+<div id="splash-screen">
+  <div id="splash-panorama"></div>
+  <div id="splash-content">
+    <h1 id="splash-welcome">welcome to my abode!</h1>
+    <div id="splash-prompt">click anywhere to start</div>
+  </div>
+</div>
+
+<!-- ════ PANORAMA ════ -->
+<div id="panorama"></div>
+
+<!-- ════ HOTSPOTS CONTAINER (separate from ui-layer) ════ -->
+<div id="hotspots-container">
+  <div class="hotspot-fixed" data-yaw="270" data-pitch="0" onclick="openWin('main', 'studio')">
+    <div class="hs-card">
+      <div class="hs-icon">🎵</div>
+      <div class="hs-name">the studio</div>
+      <div class="hs-hint">design projects</div>
+    </div>
+  </div>
+
+  <div class="hotspot-fixed" data-yaw="0" data-pitch="0" onclick="openWin('main', 'gallery')">
+    <div class="hs-card">
+      <div class="hs-icon">📸</div>
+      <div class="hs-name">gallery</div>
+      <div class="hs-hint">process photos</div>
+    </div>
+  </div>
+
+  <div class="hotspot-fixed" data-yaw="90" data-pitch="0" onclick="openWin('main', 'about')">
+    <div class="hs-card">
+      <div class="hs-icon">✏️</div>
+      <div class="hs-name">about</div>
+      <div class="hs-hint">who i am</div>
+    </div>
+  </div>
+
+  <div class="hotspot-fixed" data-yaw="180" data-pitch="0" onclick="openWin('tutorial', 'help')">
+    <div class="hs-card">
+      <div class="hs-icon">🖱️</div>
+      <div class="hs-name">how to explore</div>
+      <div class="hs-hint">quick guide</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ UI LAYER ════ -->
+<div id="ui-layer">
+
+  <!-- NAMEPLATE -->
+  <div id="nameplate">
+    <span class="np-name">Andy Gu</span>
+    <span class="np-sub">Engineer · Designer · Builder</span>
+  </div>
+
+  <!-- MAIN WINDOW -->
+  <div id="win-main" class="win">
+    <div id="win-main-bar" class="win-bar">
+      <div class="win-bar-left">
+        <div class="win-traffic">
+          <div class="win-dot close" onclick="closeWin('main')"></div>
+          <div class="win-dot min"></div>
+          <div class="win-dot max"></div>
+        </div>
+        <span id="win-main-title" class="win-title">the studio</span>
+      </div>
+    </div>
+
+    <div class="win-nav">
+      <button class="win-nav-btn active" data-pane="studio" onclick="switchPane('main', 'studio')">studio</button>
+      <button class="win-nav-btn" data-pane="gallery" onclick="switchPane('main', 'gallery')">gallery</button>
+      <button class="win-nav-btn" data-pane="about" onclick="switchPane('main', 'about')">about</button>
+      <button class="win-nav-btn" data-pane="position" onclick="switchPane('main', 'position')">position</button>
+    </div>
+
+    <div class="win-body">
+
+      <!-- ── STUDIO PANE ── -->
+      <div class="win-pane active" id="pane-studio">
+        <div class="studio-grid">
+
+          <!-- LEFT: Turntable + Crate -->
+          <div>
+            <!-- Turntable -->
+            <div class="tt-body">
+              <div class="tt-controls">
+                <div class="tt-light"></div>
+                <div class="tt-dots">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <div class="platter-wrap">
+                <div id="platter" class="platter">
+                  <div class="platter-idle">select a<br>project</div>
+                </div>
+                <div id="tonearm" class="tonearm-wrap">
+                  <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="68" y="0" width="8" height="145" fill="#2a2a2a" rx="2"/>
+                    <ellipse cx="72" cy="145" rx="8" ry="5" fill="#383838"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="tt-brand">Technics</div>
+
+              <div class="np-strip">
+                <div id="tt-light" class="tt-light"></div>
+                <div>
+                  <div class="np-txt-title" id="np-title">Now Playing</div>
+                  <div class="np-txt-sub" id="np-sub">select a record</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Crate -->
+            <div style="margin-top: 20px;">
+              <div class="crate-label">Available Projects</div>
+              <div id="crate" class="crate-grid"></div>
+
+              <!-- Liner Notes (Collapsible) -->
+              <div id="liner-wrap" class="liner-wrap">
+                <div class="liner-inner">
+                  <div class="liner-top">
+                    <div id="liner-disc"></div>
+                    <div>
+                      <span class="liner-title" id="liner-title">Project Name</span>
+                      <span class="liner-course" id="liner-course">Course Code</span>
+                      <p class="liner-blurb" id="liner-blurb">Description</p>
+                    </div>
+                  </div>
+                  <div id="tracklist" class="tracklist"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Project Overview -->
+          <div>
+            <h2 class="sect-title">Design as Jazz</h2>
+            <hr class="sect-rule">
+            <p>Welcome to the studio. This is my portfolio of design work from engineering science at U of T. Each project is a "track" — click any record to explore how it was made.</p>
+            <p>I organize around the CTMF (Creative Thinking & Problem Solving Framework), treating each phase as you might treat a chord change in jazz: a constraint that focuses creativity.</p>
+            <p>The four projects you see are:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+              <li><strong>Matboard Bridge</strong> — Structural failure and optimization</li>
+              <li><strong>Knee Sleeve</strong> — Biomedical device design</li>
+              <li><strong>Loose Outlets</strong> — Electrical safety in homes</li>
+              <li><strong>Swim Resistance</strong> — Equipment for competitive swimmers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── GALLERY PANE ── -->
+      <div class="win-pane" id="pane-gallery">
+        <h2 class="sect-title">Process</h2>
+        <hr class="sect-rule">
+
+        <div class="gal-section">
+          <div class="gal-label">Bridge</div>
+          <div class="gal-string">
+            <div class="pol" style="--rot:-3deg; --hang:10px;">
+              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+1" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
+              <div class="pol-cap">Early concept sketches</div>
+              <div class="pol-clip"></div>
+            </div>
+            <div class="pol" style="--rot:2deg; --hang:5px;">
+              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+2" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
+              <div class="pol-cap">Material testing</div>
+              <div class="pol-clip"></div>
+            </div>
+            <div class="pol" style="--rot:-1deg; --hang:12px;">
+              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+3" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
+              <div class="pol-cap">Final assembly</div>
+              <div class="pol-clip"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gal-section">
+          <div class="gal-label">Knee Sleeve</div>
+          <div class="gal-string">
+            <div class="pol" style="--rot:1deg; --hang:8px;">
+              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+4" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
+              <div class="pol-cap">Prototyping</div>
+              <div class="pol-clip"></div>
+            </div>
+            <div class="pol" style="--rot:-2deg; --hang:6px;">
+              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+5" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
+              <div class="pol-cap">User testing</div>
+              <div class="pol-clip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ABOUT PANE ── -->
+      <div class="win-pane" id="pane-about">
+        <h2 class="sect-title">About</h2>
+        <hr class="sect-rule">
+        <div class="about-grid">
+          <div>
+            <div class="gal-label">Position Statement · Jan 2026</div>
+            <div class="vid-frame">
+              <iframe src="https://www.youtube.com/embed/boVlLW7FeYs" title="Position Statement" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="vid-cap">Jazz as a lens for engineering design · Praxis I</p>
+          </div>
+          <div>
+            <div class="gal-label">A Few Things</div>
+            <div class="about-card">
+              <p>I'm Andy — a first-year engineering science student at U of T, and a musician who plays jazz on the side.</p>
+              <p>I approach design the way I approach making music: with practice, collaboration, and the kind of creativity that only comes when you know the rules well enough to bend them.</p>
+              <p>This portfolio is the record of my first year building things.</p>
+            </div>
+            <div class="tag-row">
+              <span class="tag">jazz</span>
+              <span class="tag">structures</span>
+              <span class="tag">biomedical</span>
+              <span class="tag">praxis</span>
+              <span class="tag">toronto</span>
+              <span class="tag">eng. sci. · 2T8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── POSITION STATEMENT PANE ── -->
+      <div class="win-pane" id="pane-position">
+        <h2 class="sect-title">Position Statement</h2>
+        <hr class="sect-rule">
+        <div class="pos-body">
+          <p>I approach engineering design like I approach making music — with the application of <em>practice, collaboration</em> and <em>creativity</em> to express oneself.</p>
+          <blockquote><p>"while the bridges I build collapse, I still approach design as applied creativity and an expression of my knowledge."</p></blockquote>
+          <p>Three ideas carry this position across everything I build:</p>
+          <p><strong>Ensemble.</strong> Jazz comes in a variety of ensembles. Musical sensitivity needs to be adapted to your ensemble size. I treat engineering teamwork the same way — listening to teammates share their perspective one by one, without skipping or judging.</p>
+          <p><strong>Chord Changes.</strong> In jazz, the design space comes as the chord changes for a tune. Each tune has a specified set of chords which define restrictions. In Praxis, we learned to call this the design space. The fine-tuning of requirements matters, because there exists a sweet spot where creativity shines.</p>
+          <p><strong>Vocabulary.</strong> There's no need to reinvent the alphabet. In jazz, vocabulary is standard — musicians transcribe the legends to build repertoire. In engineering, I start with failure equations and professor-given frameworks, then use that shoulder to reach higher.</p>
+          <p style="margin-top:18px;color:var(--brown-lt);font-style:italic">— iteration on the Praxis I position statement. grade: 17.5/10.</p>
+        </div>
+      </div>
+
+    </div><!-- end win-body -->
+  </div><!-- end win-main -->
+
+  <!-- TUTORIAL WINDOW -->
+  <div id="win-tutorial" class="win">
+    <div id="win-tutorial-bar" class="win-bar">
+      <div class="win-bar-left">
+        <div class="win-traffic">
+          <div class="win-dot close" onclick="closeWin('tutorial')"></div>
+          <div class="win-dot min"></div>
+          <div class="win-dot max"></div>
+        </div>
+        <span id="win-tutorial-title" class="win-title">how to explore</span>
+      </div>
+    </div>
+
+    <div class="win-nav">
+      <button class="win-nav-btn active" data-pane="help" onclick="switchPane('tutorial', 'help')">guide</button>
+    </div>
+
+    <div class="win-body">
+      <!-- ── HELP PANE ── -->
+      <div class="win-pane active" id="pane-help">
+        <h2 class="sect-title">How to Explore</h2>
+        <hr class="sect-rule">
+        
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <div>
+            <h3 style="font-family: var(--f-serif); font-size: 16px; color: var(--ink); margin-bottom: 12px;">Drag to Look Around</h3>
+            <p style="font-family: var(--f-pica); font-size: 14px; color: var(--ink); line-height: 1.6;">Click and drag your mouse across the panorama to rotate the view. Look in any direction — up, down, left, right. The room rotates smoothly as you move.</p>
+            <div style="margin-top: 16px; padding: 12px; background: rgba(107,77,52,0.08); border-radius: 2px; border-left: 3px solid var(--brown); font-family: var(--f-pica); font-size: 13px; color: var(--brown-dk); font-style: italic;">
+              💡 Try rotating all the way around — you might spot something interesting
+            </div>
+          </div>
+          
+          <div>
+            <h3 style="font-family: var(--f-serif); font-size: 16px; color: var(--ink); margin-bottom: 12px;">Click Hotspots</h3>
+            <p style="font-family: var(--f-pica); font-size: 14px; color: var(--ink); line-height: 1.6;">When you see a card with a symbol floating in the panorama, that's a hotspot. Click on it to open a window with more information about that topic.</p>
+            <div style="margin-top: 16px; padding: 12px; background: rgba(107,77,52,0.08); border-radius: 2px; border-left: 3px solid var(--brown); font-family: var(--f-pica); font-size: 13px; color: var(--brown-dk); font-style: italic;">
+              💡 You can drag windows around the screen to organize them
+            </div>
+          </div>
+          
+          <div>
+            <h3 style="font-family: var(--f-serif); font-size: 16px; color: var(--ink); margin-bottom: 12px;">Navigate Panes</h3>
+            <p style="font-family: var(--f-pica); font-size: 14px; color: var(--ink); line-height: 1.6;">Each window has tabs at the top. Click a tab to switch between different sections of content within that window.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- end win-body -->
+  </div><!-- end win-tutorial -->
+
+</div><!-- end ui-layer -->
+
+<!-- Local JavaScript -->
+<script src="app.js"></script>
+
+</body>
+</html>
