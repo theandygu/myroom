@@ -6,7 +6,10 @@ const musicPlayer = {
   playlist: [
     'music/laufey1.mp3',
     'music/laufey2.mp3',
-    'music/laufey3.mp3'
+    'music/laufey3.mp3',
+    'music/laufey4.mp3',
+    'music/laufey5.mp3',
+    'music/laufey5.mp3'
   ],
   currentTrack: 0,
   isPlaying: false,
@@ -147,7 +150,7 @@ function makeDraggable(winId) {
   let ox = 0, oy = 0;  // offset from mouse to window top-left
 
   bar.addEventListener('mousedown', e => {
-    if (e.target.classList.contains('win-dot')) return; // don't drag on close btn
+    if (e.target.closest('.win-dot, .paper-close-btn')) return; // don't drag on window controls
 
     // On first drag, fix the window position absolutely
     if (!win.classList.contains('moved')) {
@@ -360,32 +363,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const volumeBtn = document.getElementById('volume-btn');
 
   if (volumeSlider && volumeLabel) {
-    // Update volume when slider changes
+    // Update volume and label when slider changes
     volumeSlider.addEventListener('input', (e) => {
       const vol = e.target.value;
       musicPlayer.setVolume(vol / 100);
       volumeLabel.textContent = vol + '%';
-    });
-
-    // Mute/unmute button
-    let isMuted = false;
-    let previousVolume = 40;
-
-    volumeBtn.addEventListener('click', () => {
-      if (isMuted) {
-        musicPlayer.setVolume(previousVolume / 100);
-        volumeSlider.value = previousVolume;
-        volumeLabel.textContent = previousVolume + '%';
-        volumeBtn.style.opacity = '1';
-        isMuted = false;
-      } else {
-        previousVolume = volumeSlider.value;
-        musicPlayer.setVolume(0);
-        volumeSlider.value = 0;
-        volumeLabel.textContent = '0%';
-        volumeBtn.style.opacity = '0.4';
-        isMuted = true;
-      }
     });
   }
 });

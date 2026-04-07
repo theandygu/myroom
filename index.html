@@ -34,36 +34,211 @@
 
 <!-- ════ HOTSPOTS CONTAINER (separate from ui-layer) ════ -->
 <div id="hotspots-container">
-  <div class="paper-hotspot" data-yaw="0" data-pitch="0" onclick="openWin('paper1')"><div class="hs-card">📝</div></div>
-  <div class="paper-hotspot" data-yaw="60" data-pitch="0" onclick="openWin('paper2')"><div class="hs-card">📝</div></div>
-  <div class="paper-hotspot" data-yaw="120" data-pitch="0" onclick="openWin('paper3')"><div class="hs-card">📝</div></div>
-  <div class="paper-hotspot" data-yaw="180" data-pitch="0" onclick="openWin('paper4')"><div class="hs-card">📝</div></div>
-  <div class="paper-hotspot" data-yaw="240" data-pitch="0" onclick="openWin('paper5')"><div class="hs-card">📝</div></div>
-  <div class="paper-hotspot" data-yaw="300" data-pitch="0" onclick="openWin('paper6')"><div class="hs-card">📝</div></div>
+
+  <!-- Crumpled paper hotspot SVG template — each one has a unique crumple angle -->
+  <div class="paper-hotspot" data-yaw="0" data-pitch="0" onclick="openWin('paper1')" style="--crumple-rot: -4deg">
+    <div class="hs-card">
+      <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
+        <defs>
+          <filter id="shadow1"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
+        </defs>
+        <path d="M4 5 L44 3 L54 8 L55 66 L3 68Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow1)"/>
+        <path d="M44 3 L46 14 L54 8Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
+        <line x1="14" y1="4" x2="14" y2="67" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
+        <line x1="6" y1="20" x2="53" y2="20" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="28" x2="53" y2="28" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="36" x2="53" y2="36" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="44" x2="53" y2="44" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="52" x2="53" y2="52" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="60" x2="53" y2="60" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <path d="M18 20 Q30 19 42 20" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M18 28 Q35 27 46 28" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M18 36 Q28 35 38 36" stroke="#2a1a0e" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+        <!-- crease line from crumple -->
+        <path d="M10 35 Q22 42 18 55" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="paper-hotspot" data-yaw="60" data-pitch="0" onclick="openWin('paper2')" style="--crumple-rot: 3deg">
+    <div class="hs-card">
+      <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
+        <defs>
+          <filter id="shadow2"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
+        </defs>
+        <path d="M5 4 L45 2 L55 66 L2 67Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow2)"/>
+        <path d="M45 2 L43 13 L55 10Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
+        <line x1="13" y1="3" x2="13" y2="66" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
+        <line x1="5" y1="18" x2="53" y2="18" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="26" x2="53" y2="26" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="34" x2="53" y2="34" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="42" x2="53" y2="42" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="50" x2="53" y2="50" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="58" x2="53" y2="58" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <path d="M17 18 Q29 17 44 18" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M17 26 Q36 25 48 26" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M17 34 Q30 33 40 34" stroke="#2a1a0e" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+        <path d="M30 40 Q24 50 28 62" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="paper-hotspot" data-yaw="120" data-pitch="0" onclick="openWin('paper3')" style="--crumple-rot: -2deg">
+    <div class="hs-card">
+      <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
+        <defs>
+          <filter id="shadow3"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
+        </defs>
+        <path d="M3 6 L43 2 L56 5 L54 67 L4 66Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow3)"/>
+        <path d="M43 2 L45 15 L56 5Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
+        <line x1="13" y1="3" x2="12" y2="66" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
+        <line x1="5" y1="22" x2="53" y2="22" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="30" x2="53" y2="30" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="38" x2="53" y2="38" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="46" x2="53" y2="46" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="54" x2="53" y2="54" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="62" x2="53" y2="62" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <path d="M17 22 Q26 21 40 22" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M17 30 Q33 29 47 30" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M40 36 Q50 44 46 58" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="paper-hotspot" data-yaw="180" data-pitch="0" onclick="openWin('paper4')" style="--crumple-rot: 5deg">
+    <div class="hs-card">
+      <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
+        <defs>
+          <filter id="shadow4"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
+        </defs>
+        <path d="M6 3 L46 5 L55 68 L2 65Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow4)"/>
+        <path d="M46 5 L44 16 L55 12Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
+        <line x1="15" y1="4" x2="14" y2="65" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
+        <line x1="7" y1="21" x2="54" y2="21" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="7" y1="29" x2="54" y2="29" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="7" y1="37" x2="54" y2="37" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="7" y1="45" x2="54" y2="45" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="7" y1="53" x2="54" y2="53" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="7" y1="61" x2="54" y2="61" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <path d="M19 21 Q31 20 45 21" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M19 29 Q38 28 50 29" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M8 48 Q16 40 14 30" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="paper-hotspot" data-yaw="240" data-pitch="0" onclick="openWin('paper5')" style="--crumple-rot: -3deg">
+    <div class="hs-card">
+      <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
+        <defs>
+          <filter id="shadow5"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
+        </defs>
+        <path d="M4 4 L44 2 L56 8 L53 67 L3 68Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow5)"/>
+        <path d="M44 2 L46 13 L56 8Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
+        <line x1="13" y1="3" x2="12" y2="67" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
+        <line x1="5" y1="19" x2="53" y2="19" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="27" x2="53" y2="27" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="35" x2="53" y2="35" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="43" x2="53" y2="43" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="51" x2="53" y2="51" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="59" x2="53" y2="59" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <path d="M17 19 Q28 18 43 19" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M17 27 Q34 26 46 27" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M25 50 Q18 44 20 34" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="paper-hotspot" data-yaw="300" data-pitch="0" onclick="openWin('paper6')" style="--crumple-rot: 2deg">
+    <div class="hs-card">
+      <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
+        <defs>
+          <filter id="shadow6"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
+        </defs>
+        <path d="M5 5 L45 3 L54 7 L56 66 L3 66Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow6)"/>
+        <path d="M45 3 L47 14 L54 7Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
+        <line x1="14" y1="4" x2="13" y2="66" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
+        <line x1="6" y1="20" x2="54" y2="20" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="28" x2="54" y2="28" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="36" x2="54" y2="36" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="44" x2="54" y2="44" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="52" x2="54" y2="52" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="6" y1="60" x2="54" y2="60" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <path d="M18 20 Q32 19 46 20" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M18 28 Q30 27 44 28" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M44 44 Q52 38 50 28" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+
 </div>
 
 <!-- ════ UI LAYER ════ -->
 <div id="ui-layer">
 
-  <!-- PROGRESS BAR -->
+  <!-- PROGRESS BAR — lined paper strip, top center -->
   <div class="progress-container">
-    <div class="progress-bar-wrapper">
-      <div class="progress-bar-fill" id="progress-bar"></div>
-      <div class="progress-bar-label" id="progress-label">0/6</div>
+    <div class="progress-paper-strip">
+      <!-- ruled lines background drawn as SVG -->
+      <svg class="strip-lines" viewBox="0 0 260 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="260" height="36" fill="#f7f3ea"/>
+        <line x1="0" y1="12" x2="260" y2="12" stroke="#9ac0e8" stroke-width="0.8" opacity="0.6"/>
+        <line x1="0" y1="20" x2="260" y2="20" stroke="#9ac0e8" stroke-width="0.8" opacity="0.6"/>
+        <line x1="0" y1="28" x2="260" y2="28" stroke="#9ac0e8" stroke-width="0.8" opacity="0.6"/>
+        <line x1="22" y1="0" x2="22" y2="36" stroke="#e8a0a0" stroke-width="0.9" opacity="0.7"/>
+        <!-- torn left edge -->
+        <path d="M0 0 Q2 4 0 8 Q2 12 0 16 Q2 20 0 24 Q2 28 0 32 Q2 36 0 36" fill="#e8dcc8" stroke="#b8a888" stroke-width="0.5"/>
+        <!-- torn right edge -->
+        <path d="M260 0 Q258 4 260 8 Q258 12 260 16 Q258 20 260 24 Q258 28 260 32 Q258 36 260 36" fill="#e8dcc8" stroke="#b8a888" stroke-width="0.5"/>
+      </svg>
+      <div class="strip-inner">
+        <span class="strip-label">explored</span>
+        <div class="strip-track">
+          <div class="strip-fill" id="progress-bar"></div>
+          <!-- tick marks -->
+          <div class="strip-ticks">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <span class="strip-count" id="progress-label">0/6</span>
+      </div>
     </div>
   </div>
 
-  <!-- NAMEPLATE -->
-  <div id="nameplate" class="nameplate-card">
-    <span class="np-name">Andy Gu</span>
-    <span class="np-sub">Engineer · Designer · Builder</span>
+  <!-- NAMEPLATE — index card pinned top left -->
+  <div id="nameplate">
+    <div class="nameplate-card">
+      <!-- pin -->
+      <div class="card-pin"></div>
+      <!-- lined paper background -->
+      <svg class="card-lines" viewBox="0 0 180 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="180" height="72" fill="transparent"/>
+        <line x1="0" y1="24" x2="180" y2="24" stroke="#9ac0e8" stroke-width="0.8" opacity="0.5"/>
+        <line x1="0" y1="40" x2="180" y2="40" stroke="#9ac0e8" stroke-width="0.8" opacity="0.5"/>
+        <line x1="0" y1="56" x2="180" y2="56" stroke="#9ac0e8" stroke-width="0.8" opacity="0.5"/>
+        <line x1="26" y1="0" x2="26" y2="72" stroke="#e8a0a0" stroke-width="0.9" opacity="0.65"/>
+      </svg>
+      <span class="np-name">Andy Gu</span>
+      <span class="np-sub">Engineer · Designer · Builder</span>
+    </div>
   </div>
 
-  <!-- VOLUME CONTROL -->
+  <!-- VOLUME CONTROL — small note card top right -->
   <div id="volume-control" class="volume-control">
-    <button id="volume-btn" class="volume-btn" title="Volume control">🎵</button>
-    <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="40" title="Adjust volume">
-    <span id="volume-label" class="volume-label">40%</span>
+    <!-- tape strip at top -->
+    <div class="tape-strip"></div>
+    <svg class="vol-card-lines" viewBox="0 0 190 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="190" height="64" fill="transparent"/>
+      <line x1="0" y1="22" x2="190" y2="22" stroke="#9ac0e8" stroke-width="0.8" opacity="0.5"/>
+      <line x1="0" y1="38" x2="190" y2="38" stroke="#9ac0e8" stroke-width="0.8" opacity="0.5"/>
+      <line x1="0" y1="54" x2="190" y2="54" stroke="#9ac0e8" stroke-width="0.8" opacity="0.5"/>
+      <line x1="24" y1="0" x2="24" y2="64" stroke="#e8a0a0" stroke-width="0.9" opacity="0.65"/>
+    </svg>
+    <div class="vol-inner">
+      <span class="vol-icon-label">♪ vol.</span>
+      <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="40" title="Adjust volume">
+      <span id="volume-label" class="volume-label">40%</span>
+    </div>
   </div>
 
   <!-- MAIN WINDOW -->
@@ -207,16 +382,12 @@
   </div><!-- end win-main -->
 
   <!-- PAPER WINDOWS -->
-  <div id="win-paper1" class="win" style="width: 500px;">
+  <div id="win-paper1" class="win paper-popup">
     <div id="win-paper1-bar" class="win-bar">
       <div class="win-bar-left">
-        <div class="win-traffic">
-          <div class="win-dot close" onclick="closeWin('paper1')"></div>
-          <div class="win-dot min"></div>
-          <div class="win-dot max"></div>
-        </div>
         <span id="win-paper1-title" class="win-title">Sketches & Ideas</span>
       </div>
+      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper1')">x</button>
     </div>
     <div class="win-body">
       <div class="win-pane active" style="padding: 24px;">
@@ -227,16 +398,12 @@
     </div>
   </div>
 
-  <div id="win-paper2" class="win" style="width: 500px;">
+  <div id="win-paper2" class="win paper-popup">
     <div id="win-paper2-bar" class="win-bar">
       <div class="win-bar-left">
-        <div class="win-traffic">
-          <div class="win-dot close" onclick="closeWin('paper2')"></div>
-          <div class="win-dot min"></div>
-          <div class="win-dot max"></div>
-        </div>
         <span id="win-paper2-title" class="win-title">Process Notes</span>
       </div>
+      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper2')">x</button>
     </div>
     <div class="win-body">
       <div class="win-pane active" style="padding: 24px;">
@@ -247,16 +414,12 @@
     </div>
   </div>
 
-  <div id="win-paper3" class="win" style="width: 500px;">
+  <div id="win-paper3" class="win paper-popup">
     <div id="win-paper3-bar" class="win-bar">
       <div class="win-bar-left">
-        <div class="win-traffic">
-          <div class="win-dot close" onclick="closeWin('paper3')"></div>
-          <div class="win-dot min"></div>
-          <div class="win-dot max"></div>
-        </div>
         <span id="win-paper3-title" class="win-title">Design Phase</span>
       </div>
+      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper3')">x</button>
     </div>
     <div class="win-body">
       <div class="win-pane active" style="padding: 24px;">
@@ -267,16 +430,12 @@
     </div>
   </div>
 
-  <div id="win-paper4" class="win" style="width: 500px;">
+  <div id="win-paper4" class="win paper-popup">
     <div id="win-paper4-bar" class="win-bar">
       <div class="win-bar-left">
-        <div class="win-traffic">
-          <div class="win-dot close" onclick="closeWin('paper4')"></div>
-          <div class="win-dot min"></div>
-          <div class="win-dot max"></div>
-        </div>
         <span id="win-paper4-title" class="win-title">How to Explore</span>
       </div>
+      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper4')">x</button>
     </div>
     <div class="win-body">
       <div class="win-pane active" style="padding: 24px;">
@@ -292,16 +451,12 @@
     </div>
   </div>
 
-  <div id="win-paper5" class="win" style="width: 500px;">
+  <div id="win-paper5" class="win paper-popup">
     <div id="win-paper5-bar" class="win-bar">
       <div class="win-bar-left">
-        <div class="win-traffic">
-          <div class="win-dot close" onclick="closeWin('paper5')"></div>
-          <div class="win-dot min"></div>
-          <div class="win-dot max"></div>
-        </div>
         <span id="win-paper5-title" class="win-title">Refinement</span>
       </div>
+      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper5')">x</button>
     </div>
     <div class="win-body">
       <div class="win-pane active" style="padding: 24px;">
@@ -312,16 +467,12 @@
     </div>
   </div>
 
-  <div id="win-paper6" class="win" style="width: 500px;">
+  <div id="win-paper6" class="win paper-popup">
     <div id="win-paper6-bar" class="win-bar">
       <div class="win-bar-left">
-        <div class="win-traffic">
-          <div class="win-dot close" onclick="closeWin('paper6')"></div>
-          <div class="win-dot min"></div>
-          <div class="win-dot max"></div>
-        </div>
         <span id="win-paper6-title" class="win-title">Final Result</span>
       </div>
+      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper6')">x</button>
     </div>
     <div class="win-body">
       <div class="win-pane active" style="padding: 24px;">
