@@ -23,6 +23,8 @@
   <div id="splash-panorama"></div>
   <div id="splash-content">
     <h1 id="splash-welcome">welcome to my abode!</h1>
+    <h2 id="splash-subtitle">Andy's Room</h2>
+    <p id="splash-tagline">A Design Portfolio</p>
     <div id="splash-prompt">click anywhere to start</div>
   </div>
 </div>
@@ -32,46 +34,36 @@
 
 <!-- ════ HOTSPOTS CONTAINER (separate from ui-layer) ════ -->
 <div id="hotspots-container">
-  <div class="hotspot-fixed" data-yaw="270" data-pitch="0" onclick="openWin('main', 'studio')">
-    <div class="hs-card">
-      <div class="hs-icon">🎵</div>
-      <div class="hs-name">the studio</div>
-      <div class="hs-hint">design projects</div>
-    </div>
-  </div>
-
-  <div class="hotspot-fixed" data-yaw="0" data-pitch="0" onclick="openWin('main', 'gallery')">
-    <div class="hs-card">
-      <div class="hs-icon">📸</div>
-      <div class="hs-name">gallery</div>
-      <div class="hs-hint">process photos</div>
-    </div>
-  </div>
-
-  <div class="hotspot-fixed" data-yaw="90" data-pitch="0" onclick="openWin('main', 'about')">
-    <div class="hs-card">
-      <div class="hs-icon">✏️</div>
-      <div class="hs-name">about</div>
-      <div class="hs-hint">who i am</div>
-    </div>
-  </div>
-
-  <div class="hotspot-fixed" data-yaw="180" data-pitch="0" onclick="openWin('tutorial', 'help')">
-    <div class="hs-card">
-      <div class="hs-icon">🖱️</div>
-      <div class="hs-name">how to explore</div>
-      <div class="hs-hint">quick guide</div>
-    </div>
-  </div>
+  <div class="paper-hotspot" data-yaw="0" data-pitch="0" onclick="openWin('paper1')"><div class="hs-card">📝</div></div>
+  <div class="paper-hotspot" data-yaw="60" data-pitch="0" onclick="openWin('paper2')"><div class="hs-card">📝</div></div>
+  <div class="paper-hotspot" data-yaw="120" data-pitch="0" onclick="openWin('paper3')"><div class="hs-card">📝</div></div>
+  <div class="paper-hotspot" data-yaw="180" data-pitch="0" onclick="openWin('paper4')"><div class="hs-card">📝</div></div>
+  <div class="paper-hotspot" data-yaw="240" data-pitch="0" onclick="openWin('paper5')"><div class="hs-card">📝</div></div>
+  <div class="paper-hotspot" data-yaw="300" data-pitch="0" onclick="openWin('paper6')"><div class="hs-card">📝</div></div>
 </div>
 
 <!-- ════ UI LAYER ════ -->
 <div id="ui-layer">
 
+  <!-- PROGRESS BAR -->
+  <div class="progress-container">
+    <div class="progress-bar-wrapper">
+      <div class="progress-bar-fill" id="progress-bar"></div>
+      <div class="progress-bar-label" id="progress-label">0/6</div>
+    </div>
+  </div>
+
   <!-- NAMEPLATE -->
-  <div id="nameplate">
+  <div id="nameplate" class="nameplate-card">
     <span class="np-name">Andy Gu</span>
     <span class="np-sub">Engineer · Designer · Builder</span>
+  </div>
+
+  <!-- VOLUME CONTROL -->
+  <div id="volume-control" class="volume-control">
+    <button id="volume-btn" class="volume-btn" title="Volume control">🎵</button>
+    <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="40" title="Adjust volume">
+    <span id="volume-label" class="volume-label">40%</span>
   </div>
 
   <!-- MAIN WINDOW -->
@@ -102,58 +94,7 @@
 
           <!-- LEFT: Turntable + Crate -->
           <div>
-            <!-- Turntable -->
-            <div class="tt-body">
-              <div class="tt-controls">
-                <div class="tt-light"></div>
-                <div class="tt-dots">
-                  <span></span><span></span><span></span>
-                </div>
-              </div>
-
-              <div class="platter-wrap">
-                <div id="platter" class="platter">
-                  <div class="platter-idle">select a<br>project</div>
-                </div>
-                <div id="tonearm" class="tonearm-wrap">
-                  <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="68" y="0" width="8" height="145" fill="#2a2a2a" rx="2"/>
-                    <ellipse cx="72" cy="145" rx="8" ry="5" fill="#383838"/>
-                  </svg>
-                </div>
-              </div>
-
-              <div class="tt-brand">Technics</div>
-
-              <div class="np-strip">
-                <div id="tt-light" class="tt-light"></div>
-                <div>
-                  <div class="np-txt-title" id="np-title">Now Playing</div>
-                  <div class="np-txt-sub" id="np-sub">select a record</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Crate -->
-            <div style="margin-top: 20px;">
-              <div class="crate-label">Available Projects</div>
-              <div id="crate" class="crate-grid"></div>
-
-              <!-- Liner Notes (Collapsible) -->
-              <div id="liner-wrap" class="liner-wrap">
-                <div class="liner-inner">
-                  <div class="liner-top">
-                    <div id="liner-disc"></div>
-                    <div>
-                      <span class="liner-title" id="liner-title">Project Name</span>
-                      <span class="liner-course" id="liner-course">Course Code</span>
-                      <p class="liner-blurb" id="liner-blurb">Description</p>
-                    </div>
-                  </div>
-                  <div id="tracklist" class="tracklist"></div>
-                </div>
-              </div>
-            </div>
+            <p>The studio is ready for your exploration. Click on the paper (📝) icons scattered around the panorama to open draggable windows with notes, process documentation, and design insights.</p>
           </div>
 
           <!-- RIGHT: Project Overview -->
@@ -265,54 +206,131 @@
     </div><!-- end win-body -->
   </div><!-- end win-main -->
 
-  <!-- TUTORIAL WINDOW -->
-  <div id="win-tutorial" class="win">
-    <div id="win-tutorial-bar" class="win-bar">
+  <!-- PAPER WINDOWS -->
+  <div id="win-paper1" class="win" style="width: 500px;">
+    <div id="win-paper1-bar" class="win-bar">
       <div class="win-bar-left">
         <div class="win-traffic">
-          <div class="win-dot close" onclick="closeWin('tutorial')"></div>
+          <div class="win-dot close" onclick="closeWin('paper1')"></div>
           <div class="win-dot min"></div>
           <div class="win-dot max"></div>
         </div>
-        <span id="win-tutorial-title" class="win-title">how to explore</span>
+        <span id="win-paper1-title" class="win-title">Sketches & Ideas</span>
       </div>
     </div>
-
-    <div class="win-nav">
-      <button class="win-nav-btn active" data-pane="help" onclick="switchPane('tutorial', 'help')">guide</button>
-    </div>
-
     <div class="win-body">
-      <!-- ── HELP PANE ── -->
-      <div class="win-pane active" id="pane-help">
-        <h2 class="sect-title">How to Explore</h2>
-        <hr class="sect-rule">
-        
-        <div style="display: flex; flex-direction: column; gap: 32px;">
-          <div>
-            <h3 style="font-family: var(--f-serif); font-size: 16px; color: var(--ink); margin-bottom: 12px;">Drag to Look Around</h3>
-            <p style="font-family: var(--f-pica); font-size: 14px; color: var(--ink); line-height: 1.6;">Click and drag your mouse across the panorama to rotate the view. Look in any direction — up, down, left, right. The room rotates smoothly as you move.</p>
-            <div style="margin-top: 16px; padding: 12px; background: rgba(107,77,52,0.08); border-radius: 2px; border-left: 3px solid var(--brown); font-family: var(--f-pica); font-size: 13px; color: var(--brown-dk); font-style: italic;">
-              💡 Try rotating all the way around — you might spot something interesting
-            </div>
-          </div>
-          
-          <div>
-            <h3 style="font-family: var(--f-serif); font-size: 16px; color: var(--ink); margin-bottom: 12px;">Click Hotspots</h3>
-            <p style="font-family: var(--f-pica); font-size: 14px; color: var(--ink); line-height: 1.6;">When you see a card with a symbol floating in the panorama, that's a hotspot. Click on it to open a window with more information about that topic.</p>
-            <div style="margin-top: 16px; padding: 12px; background: rgba(107,77,52,0.08); border-radius: 2px; border-left: 3px solid var(--brown); font-family: var(--f-pica); font-size: 13px; color: var(--brown-dk); font-style: italic;">
-              💡 You can drag windows around the screen to organize them
-            </div>
-          </div>
-          
-          <div>
-            <h3 style="font-family: var(--f-serif); font-size: 16px; color: var(--ink); margin-bottom: 12px;">Navigate Panes</h3>
-            <p style="font-family: var(--f-pica); font-size: 14px; color: var(--ink); line-height: 1.6;">Each window has tabs at the top. Click a tab to switch between different sections of content within that window.</p>
-          </div>
-        </div>
+      <div class="win-pane active" style="padding: 24px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="margin-top: 16px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p style="margin-top: 16px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
       </div>
-    </div><!-- end win-body -->
-  </div><!-- end win-tutorial -->
+    </div>
+  </div>
+
+  <div id="win-paper2" class="win" style="width: 500px;">
+    <div id="win-paper2-bar" class="win-bar">
+      <div class="win-bar-left">
+        <div class="win-traffic">
+          <div class="win-dot close" onclick="closeWin('paper2')"></div>
+          <div class="win-dot min"></div>
+          <div class="win-dot max"></div>
+        </div>
+        <span id="win-paper2-title" class="win-title">Process Notes</span>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="win-pane active" style="padding: 24px;">
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        <p style="margin-top: 16px;">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        <p style="margin-top: 16px;">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut quid ex ea commodi consequatur.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="win-paper3" class="win" style="width: 500px;">
+    <div id="win-paper3-bar" class="win-bar">
+      <div class="win-bar-left">
+        <div class="win-traffic">
+          <div class="win-dot close" onclick="closeWin('paper3')"></div>
+          <div class="win-dot min"></div>
+          <div class="win-dot max"></div>
+        </div>
+        <span id="win-paper3-title" class="win-title">Design Phase</span>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="win-pane active" style="padding: 24px;">
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+        <p style="margin-top: 16px;">Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+        <p style="margin-top: 16px;">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="win-paper4" class="win" style="width: 500px;">
+    <div id="win-paper4-bar" class="win-bar">
+      <div class="win-bar-left">
+        <div class="win-traffic">
+          <div class="win-dot close" onclick="closeWin('paper4')"></div>
+          <div class="win-dot min"></div>
+          <div class="win-dot max"></div>
+        </div>
+        <span id="win-paper4-title" class="win-title">How to Explore</span>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="win-pane active" style="padding: 24px;">
+        <h3 style="font-family: var(--f-serif); font-size: 18px; color: var(--ink); margin-bottom: 12px;">Drag to Look Around</h3>
+        <p>Click and drag your mouse across the panorama to rotate the view. Look in any direction — up, down, left, right. The room rotates smoothly as you move. Try rotating all the way around — you might spot something interesting.</p>
+        
+        <h3 style="font-family: var(--f-serif); font-size: 18px; color: var(--ink); margin-bottom: 12px; margin-top: 20px;">Click Hotspots</h3>
+        <p>When you see a page icon (📝) floating in the panorama, that's a hotspot. Click on it to open a draggable window with more information. You can drag windows around the screen to organize them as you like.</p>
+        
+        <h3 style="font-family: var(--f-serif); font-size: 18px; color: var(--ink); margin-bottom: 12px; margin-top: 20px;">Manage Windows</h3>
+        <p>Close windows with the red dot in the top-left corner. Minimize windows with the yellow dot. Each window can be dragged by its title bar to rearrange your workspace.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="win-paper5" class="win" style="width: 500px;">
+    <div id="win-paper5-bar" class="win-bar">
+      <div class="win-bar-left">
+        <div class="win-traffic">
+          <div class="win-dot close" onclick="closeWin('paper5')"></div>
+          <div class="win-dot min"></div>
+          <div class="win-dot max"></div>
+        </div>
+        <span id="win-paper5-title" class="win-title">Refinement</span>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="win-pane active" style="padding: 24px;">
+        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum hic tenetur a sapiente delectus.</p>
+        <p style="margin-top: 16px;">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est omnis dolor repellendus.</p>
+        <p style="margin-top: 16px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="win-paper6" class="win" style="width: 500px;">
+    <div id="win-paper6-bar" class="win-bar">
+      <div class="win-bar-left">
+        <div class="win-traffic">
+          <div class="win-dot close" onclick="closeWin('paper6')"></div>
+          <div class="win-dot min"></div>
+          <div class="win-dot max"></div>
+        </div>
+        <span id="win-paper6-title" class="win-title">Final Result</span>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="win-pane active" style="padding: 24px;">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p style="margin-top: 16px;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.</p>
+        <p style="margin-top: 16px;">Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem ut enim ad minima.</p>
+      </div>
+    </div>
+  </div>
 
 </div><!-- end ui-layer -->
 
