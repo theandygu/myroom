@@ -4,16 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andy Gu | Studio</title>
-
-  <!-- CDN Dependencies -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-  
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
-
-  <!-- Local Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -35,7 +29,6 @@
   <div id="panorama-sketch"></div>
 </div>
 
-<!-- Mask used to "erase" circles from the sketch layer -->
 <svg id="sketch-mask-defs" aria-hidden="true" focusable="false">
   <defs>
     <filter id="reveal-soft-blur" x="-30%" y="-30%" width="160%" height="160%">
@@ -48,17 +41,15 @@
   </defs>
 </svg>
 
-<!-- ════ HOTSPOTS CONTAINER (separate from ui-layer) ════ -->
+<!-- ════ HOTSPOTS (8 total) ════ -->
 <div id="hotspots-container">
 
-  <!-- Crumpled paper hotspot SVG template — each one has a unique crumple angle -->
-  <div class="paper-hotspot" data-yaw="0" data-pitch="0" onclick="openWin('paper1')" style="--crumple-rot: -4deg">
+  <!-- paper1 · Tutorial · yaw 0 -->
+  <div class="paper-hotspot" data-yaw="0" data-pitch="0" onclick="openWin('paper1')" style="--crumple-rot:-4deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
-        <defs>
-          <filter id="shadow1"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
-        </defs>
-        <path d="M4 5 L44 3 L54 8 L55 66 L3 68Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow1)"/>
+        <defs><filter id="sh1"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
+        <path d="M4 5 L44 3 L54 8 L55 66 L3 68Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#sh1)"/>
         <path d="M44 3 L46 14 L54 8Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
         <line x1="14" y1="4" x2="14" y2="67" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
         <line x1="6" y1="20" x2="53" y2="20" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
@@ -66,167 +57,195 @@
         <line x1="6" y1="36" x2="53" y2="36" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="6" y1="44" x2="53" y2="44" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="6" y1="52" x2="53" y2="52" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="6" y1="60" x2="53" y2="60" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <path d="M18 20 Q30 19 42 20" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M18 28 Q35 27 46 28" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M18 36 Q28 35 38 36" stroke="#2a1a0e" stroke-width="0.8" fill="none" stroke-linecap="round"/>
-        <!-- crease line from crumple -->
+        <text x="20" y="17" font-family="serif" font-size="6" fill="#6b4d34" font-style="italic">how to</text>
+        <text x="17" y="25" font-family="serif" font-size="6" fill="#6b4d34" font-style="italic">explore</text>
         <path d="M10 35 Q22 42 18 55" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
       </svg>
     </div>
   </div>
 
-  <div class="paper-hotspot" data-yaw="60" data-pitch="0" onclick="openWin('paper2')" style="--crumple-rot: 3deg">
+  <!-- paper2 · Position in Context · yaw 45 -->
+  <div class="paper-hotspot" data-yaw="45" data-pitch="0" onclick="openWin('paper2')" style="--crumple-rot:3deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
-        <defs>
-          <filter id="shadow2"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
-        </defs>
-        <path d="M5 4 L45 2 L55 66 L2 67Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow2)"/>
+        <defs><filter id="sh2"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
+        <path d="M5 4 L45 2 L55 66 L2 67Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#sh2)"/>
         <path d="M45 2 L43 13 L55 10Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
         <line x1="13" y1="3" x2="13" y2="66" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
         <line x1="5" y1="18" x2="53" y2="18" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="5" y1="26" x2="53" y2="26" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="5" y1="34" x2="53" y2="34" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="5" y1="42" x2="53" y2="42" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="5" y1="50" x2="53" y2="50" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="5" y1="58" x2="53" y2="58" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <path d="M17 18 Q29 17 44 18" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M17 26 Q36 25 48 26" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M17 34 Q30 33 40 34" stroke="#2a1a0e" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+        <text x="18" y="15" font-family="serif" font-size="5.5" fill="#6b4d34" font-style="italic">position</text>
         <path d="M30 40 Q24 50 28 62" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+        <!-- music note doodle -->
+        <path d="M36 28 L36 38 M36 28 L40 26 L40 30 L36 32" stroke="#2a1a0e" stroke-width="0.9" fill="none"/>
+        <ellipse cx="35" cy="39" rx="2.5" ry="1.8" fill="#2a1a0e" transform="rotate(-15 35 39)"/>
       </svg>
     </div>
   </div>
 
-  <div class="paper-hotspot" data-yaw="120" data-pitch="0" onclick="openWin('paper3')" style="--crumple-rot: -2deg">
+  <!-- paper3 · Design Work Summary · yaw 90 -->
+  <div class="paper-hotspot" data-yaw="90" data-pitch="0" onclick="openWin('paper3')" style="--crumple-rot:-2deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
-        <defs>
-          <filter id="shadow3"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
-        </defs>
-        <path d="M3 6 L43 2 L56 5 L54 67 L4 66Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow3)"/>
+        <defs><filter id="sh3"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
+        <path d="M3 6 L43 2 L56 5 L54 67 L4 66Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#sh3)"/>
         <path d="M43 2 L45 15 L56 5Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
         <line x1="13" y1="3" x2="12" y2="66" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
         <line x1="5" y1="22" x2="53" y2="22" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="5" y1="30" x2="53" y2="30" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="5" y1="38" x2="53" y2="38" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="5" y1="46" x2="53" y2="46" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="5" y1="54" x2="53" y2="54" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="5" y1="62" x2="53" y2="62" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <path d="M17 22 Q26 21 40 22" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M17 30 Q33 29 47 30" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M40 36 Q50 44 46 58" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+        <text x="17" y="19" font-family="serif" font-size="5.5" fill="#6b4d34" font-style="italic">all work</text>
+        <!-- grid doodle -->
+        <rect x="18" y="32" width="7" height="7" fill="none" stroke="#6b4d34" stroke-width="0.7"/>
+        <rect x="27" y="32" width="7" height="7" fill="none" stroke="#6b4d34" stroke-width="0.7"/>
+        <rect x="18" y="41" width="7" height="7" fill="none" stroke="#6b4d34" stroke-width="0.7"/>
+        <rect x="27" y="41" width="7" height="7" fill="none" stroke="#6b4d34" stroke-width="0.7"/>
       </svg>
     </div>
   </div>
 
-  <div class="paper-hotspot" data-yaw="180" data-pitch="0" onclick="openWin('paper4')" style="--crumple-rot: 5deg">
+  <!-- paper4 · Matboard Bridge · yaw 135 -->
+  <div class="paper-hotspot" data-yaw="135" data-pitch="0" onclick="openWin('paper4')" style="--crumple-rot:5deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
-        <defs>
-          <filter id="shadow4"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
-        </defs>
-        <path d="M6 3 L46 5 L55 68 L2 65Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow4)"/>
+        <defs><filter id="sh4"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
+        <path d="M6 3 L46 5 L55 68 L2 65Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#sh4)"/>
         <path d="M46 5 L44 16 L55 12Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
         <line x1="15" y1="4" x2="14" y2="65" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
         <line x1="7" y1="21" x2="54" y2="21" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="7" y1="29" x2="54" y2="29" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="7" y1="37" x2="54" y2="37" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="7" y1="45" x2="54" y2="45" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="7" y1="53" x2="54" y2="53" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="7" y1="61" x2="54" y2="61" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <path d="M19 21 Q31 20 45 21" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M19 29 Q38 28 50 29" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <text x="18" y="18" font-family="serif" font-size="5" fill="#6b4d34" font-style="italic">bridge</text>
+        <!-- bridge doodle -->
+        <path d="M10 54 L48 54" stroke="#2a1a0e" stroke-width="1" fill="none"/>
+        <path d="M16 54 L16 44 L29 38 L42 44 L42 54" stroke="#2a1a0e" stroke-width="0.8" fill="none"/>
         <path d="M8 48 Q16 40 14 30" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
       </svg>
     </div>
   </div>
 
-  <div class="paper-hotspot" data-yaw="240" data-pitch="0" onclick="openWin('paper5')" style="--crumple-rot: -3deg">
+  <!-- paper5 · Knee Sleeve · yaw 180 -->
+  <div class="paper-hotspot" data-yaw="180" data-pitch="0" onclick="openWin('paper5')" style="--crumple-rot:-3deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
-        <defs>
-          <filter id="shadow5"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
-        </defs>
-        <path d="M4 4 L44 2 L56 8 L53 67 L3 68Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow5)"/>
+        <defs><filter id="sh5"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
+        <path d="M4 4 L44 2 L56 8 L53 67 L3 68Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#sh5)"/>
         <path d="M44 2 L46 13 L56 8Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
         <line x1="13" y1="3" x2="12" y2="67" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
         <line x1="5" y1="19" x2="53" y2="19" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="5" y1="27" x2="53" y2="27" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="5" y1="35" x2="53" y2="35" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="5" y1="43" x2="53" y2="43" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="5" y1="51" x2="53" y2="51" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="5" y1="59" x2="53" y2="59" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <path d="M17 19 Q28 18 43 19" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M17 27 Q34 26 46 27" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <text x="17" y="16" font-family="serif" font-size="5" fill="#6b4d34" font-style="italic">knee</text>
+        <!-- knee/leg doodle -->
+        <path d="M24 24 C22 30 26 36 24 44 C22 50 20 54 22 60" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <ellipse cx="24" cy="36" rx="5" ry="4" fill="none" stroke="#6b4d34" stroke-width="0.8" stroke-dasharray="2,2"/>
         <path d="M25 50 Q18 44 20 34" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
       </svg>
     </div>
   </div>
 
-  <div class="paper-hotspot" data-yaw="300" data-pitch="0" onclick="openWin('paper6')" style="--crumple-rot: 2deg">
+  <!-- paper6 · Praxis I Loose Outlets · yaw 225 -->
+  <div class="paper-hotspot" data-yaw="225" data-pitch="0" onclick="openWin('paper6')" style="--crumple-rot:2deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
-        <defs>
-          <filter id="shadow6"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter>
-        </defs>
-        <path d="M5 5 L45 3 L54 7 L56 66 L3 66Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#shadow6)"/>
+        <defs><filter id="sh6"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
+        <path d="M5 5 L45 3 L54 7 L56 66 L3 66Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#sh6)"/>
         <path d="M45 3 L47 14 L54 7Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
         <line x1="14" y1="4" x2="13" y2="66" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
         <line x1="6" y1="20" x2="54" y2="20" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="6" y1="28" x2="54" y2="28" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
         <line x1="6" y1="36" x2="54" y2="36" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="6" y1="44" x2="54" y2="44" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="6" y1="52" x2="54" y2="52" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <line x1="6" y1="60" x2="54" y2="60" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
-        <path d="M18 20 Q32 19 46 20" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M18 28 Q30 27 44 28" stroke="#2a1a0e" stroke-width="1" fill="none" stroke-linecap="round"/>
-        <path d="M44 44 Q52 38 50 28" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+        <text x="18" y="17" font-family="serif" font-size="5" fill="#6b4d34" font-style="italic">outlets</text>
+        <!-- outlet doodle -->
+        <rect x="20" y="26" width="18" height="22" rx="2" fill="none" stroke="#2a1a0e" stroke-width="1"/>
+        <ellipse cx="25" cy="33" rx="2" ry="2.5" fill="#2a1a0e"/>
+        <ellipse cx="33" cy="33" rx="2" ry="2.5" fill="#2a1a0e"/>
+        <ellipse cx="29" cy="40" rx="2.5" ry="2" fill="#2a1a0e"/>
       </svg>
     </div>
   </div>
 
-</div>
+  <!-- paper7 · Praxis II Swim Resistance · yaw 270 -->
+  <div class="paper-hotspot" data-yaw="270" data-pitch="0" onclick="openWin('paper7')" style="--crumple-rot:-5deg">
+    <div class="hs-card">
+      <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
+        <defs><filter id="sh7"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
+        <path d="M4 6 L44 3 L55 6 L53 67 L3 68Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#sh7)"/>
+        <path d="M44 3 L47 15 L55 6Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
+        <line x1="13" y1="4" x2="12" y2="67" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
+        <line x1="5" y1="20" x2="53" y2="20" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="28" x2="53" y2="28" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="36" x2="53" y2="36" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <text x="18" y="17" font-family="serif" font-size="5" fill="#6b4d34" font-style="italic">swim</text>
+        <!-- wave doodle -->
+        <path d="M10 35 Q16 29 22 35 Q28 41 34 35 Q40 29 46 35" stroke="#4a8fc0" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <path d="M10 43 Q16 37 22 43 Q28 49 34 43 Q40 37 46 43" stroke="#4a8fc0" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M30 50 Q40 48 46 52" stroke="#bbb" stroke-width="0.7" fill="none" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- paper8 · Reference List · yaw 315 -->
+  <div class="paper-hotspot" data-yaw="315" data-pitch="0" onclick="openWin('paper8')" style="--crumple-rot:4deg">
+    <div class="hs-card">
+      <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
+        <defs><filter id="sh8"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
+        <path d="M5 4 L45 2 L54 68 L3 66Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.4" filter="url(#sh8)"/>
+        <path d="M45 2 L43 13 L54 10Z" fill="#e0d8c8" stroke="#2a1a0e" stroke-width="1.1"/>
+        <line x1="13" y1="3" x2="13" y2="66" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
+        <line x1="5" y1="18" x2="53" y2="18" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="26" x2="53" y2="26" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="34" x2="53" y2="34" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="42" x2="53" y2="42" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <line x1="5" y1="50" x2="53" y2="50" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+        <text x="17" y="15" font-family="serif" font-size="5" fill="#6b4d34" font-style="italic">refs.</text>
+        <path d="M17 23 Q32 22 44 23" stroke="#2a1a0e" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+        <path d="M17 31 Q28 30 38 31" stroke="#2a1a0e" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+        <path d="M17 39 Q30 38 42 39" stroke="#2a1a0e" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+        <path d="M17 47 Q26 46 34 47" stroke="#2a1a0e" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+</div><!-- end hotspots-container -->
 
 <!-- ════ UI LAYER ════ -->
 <div id="ui-layer">
 
-  <!-- PROGRESS BAR — lined paper strip, top center -->
+  <!-- PROGRESS BAR -->
   <div class="progress-container">
     <div class="progress-paper-strip">
-      <!-- ruled lines background drawn as SVG -->
       <svg class="strip-lines" viewBox="0 0 260 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="260" height="36" fill="#f7f3ea"/>
         <line x1="0" y1="12" x2="260" y2="12" stroke="#9ac0e8" stroke-width="0.8" opacity="0.6"/>
         <line x1="0" y1="20" x2="260" y2="20" stroke="#9ac0e8" stroke-width="0.8" opacity="0.6"/>
         <line x1="0" y1="28" x2="260" y2="28" stroke="#9ac0e8" stroke-width="0.8" opacity="0.6"/>
         <line x1="22" y1="0" x2="22" y2="36" stroke="#e8a0a0" stroke-width="0.9" opacity="0.7"/>
-        <!-- torn left edge -->
         <path d="M0 0 Q2 4 0 8 Q2 12 0 16 Q2 20 0 24 Q2 28 0 32 Q2 36 0 36" fill="#e8dcc8" stroke="#b8a888" stroke-width="0.5"/>
-        <!-- torn right edge -->
         <path d="M260 0 Q258 4 260 8 Q258 12 260 16 Q258 20 260 24 Q258 28 260 32 Q258 36 260 36" fill="#e8dcc8" stroke="#b8a888" stroke-width="0.5"/>
       </svg>
       <div class="strip-inner">
         <span class="strip-label">explored</span>
         <div class="strip-track">
           <div class="strip-fill" id="progress-bar"></div>
-          <!-- tick marks -->
           <div class="strip-ticks">
-            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
           </div>
         </div>
-        <span class="strip-count" id="progress-label">0/6</span>
+        <span class="strip-count" id="progress-label">0/8</span>
       </div>
     </div>
   </div>
 
-  <!-- NAMEPLATE — index card pinned top left -->
+  <!-- NAMEPLATE -->
   <div id="nameplate">
     <div class="nameplate-card">
-      <!-- pin -->
       <div class="card-pin"></div>
-      <!-- lined paper background -->
       <svg class="card-lines" viewBox="0 0 180 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="180" height="72" fill="transparent"/>
         <line x1="0" y1="24" x2="180" y2="24" stroke="#9ac0e8" stroke-width="0.8" opacity="0.5"/>
@@ -239,9 +258,8 @@
     </div>
   </div>
 
-  <!-- VOLUME CONTROL — small note card top right -->
+  <!-- VOLUME CONTROL -->
   <div id="volume-control" class="volume-control">
-    <!-- tape strip at top -->
     <div class="tape-strip"></div>
     <svg class="vol-card-lines" viewBox="0 0 190 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="190" height="64" fill="transparent"/>
@@ -252,14 +270,16 @@
     </svg>
     <div class="vol-inner">
       <span class="vol-icon-label">♪ vol.</span>
-      <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="40" title="Adjust volume">
+      <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="40">
       <span id="volume-label" class="volume-label">40%</span>
     </div>
   </div>
 
   <button id="restart-btn" type="button" title="Restart reveal">restart</button>
 
-  <!-- MAIN WINDOW -->
+  <!-- ══════════════════════════════════
+       MAIN WINDOW (studio / gallery / about)
+  ══════════════════════════════════ -->
   <div id="win-main" class="win">
     <div id="win-main-bar" class="win-bar">
       <div class="win-bar-left">
@@ -271,89 +291,58 @@
         <span id="win-main-title" class="win-title">the studio</span>
       </div>
     </div>
-
     <div class="win-nav">
-      <button class="win-nav-btn active" data-pane="studio" onclick="switchPane('main', 'studio')">studio</button>
-      <button class="win-nav-btn" data-pane="gallery" onclick="switchPane('main', 'gallery')">gallery</button>
-      <button class="win-nav-btn" data-pane="about" onclick="switchPane('main', 'about')">about</button>
-      <button class="win-nav-btn" data-pane="position" onclick="switchPane('main', 'position')">position</button>
+      <button class="win-nav-btn active" data-pane="studio" onclick="switchPane('main','studio')">studio</button>
+      <button class="win-nav-btn" data-pane="gallery" onclick="switchPane('main','gallery')">gallery</button>
+      <button class="win-nav-btn" data-pane="about" onclick="switchPane('main','about')">about</button>
+      <button class="win-nav-btn" data-pane="position" onclick="switchPane('main','position')">position</button>
     </div>
-
     <div class="win-body">
-
-      <!-- ── STUDIO PANE ── -->
       <div class="win-pane active" id="pane-studio">
-        <div class="studio-grid">
-
-          <!-- LEFT: Turntable + Crate -->
-          <div>
-            <p>The studio is ready for your exploration. Click on the paper (📝) icons scattered around the panorama to open draggable windows with notes, process documentation, and design insights.</p>
-          </div>
-
-          <!-- RIGHT: Project Overview -->
-          <div>
-            <h2 class="sect-title">Design as Jazz</h2>
-            <hr class="sect-rule">
-            <p>Welcome to the studio. This is my portfolio of design work from engineering science at U of T. Each project is a "track" — click any record to explore how it was made.</p>
-            <p>I organize around the CTMF (Creative Thinking & Problem Solving Framework), treating each phase as you might treat a chord change in jazz: a constraint that focuses creativity.</p>
-            <p>The four projects you see are:</p>
-            <ul style="margin-left: 20px; margin-top: 10px;">
-              <li><strong>Matboard Bridge</strong> — Structural failure and optimization</li>
-              <li><strong>Knee Sleeve</strong> — Biomedical device design</li>
-              <li><strong>Loose Outlets</strong> — Electrical safety in homes</li>
-              <li><strong>Swim Resistance</strong> — Equipment for competitive swimmers</li>
-            </ul>
-          </div>
+        <h2 class="sect-title">Design as Jazz</h2><hr class="sect-rule">
+        <p>Explore the room — each floating paper holds a piece of this portfolio. Click any paper icon you see to open it, drag windows to arrange your workspace, and look around with your mouse.</p>
+        <p style="margin-top:16px">The four design projects are scattered around the room. Each one is a record — a chord change, a solo, a vocabulary built from scratch.</p>
+        <div class="proj-overview-grid" style="margin-top:24px">
+          <div class="proj-overview-card" onclick="openWin('paper4')"><span class="poc-tag">CIV102</span><strong>Matboard Bridge</strong><p>Structural optimization under failure</p></div>
+          <div class="proj-overview-card" onclick="openWin('paper5')"><span class="poc-tag">UTBiome</span><strong>Rehabilitative Knee Sleeve</strong><p>Wearable biomedical device design</p></div>
+          <div class="proj-overview-card" onclick="openWin('paper6')"><span class="poc-tag">Praxis I</span><strong>Loose Outlets</strong><p>Electrical safety in residential homes</p></div>
+          <div class="proj-overview-card" onclick="openWin('paper7')"><span class="poc-tag">Praxis II</span><strong>Variable Swim Resistance</strong><p>Adaptive drag for competitive swimmers</p></div>
         </div>
       </div>
-
-      <!-- ── GALLERY PANE ── -->
       <div class="win-pane" id="pane-gallery">
-        <h2 class="sect-title">Process</h2>
-        <hr class="sect-rule">
-
+        <h2 class="sect-title">Process Gallery</h2><hr class="sect-rule">
         <div class="gal-section">
-          <div class="gal-label">Bridge</div>
+          <div class="gal-label">Matboard Bridge · CIV102</div>
           <div class="gal-string">
-            <div class="pol" style="--rot:-3deg; --hang:10px;">
-              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+1" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
-              <div class="pol-cap">Early concept sketches</div>
-              <div class="pol-clip"></div>
-            </div>
-            <div class="pol" style="--rot:2deg; --hang:5px;">
-              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+2" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
-              <div class="pol-cap">Material testing</div>
-              <div class="pol-clip"></div>
-            </div>
-            <div class="pol" style="--rot:-1deg; --hang:12px;">
-              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+3" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
-              <div class="pol-cap">Final assembly</div>
-              <div class="pol-clip"></div>
-            </div>
+            <div class="pol" style="--rot:-3deg;--hang:10px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#d4c4a0,#c4b090)"></div><div class="pol-cap">Cross-section sketches</div></div>
+            <div class="pol" style="--rot:2deg;--hang:5px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#c8c0b0,#b8b0a0)"></div><div class="pol-cap">Gluing the I-beam</div></div>
+            <div class="pol" style="--rot:-1deg;--hang:12px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#ccc,#aaa)"></div><div class="pol-cap">Load test — 82N</div></div>
           </div>
         </div>
-
         <div class="gal-section">
-          <div class="gal-label">Knee Sleeve</div>
+          <div class="gal-label">Knee Sleeve · UTBiome</div>
           <div class="gal-string">
-            <div class="pol" style="--rot:1deg; --hang:8px;">
-              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+4" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
-              <div class="pol-cap">Prototyping</div>
-              <div class="pol-clip"></div>
-            </div>
-            <div class="pol" style="--rot:-2deg; --hang:6px;">
-              <img class="pol-img" src="https://via.placeholder.com/120x150?text=Photo+5" alt="Process photo" style="width:120px;height:150px;background:#ccc;">
-              <div class="pol-cap">User testing</div>
-              <div class="pol-clip"></div>
-            </div>
+            <div class="pol" style="--rot:1deg;--hang:8px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#a0b4c8,#90a4b8)"></div><div class="pol-cap">Empathy map</div></div>
+            <div class="pol" style="--rot:-2deg;--hang:6px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#b0c4c0,#a0b4b0)"></div><div class="pol-cap">Foam prototype</div></div>
+          </div>
+        </div>
+        <div class="gal-section">
+          <div class="gal-label">Loose Outlets · Praxis I</div>
+          <div class="gal-string">
+            <div class="pol" style="--rot:-2deg;--hang:14px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#f0d890,#e0c880)"></div><div class="pol-cap">HMW brainstorm</div></div>
+            <div class="pol" style="--rot:3deg;--hang:4px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#d0c8b8,#c0b8a8)"></div><div class="pol-cap">Pugh chart</div></div>
+          </div>
+        </div>
+        <div class="gal-section">
+          <div class="gal-label">Swim Resistance · Praxis II</div>
+          <div class="gal-string">
+            <div class="pol" style="--rot:-1deg;--hang:10px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#90c4c0,#80b4b0)"></div><div class="pol-cap">Pool testing</div></div>
+            <div class="pol" style="--rot:2.5deg;--hang:6px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#b8c8d0,#a8b8c0)"></div><div class="pol-cap">Final prototype</div></div>
           </div>
         </div>
       </div>
-
-      <!-- ── ABOUT PANE ── -->
       <div class="win-pane" id="pane-about">
-        <h2 class="sect-title">About</h2>
-        <hr class="sect-rule">
+        <h2 class="sect-title">About</h2><hr class="sect-rule">
         <div class="about-grid">
           <div>
             <div class="gal-label">Position Statement · Jan 2026</div>
@@ -365,146 +354,738 @@
           <div>
             <div class="gal-label">A Few Things</div>
             <div class="about-card">
-              <p>I'm Andy — a first-year engineering science student at U of T, and a musician who plays jazz on the side.</p>
-              <p>I approach design the way I approach making music: with practice, collaboration, and the kind of creativity that only comes when you know the rules well enough to bend them.</p>
-              <p>This portfolio is the record of my first year building things.</p>
+              <p>I'm Andy — a first-year Engineering Science student at U of T, and a jazz musician who treats both disciplines the same way.</p>
+              <p>I design like I improvise: vocabulary first, then freedom. This portfolio is the record of my first year building things.</p>
             </div>
             <div class="tag-row">
-              <span class="tag">jazz</span>
-              <span class="tag">structures</span>
-              <span class="tag">biomedical</span>
-              <span class="tag">praxis</span>
-              <span class="tag">toronto</span>
-              <span class="tag">eng. sci. · 2T8</span>
+              <span class="tag">jazz</span><span class="tag">structures</span><span class="tag">biomedical</span>
+              <span class="tag">praxis</span><span class="tag">toronto</span><span class="tag">eng. sci. · 2T8</span>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- ── POSITION STATEMENT PANE ── -->
       <div class="win-pane" id="pane-position">
-        <h2 class="sect-title">Position Statement</h2>
-        <hr class="sect-rule">
+        <h2 class="sect-title">Position Statement</h2><hr class="sect-rule">
         <div class="pos-body">
-          <p>I approach engineering design like I approach making music — with the application of <em>practice, collaboration</em> and <em>creativity</em> to express oneself.</p>
+          <p>I approach engineering design like I approach jazz — with the application of <em>practice, collaboration</em> and <em>creativity</em> to express oneself.</p>
           <blockquote><p>"while the bridges I build collapse, I still approach design as applied creativity and an expression of my knowledge."</p></blockquote>
-          <p>Three ideas carry this position across everything I build:</p>
-          <p><strong>Ensemble.</strong> Jazz comes in a variety of ensembles. Musical sensitivity needs to be adapted to your ensemble size. I treat engineering teamwork the same way — listening to teammates share their perspective one by one, without skipping or judging.</p>
-          <p><strong>Chord Changes.</strong> In jazz, the design space comes as the chord changes for a tune. Each tune has a specified set of chords which define restrictions. In Praxis, we learned to call this the design space. The fine-tuning of requirements matters, because there exists a sweet spot where creativity shines.</p>
-          <p><strong>Vocabulary.</strong> There's no need to reinvent the alphabet. In jazz, vocabulary is standard — musicians transcribe the legends to build repertoire. In engineering, I start with failure equations and professor-given frameworks, then use that shoulder to reach higher.</p>
-          <p style="margin-top:18px;color:var(--brown-lt);font-style:italic">— iteration on the Praxis I position statement. grade: 17.5/10.</p>
+          <p><strong>Ensemble.</strong> Jazz sensitivity adapts to ensemble size. I treat engineering teamwork the same way — listening to teammates one by one, without skipping or judging.</p>
+          <p><strong>Chord Changes.</strong> In jazz, the design space comes as chord changes. The fine-tuning of requirements matters — there's a sweet spot where creativity shines.</p>
+          <p><strong>Vocabulary.</strong> No need to reinvent the alphabet. I transcribe Chet Baker solos to build repertoire; I review failure equations to build design intuition.</p>
+          <p style="margin-top:18px;color:var(--brown-lt);font-style:italic">— Praxis I position statement · grade: 17.5/10</p>
         </div>
       </div>
+    </div>
+  </div>
 
-    </div><!-- end win-body -->
-  </div><!-- end win-main -->
-
-  <!-- PAPER WINDOWS -->
+  <!-- ══════════════════════════════════
+       PAPER 1 — TUTORIAL
+  ══════════════════════════════════ -->
   <div id="win-paper1" class="win paper-popup">
     <div id="win-paper1-bar" class="win-bar">
-      <div class="win-bar-left">
-        <span id="win-paper1-title" class="win-title">Sketches & Ideas</span>
-      </div>
-      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper1')">x</button>
+      <div class="win-bar-left"><span class="win-title">How to Explore</span></div>
+      <button class="paper-close-btn" onclick="closeWin('paper1')">×</button>
     </div>
     <div class="win-body">
-      <div class="win-pane active" style="padding: 24px;">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p style="margin-top: 16px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p style="margin-top: 16px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <div class="win-pane active">
+
+        <h2 class="sect-title">Welcome to the Room</h2><hr class="sect-rule">
+
+        <div class="tut-steps">
+
+          <div class="tut-step" id="tut-step-1">
+            <div class="tut-step-icon">
+              <!-- animated drag hand -->
+              <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="28" fill="rgba(107,77,52,0.08)" stroke="var(--brown)" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <g class="tut-mouse-anim">
+                  <rect x="22" y="16" width="20" height="28" rx="10" fill="none" stroke="var(--brown-dk)" stroke-width="2"/>
+                  <line x1="32" y1="16" x2="32" y2="28" stroke="var(--brown-dk)" stroke-width="1.5"/>
+                  <circle cx="32" cy="24" r="3" fill="var(--brown-lt)" class="scroll-wheel"/>
+                </g>
+                <g transform="translate(36,36)" class="tut-arrow-anim">
+                  <path d="M0 0 L12 0 M8 -4 L12 0 L8 4" stroke="var(--brown-dk)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+              </svg>
+            </div>
+            <div class="tut-step-text">
+              <h3>Look Around</h3>
+              <p><strong>Click and drag</strong> anywhere in the background to rotate your view. Sweep left or right to pan through the room. Use your scroll wheel to zoom in or out.</p>
+            </div>
+          </div>
+
+          <div class="tut-step" id="tut-step-2">
+            <div class="tut-step-icon">
+              <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="28" fill="rgba(107,77,52,0.08)" stroke="var(--brown)" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <!-- crumpled paper mini -->
+                <path d="M18 14 L42 12 L46 52 L14 50Z" fill="#f8f5ee" stroke="#2a1a0e" stroke-width="1.5"/>
+                <line x1="14" y1="14" x2="14" y2="50" stroke="#e8a0a0" stroke-width="0.9" opacity="0.8"/>
+                <line x1="16" y1="24" x2="45" y2="24" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+                <line x1="16" y1="32" x2="45" y2="32" stroke="#9ac0e8" stroke-width="0.75" opacity="0.7"/>
+                <!-- glow ring -->
+                <circle cx="32" cy="32" r="22" fill="none" stroke="var(--brown-lt)" stroke-width="1" opacity="0.5" class="tut-pulse-ring"/>
+              </svg>
+            </div>
+            <div class="tut-step-text">
+              <h3>Find the Papers</h3>
+              <p><strong>Paper icons float in the room.</strong> Each crumpled page is a hotspot — click one to open a draggable window with project notes, reflections, or references. Every click fills the progress bar above.</p>
+            </div>
+          </div>
+
+          <div class="tut-step" id="tut-step-3">
+            <div class="tut-step-icon">
+              <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="28" fill="rgba(107,77,52,0.08)" stroke="var(--brown)" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <!-- window mini -->
+                <rect x="12" y="18" width="36" height="26" rx="2" fill="#f5efe2" stroke="#6b4d34" stroke-width="1.5"/>
+                <rect x="12" y="18" width="36" height="8" rx="2" fill="#6b4d34"/>
+                <circle cx="18" cy="22" r="2" fill="#e74c3c"/>
+                <circle cx="24" cy="22" r="2" fill="#e8b84b"/>
+                <!-- drag arrow -->
+                <g class="tut-drag-anim">
+                  <circle cx="44" cy="30" r="5" fill="var(--brown-lt)" opacity="0.7"/>
+                  <path d="M44 25 L44 22 M44 35 L44 38 M39 30 L36 30 M49 30 L52 30" stroke="var(--brown-dk)" stroke-width="1.2" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+            <div class="tut-step-text">
+              <h3>Move Windows</h3>
+              <p><strong>Drag any window</strong> by its title bar to move it. You can have multiple windows open at once — the room stays interactive behind them. Close with the × button.</p>
+            </div>
+          </div>
+
+          <div class="tut-step tut-step--tip">
+            <div class="tut-step-icon" style="font-size:32px; display:flex; align-items:center; justify-content:center; width:64px; height:64px;">→</div>
+            <div class="tut-step-text">
+              <h3>Quick Tip</h3>
+              <p>Start by looking to the <em>right</em> — that's where the first design projects appear. But don't stop there. Engineering can be discovered in all directions.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tut-progress-explain">
+          <svg width="220" height="36" viewBox="0 0 220 36" xmlns="http://www.w3.org/2000/svg">
+            <rect width="220" height="36" fill="#f7f3ea" rx="2"/>
+            <rect x="0" y="0" width="80" height="36" fill="repeating-linear-gradient(45deg,#52b552,#52b552 2px,transparent 2px,transparent 5px)" rx="2"/>
+            <line x1="0" y1="12" x2="220" y2="12" stroke="#9ac0e8" stroke-width="0.7" opacity="0.5"/>
+            <text x="90" y="22" font-family="serif" font-size="11" fill="#6b4d34" font-style="italic">← this fills as you explore</text>
+          </svg>
+        </div>
+
+        <button class="tut-done-btn" id="tut-done-btn" onclick="completeTutorial()">
+          I'm ready — start exploring →
+        </button>
+
       </div>
     </div>
   </div>
 
+  <!-- ══════════════════════════════════
+       PAPER 2 — POSITION IN CONTEXT
+  ══════════════════════════════════ -->
   <div id="win-paper2" class="win paper-popup">
     <div id="win-paper2-bar" class="win-bar">
-      <div class="win-bar-left">
-        <span id="win-paper2-title" class="win-title">Process Notes</span>
-      </div>
-      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper2')">x</button>
+      <div class="win-bar-left"><span class="win-title">Position in Context</span></div>
+      <button class="paper-close-btn" onclick="closeWin('paper2')">×</button>
     </div>
     <div class="win-body">
-      <div class="win-pane active" style="padding: 24px;">
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-        <p style="margin-top: 16px;">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-        <p style="margin-top: 16px;">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut quid ex ea commodi consequatur.</p>
+      <div class="win-pane active">
+
+        <h2 class="sect-title">My Position as a Designer</h2><hr class="sect-rule">
+
+        <!-- Sticky note annotation -->
+        <div class="sticky-note sticky-note--yellow" style="--sn-rot: -1.8deg">
+          <span class="sn-label">note to self ✦</span>
+          <p>Updated position — Jan 2026 → Apr 2026. The jazz metaphor still holds, but I've realised something broader: our experiences — jazz, photography, just existing — are how we <em>sketch the world</em>. Engineering is the process of revealing what's always been there. Like this room.</p>
+        </div>
+
+        <!-- YouTube embed -->
+        <div class="pos-video-wrap">
+          <div class="vid-frame">
+            <iframe src="https://www.youtube.com/embed/boVlLW7FeYs" title="Andy Gu Position Statement" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="vid-cap">Position Statement · Praxis I · January 2026 · Grade: 17.5/10</p>
+        </div>
+
+        <!-- Updated position body -->
+        <div class="pos-section-header" style="margin-top:32px">
+          <h3>The Updated Position</h3>
+        </div>
+
+        <p>My updated position is this: <strong>our experiences — including our projects and hobbies — help us sketch in the real world, and that sketching improves our engineering.</strong></p>
+
+        <div class="pos-pillar-row">
+          <div class="pos-pillar">
+            <div class="pos-pillar-icon">♪</div>
+            <h4>Jazz</h4>
+            <p>Playing jazz — improvising inside chord changes, transcribing Chet Baker — gave me vocabulary. The same discipline applies to design: learn the grammar, then speak freely within it.</p>
+          </div>
+          <div class="pos-pillar">
+            <div class="pos-pillar-icon">◉</div>
+            <h4>Sketching the Blank</h4>
+            <p>This panoramic room starts as a sketch layer — blurry, incomplete. Clicking reveals what's real beneath it. That's engineering design: you start in the unknown and your investigations reveal structure.</p>
+          </div>
+          <div class="pos-pillar">
+            <div class="pos-pillar-icon">◈</div>
+            <h4>Ensemble Thinking</h4>
+            <p>A combo of five is different from a big band. Working in Praxis taught me that group size changes how I listen, contribute, and hold back. Engineering teams are ensembles too.</p>
+          </div>
+        </div>
+
+        <blockquote style="margin-top:28px">
+          <p>"while the bridges I build collapse, I still approach design as applied creativity and an expression of my knowledge. Jazz music remains deeply intertwined with my interpretation of the engineering design process."</p>
+        </blockquote>
+
       </div>
     </div>
   </div>
 
+  <!-- ══════════════════════════════════
+       PAPER 3 — DESIGN WORK SUMMARY
+  ══════════════════════════════════ -->
   <div id="win-paper3" class="win paper-popup">
     <div id="win-paper3-bar" class="win-bar">
-      <div class="win-bar-left">
-        <span id="win-paper3-title" class="win-title">Design Phase</span>
-      </div>
-      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper3')">x</button>
+      <div class="win-bar-left"><span class="win-title">All Design Work</span></div>
+      <button class="paper-close-btn" onclick="closeWin('paper3')">×</button>
     </div>
     <div class="win-body">
-      <div class="win-pane active" style="padding: 24px;">
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-        <p style="margin-top: 16px;">Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-        <p style="margin-top: 16px;">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
+      <div class="win-pane active">
+
+        <h2 class="sect-title">Design Work — 2025–2026</h2><hr class="sect-rule">
+
+        <p>Four projects across two semesters. Each one pushed me into a different type of problem — structural, biomedical, safety, competitive performance. Each one used the Frame → Diverge → Converge → Represent process, and each one left a vocabulary I'll carry forward.</p>
+
+        <div class="summary-cards">
+
+          <div class="summary-card" onclick="openWin('paper4')">
+            <div class="sc-header" style="--sc-color:#C47A3A">
+              <span class="sc-course">CIV102 · Fall 2025</span>
+              <h3>Matboard Bridge</h3>
+            </div>
+            <div class="sc-body">
+              <p>Design and construction of a load-bearing matboard bridge optimized against failure. Tested to structural failure under a point load.</p>
+              <div class="sc-fdcr">
+                <span class="fdcr-tag fdcr-frame">Frame</span>
+                <span class="fdcr-tag fdcr-diverge">Diverge</span>
+                <span class="fdcr-tag fdcr-converge">Converge</span>
+              </div>
+              <div class="sc-open-hint">click to open full notes →</div>
+            </div>
+          </div>
+
+          <div class="summary-card" onclick="openWin('paper5')">
+            <div class="sc-header" style="--sc-color:#4A8FC0">
+              <span class="sc-course">UTBiome · Fall 2025</span>
+              <h3>Rehabilitative Knee Sleeve</h3>
+            </div>
+            <div class="sc-body">
+              <p>A wearable biomedical device designed to support post-surgical knee rehabilitation through targeted compression and joint stabilisation.</p>
+              <div class="sc-fdcr">
+                <span class="fdcr-tag fdcr-frame">Frame</span>
+                <span class="fdcr-tag fdcr-diverge">Diverge</span>
+                <span class="fdcr-tag fdcr-represent">Represent</span>
+              </div>
+              <div class="sc-open-hint">click to open full notes →</div>
+            </div>
+          </div>
+
+          <div class="summary-card" onclick="openWin('paper6')">
+            <div class="sc-header" style="--sc-color:#C9B840">
+              <span class="sc-course">Praxis I · Fall 2025</span>
+              <h3>Loose Outlet Problem</h3>
+            </div>
+            <div class="sc-body">
+              <p>Identifying and designing a solution to the under-addressed electrical safety hazard of loose power outlets in residential buildings.</p>
+              <div class="sc-fdcr">
+                <span class="fdcr-tag fdcr-frame">Frame</span>
+                <span class="fdcr-tag fdcr-converge">Converge</span>
+                <span class="fdcr-tag fdcr-represent">Represent</span>
+              </div>
+              <div class="sc-open-hint">click to open full notes →</div>
+            </div>
+          </div>
+
+          <div class="summary-card" onclick="openWin('paper7')">
+            <div class="sc-header" style="--sc-color:#3BA08C">
+              <span class="sc-course">Praxis II · Winter 2026</span>
+              <h3>Variable Swim Resistance</h3>
+            </div>
+            <div class="sc-body">
+              <p>Design of an adjustable drag device for competitive swimmer training — making drag a controllable, precise design parameter.</p>
+              <div class="sc-fdcr">
+                <span class="fdcr-tag fdcr-frame">Frame</span>
+                <span class="fdcr-tag fdcr-diverge">Diverge</span>
+                <span class="fdcr-tag fdcr-converge">Converge</span>
+                <span class="fdcr-tag fdcr-represent">Represent</span>
+              </div>
+              <div class="sc-open-hint">click to open full notes →</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FDCR legend -->
+        <div class="fdcr-legend">
+          <span class="fdcr-tag fdcr-frame">Frame</span>
+          <span class="fdcr-tag fdcr-diverge">Diverge</span>
+          <span class="fdcr-tag fdcr-converge">Converge</span>
+          <span class="fdcr-tag fdcr-represent">Represent</span>
+          <span style="font-family:var(--f-pica);font-size:12px;color:var(--brown-lt);font-style:italic;margin-left:8px">— phases covered per project</span>
+        </div>
+
       </div>
     </div>
   </div>
 
+  <!-- ══════════════════════════════════
+       PAPER 4 — MATBOARD BRIDGE
+  ══════════════════════════════════ -->
   <div id="win-paper4" class="win paper-popup">
     <div id="win-paper4-bar" class="win-bar">
-      <div class="win-bar-left">
-        <span id="win-paper4-title" class="win-title">How to Explore</span>
-      </div>
-      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper4')">x</button>
+      <div class="win-bar-left"><span class="win-title">Matboard Bridge</span></div>
+      <button class="paper-close-btn" onclick="closeWin('paper4')">×</button>
     </div>
     <div class="win-body">
-      <div class="win-pane active" style="padding: 24px;">
-        <h3 style="font-family: var(--f-serif); font-size: 18px; color: var(--ink); margin-bottom: 12px;">Drag to Look Around</h3>
-        <p>Click and drag your mouse across the panorama to rotate the view. Look in any direction — up, down, left, right. The room rotates smoothly as you move. Try rotating all the way around — you might spot something interesting.</p>
-        
-        <h3 style="font-family: var(--f-serif); font-size: 18px; color: var(--ink); margin-bottom: 12px; margin-top: 20px;">Click Hotspots</h3>
-        <p>When you see a page icon (📝) floating in the panorama, that's a hotspot. Click on it to open a draggable window with more information. You can drag windows around the screen to organize them as you like.</p>
-        
-        <h3 style="font-family: var(--f-serif); font-size: 18px; color: var(--ink); margin-bottom: 12px; margin-top: 20px;">Manage Windows</h3>
-        <p>Close windows with the red dot in the top-left corner. Minimize windows with the yellow dot. Each window can be dragged by its title bar to rearrange your workspace.</p>
+      <div class="win-pane active">
+
+        <div class="proj-banner" style="--proj-color:#C47A3A">
+          <span class="proj-course-tag">CIV102 · Structures & Materials · Fall 2025</span>
+          <h2 class="sect-title" style="margin-bottom:0">Matboard Bridge</h2>
+          <p class="proj-blurb">Design and construction of a load-bearing bridge from matboard — optimized against failure by shear, flexure, and buckling. Tested to failure under a point load at midspan.</p>
+        </div>
+
+        <!-- Sticky note annotation -->
+        <div class="sticky-note sticky-note--yellow" style="--sn-rot:1.5deg">
+          <span class="sn-label">annotation ✦</span>
+          <p>This was vocabulary in action. I couldn't start designing until I reviewed the failure equations — buckling, shear, flexure. The professor's initial design was my Chet Baker transcription: I listened, decoded the logic, then played something new. My I-beam cross section came from there. The collapse told me more than the test itself.</p>
+        </div>
+
+        <!-- FDCR Timeline -->
+        <div class="fdcr-bar">
+          <div class="fdcr-bar-phase fdcr-frame active"><span>Frame</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-diverge active"><span>Diverge</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-converge active"><span>Converge</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-represent"><span>Represent</span></div>
+        </div>
+
+        <h3 class="ctmf-section-title">Concepts, Tools, Models & Frameworks</h3>
+
+        <!-- CTMF 1 -->
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div>
+              <span class="fdcr-tag fdcr-frame">Frame</span>
+              <span class="ctmf-name">Structural Requirements Analysis</span>
+            </div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> Defining the load capacity requirements using beam theory — establishing the target failure force and the relevant failure modes (shear, flexure, local buckling) that bound the design space.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> We were given a load requirement and material constraints. I used the provided failure equations to bound the design space before sketching any cross-section — treating each equation as a "chord change" that constrained what was possible.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> Highly effective as a <em>starting frame</em>. Without it, we would have been improvising without a key. The limitation is that it requires understanding the equations before you can use them as constraints — the vocabulary must come first.</p>
+          </div>
+        </div>
+
+        <!-- CTMF 2 -->
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div>
+              <span class="fdcr-tag fdcr-diverge">Diverge</span>
+              <span class="ctmf-name">Morphological Chart</span>
+            </div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> A matrix that breaks a design into functional sub-systems (e.g. top flange shape, web geometry, bottom flange) and generates variants for each — then combines them into novel concepts.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Used to generate cross-section shape variants (I-beam, T-beam, box section, trapezoidal web). Allowed us to explore a systematic range without anchoring on any single concept early.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> Very strong for <em>structured divergence</em>. The risk is that it can produce physically implausible combinations — pairing it with a quick feasibility screen is essential.</p>
+          </div>
+        </div>
+
+        <!-- CTMF 3 -->
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div>
+              <span class="fdcr-tag fdcr-converge">Converge</span>
+              <span class="ctmf-name">Analytical Failure Comparison</span>
+            </div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> Applying the failure equations to each candidate cross-section to predict its failure load. The design with the highest predicted failure load (within mass constraints) converges as the selected concept.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Ran failure predictions for our top three cross-section variants. The I-beam scored highest across all three failure modes. Provided a rigorous, quantitative basis for the decision.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> The clearest convergence tool available in this context — the math does the judging. The key limitation: it only works if the failure model accurately captures the physical behaviour, which it doesn't always (local glue joint failures were not modelled).</p>
+          </div>
+        </div>
+
+        <!-- Photo strip -->
+        <div class="proj-photo-strip">
+          <div class="gal-label" style="margin-top:24px">Process photos</div>
+          <div class="gal-string">
+            <div class="pol" style="--rot:-3deg;--hang:12px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#d4c4a0,#c4b090)"></div><div class="pol-cap">Cross-section options</div></div>
+            <div class="pol" style="--rot:2deg;--hang:6px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#c8c0b0,#b8b0a0)"></div><div class="pol-cap">Gluing the I-beam</div></div>
+            <div class="pol" style="--rot:-1.5deg;--hang:14px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#ccc,#aaa)"></div><div class="pol-cap">Load test — 82 N</div></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 
+  <!-- ══════════════════════════════════
+       PAPER 5 — KNEE SLEEVE
+  ══════════════════════════════════ -->
   <div id="win-paper5" class="win paper-popup">
     <div id="win-paper5-bar" class="win-bar">
-      <div class="win-bar-left">
-        <span id="win-paper5-title" class="win-title">Refinement</span>
-      </div>
-      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper5')">x</button>
+      <div class="win-bar-left"><span class="win-title">Rehabilitative Knee Sleeve</span></div>
+      <button class="paper-close-btn" onclick="closeWin('paper5')">×</button>
     </div>
     <div class="win-body">
-      <div class="win-pane active" style="padding: 24px;">
-        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum hic tenetur a sapiente delectus.</p>
-        <p style="margin-top: 16px;">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est omnis dolor repellendus.</p>
-        <p style="margin-top: 16px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+      <div class="win-pane active">
+
+        <div class="proj-banner" style="--proj-color:#4A8FC0">
+          <span class="proj-course-tag">UTBiome · Biomedical Engineering · Fall 2025</span>
+          <h2 class="sect-title" style="margin-bottom:0">Rehabilitative Knee Sleeve</h2>
+          <p class="proj-blurb">A wearable biomedical device addressing post-surgical knee rehabilitation through targeted compression, joint stabilisation, and ergonomic material selection.</p>
+        </div>
+
+        <div class="sticky-note sticky-note--blue" style="--sn-rot:-1.2deg">
+          <span class="sn-label">annotation ✦</span>
+          <p>The hardest part was the framing. A knee is a system, not a part — and users are patients, not operators. The empathy map forced me to slow down and listen before I diverged. This is the "listening in the ensemble" of engineering: let the stakeholder solo before you play.</p>
+        </div>
+
+        <div class="fdcr-bar">
+          <div class="fdcr-bar-phase fdcr-frame active"><span>Frame</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-diverge active"><span>Diverge</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-converge"><span>Converge</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-represent active"><span>Represent</span></div>
+        </div>
+
+        <h3 class="ctmf-section-title">Concepts, Tools, Models & Frameworks</h3>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-frame">Frame</span><span class="ctmf-name">Empathy Mapping</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> A structured tool to capture stakeholder experiences across four dimensions: what they say, think, do, and feel. Used to understand unmet needs beyond what a requirements list captures.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Conducted informal interviews with physiotherapy students and generated an empathy map that revealed the primary pain point was not physical support — it was <em>compliance</em>. Patients don't wear uncomfortable devices consistently.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> Indispensable for biomedical design. Forces you to stop designing for the condition and start designing for the person. The limitation: maps can be vague if interviews aren't specific enough.</p>
+          </div>
+        </div>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-diverge">Diverge</span><span class="ctmf-name">Brainstorming + Biomimicry</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> Unstructured idea generation followed by biomimicry — looking to biological systems (ligament structure, compression gradients in muscle) for inspiration for textile and mechanical solutions.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Explored knee-brace mechanisms from spider silk tensioning to graduated compression socks. Biomimicry pushed us toward a layered textile system that mimics the multi-ligament structure of the knee.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> Biomimicry was the most generative frame — it broke us out of "conventional device" thinking. The challenge: biological analogies aren't always structurally viable.</p>
+          </div>
+        </div>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-represent">Represent</span><span class="ctmf-name">Low-Fidelity Prototype</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> A physical approximation of the design concept using accessible materials (foam, elastic, velcro) to test form, fit, and initial function before committing to final materials.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Built a foam-and-elastic prototype that demonstrated the compression gradient concept. Allowed us to test on a volunteer knee and confirm that the lateral stabilisation panel position was off — critical feedback before committing to fabric.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> Essential in biomedical design where physical comfort matters. A drawing cannot tell you if something fits. The limitation: foam doesn't replicate real textile behaviour — there's a gap between the prototype and the intended material.</p>
+          </div>
+        </div>
+
+        <div class="proj-photo-strip">
+          <div class="gal-label" style="margin-top:24px">Process photos</div>
+          <div class="gal-string">
+            <div class="pol" style="--rot:1deg;--hang:8px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#a0b4c8,#90a4b8)"></div><div class="pol-cap">Empathy map session</div></div>
+            <div class="pol" style="--rot:-2deg;--hang:6px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#b0c4c0,#a0b4b0)"></div><div class="pol-cap">Foam prototype</div></div>
+            <div class="pol" style="--rot:1.5deg;--hang:14px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#c8d0d8,#b8c0c8)"></div><div class="pol-cap">Wear test</div></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 
+  <!-- ══════════════════════════════════
+       PAPER 6 — PRAXIS I LOOSE OUTLETS
+  ══════════════════════════════════ -->
   <div id="win-paper6" class="win paper-popup">
     <div id="win-paper6-bar" class="win-bar">
-      <div class="win-bar-left">
-        <span id="win-paper6-title" class="win-title">Final Result</span>
-      </div>
-      <button class="paper-close-btn" type="button" aria-label="Close popup" onclick="closeWin('paper6')">x</button>
+      <div class="win-bar-left"><span class="win-title">Loose Outlets — Praxis I</span></div>
+      <button class="paper-close-btn" onclick="closeWin('paper6')">×</button>
     </div>
     <div class="win-body">
-      <div class="win-pane active" style="padding: 24px;">
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        <p style="margin-top: 16px;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.</p>
-        <p style="margin-top: 16px;">Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem ut enim ad minima.</p>
+      <div class="win-pane active">
+
+        <div class="proj-banner" style="--proj-color:#C9B840">
+          <span class="proj-course-tag">ESC102 · Praxis I · Fall 2025</span>
+          <h2 class="sect-title" style="margin-bottom:0">The Loose Outlet Problem</h2>
+          <p class="proj-blurb">A quiet, invisible hazard: millions of North American outlets gradually loosen from their boxes, creating fire risk and shock hazard. We designed a retention mechanism to prevent this.</p>
+        </div>
+
+        <div class="sticky-note sticky-note--green" style="--sn-rot:1.2deg">
+          <span class="sn-label">annotation ✦</span>
+          <p>The chord changes moment: we initially wrote our requirement as "a percentage improvement in retention." That's a vague chord — too open, like playing with no changes. I suggested switching to a specific Newton force target. Everything sharpened after that. The design space narrowed, and ideas became comparable.</p>
+        </div>
+
+        <div class="fdcr-bar">
+          <div class="fdcr-bar-phase fdcr-frame active"><span>Frame</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-diverge"><span>Diverge</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-converge active"><span>Converge</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-represent active"><span>Represent</span></div>
+        </div>
+
+        <h3 class="ctmf-section-title">Concepts, Tools, Models & Frameworks</h3>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-frame">Frame</span><span class="ctmf-name">How Might We (HMW) Framing</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> A reframing technique that converts problem statements into open-ended design questions using the structure "How Might We…" — to open solution space without anchoring to a specific answer.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Our original problem statement was too solution-specific ("design a clip"). HMW forced us to step back: <em>How might we prevent outlet migration from the junction box?</em> This opened material, geometric, and fastening approaches that a clip-focused framing would have excluded.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> A light, high-leverage tool. Best applied early — it shapes every downstream decision. The risk is framing too broadly ("HMW make electricity safe?") or too narrowly ("HMW hold this one screw?").</p>
+          </div>
+        </div>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-converge">Converge</span><span class="ctmf-name">Measurement Matrix (Pugh Chart)</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> A concept selection matrix that scores design concepts against weighted requirements criteria. Allows structured, auditable comparison of multiple concepts.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> After defining our retention force requirement (a specific Newton value), we scored three concepts: a tension-tab insert, a friction-wedge plate, and a threaded collar. The matrix revealed that the friction-wedge scored highest on ease of installation — our primary user constraint.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> The quality of this tool depends entirely on the quality of the requirements. With vague requirements (our original % improvement), the matrix was useless. With the Newton-force requirement, it became meaningful.</p>
+          </div>
+        </div>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-represent">Represent</span><span class="ctmf-name">Design One-Pager</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> A double-sided letter-sized design summary that presents the opportunity, the design, and the evidence in a concise, visually organized format for an external audience.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Prepared for the Praxis I Showcase. The one-pager forced us to reduce the project to its essential logic: the problem (outlets loosen), the mechanism (friction wedge), and the evidence (retention force measured in Newtons).</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> Extremely useful for communication clarity. The constraint of one page forces prioritization — you learn what matters when you're forced to cut. I would use this earlier in the process as a self-check on clarity of thought.</p>
+          </div>
+        </div>
+
+        <div class="proj-photo-strip">
+          <div class="gal-label" style="margin-top:24px">Process photos</div>
+          <div class="gal-string">
+            <div class="pol" style="--rot:-2deg;--hang:14px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#f0d890,#e0c880)"></div><div class="pol-cap">HMW brainstorm session</div></div>
+            <div class="pol" style="--rot:3deg;--hang:4px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#d0c8b8,#c0b8a8)"></div><div class="pol-cap">Pugh chart comparison</div></div>
+            <div class="pol" style="--rot:-1deg;--hang:10px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#e0d4b0,#d0c4a0)"></div><div class="pol-cap">Prototype assembly</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       PAPER 7 — PRAXIS II SWIM RESISTANCE
+  ══════════════════════════════════ -->
+  <div id="win-paper7" class="win paper-popup">
+    <div id="win-paper7-bar" class="win-bar">
+      <div class="win-bar-left"><span class="win-title">Variable Swim Resistance — Praxis II</span></div>
+      <button class="paper-close-btn" onclick="closeWin('paper7')">×</button>
+    </div>
+    <div class="win-body">
+      <div class="win-pane active">
+
+        <div class="proj-banner" style="--proj-color:#3BA08C">
+          <span class="proj-course-tag">ESC102 · Praxis II · Winter 2026</span>
+          <h2 class="sect-title" style="margin-bottom:0">Variable Swim Resistance Device</h2>
+          <p class="proj-blurb">Design of an adjustable hydrodynamic drag device for competitive swimmer training — allowing athletes to precisely control resistance as a training variable, not just a fixed constraint.</p>
+        </div>
+
+        <div class="sticky-note sticky-note--teal" style="--sn-rot:-1.5deg">
+          <span class="sn-label">annotation ✦</span>
+          <p>This project taught me that the design space can be designed. The design space IS the variable resistance — we weren't just designing a device, we were designing the space within which a swimmer could train. That's a chord change: choosing the key signature, not just playing in it.</p>
+        </div>
+
+        <div class="fdcr-bar">
+          <div class="fdcr-bar-phase fdcr-frame active"><span>Frame</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-diverge active"><span>Diverge</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-converge active"><span>Converge</span></div>
+          <div class="fdcr-bar-arrow">→</div>
+          <div class="fdcr-bar-phase fdcr-represent active"><span>Represent</span></div>
+        </div>
+
+        <h3 class="ctmf-section-title">Concepts, Tools, Models & Frameworks</h3>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-frame">Frame</span><span class="ctmf-name">Opportunity Framing + Stakeholder Map</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> A structured tool for identifying who is affected by the design opportunity and how — mapping primary users, secondary users, experts, and affected parties before defining requirements.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Mapped competitive swimmers, coaches, and equipment managers. Key insight: coaches don't swim — they design training programs. The real user of the resistance device is the <em>coach's protocol</em>, not just the athlete's body. This reframed the adjustability requirement.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> Critical for avoiding the "design for the obvious user" trap. The expanded map revealed a requirement (coach-configurable levels) that no athlete-only interview would have surfaced.</p>
+          </div>
+        </div>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-diverge">Diverge</span><span class="ctmf-name">SCAMPER + Concept Sketching</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> SCAMPER is a structured creativity technique: Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse. Applied to existing swim resistance equipment to generate novel variants.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Applied SCAMPER to existing drag suits and parachute trainers. "Modify" led to the concept of a variable-aperture fin array; "Combine" combined a parachute's deployment mechanism with a rigid-body frame. Produced 12 sketched concepts in a single session.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> More generative than free brainstorming — the prompts break satisficing behaviour ("the first idea that works"). The weakness: some SCAMPER prompts feel forced when applied rigidly.</p>
+          </div>
+        </div>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-converge">Converge</span><span class="ctmf-name">Weighted Decision Matrix</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> A concept selection tool where criteria are weighted by importance before scoring, allowing nuanced comparison when requirements have different priorities.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Four criteria: adjustable drag range (weight 0.35), durability in chlorine water (0.25), ease of don/doff (0.25), cost (0.15). Our fin-array concept scored highest overall despite not scoring highest on any single criterion — the weighting revealed its balanced strength.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> Superior to an unweighted Pugh chart when criteria genuinely differ in importance. The subjectivity of the weights is a limitation — we debated the drag range weight extensively, which itself was a valuable design conversation.</p>
+          </div>
+        </div>
+
+        <div class="ctmf-item" onclick="toggleCtmf(this)">
+          <div class="ctmf-header">
+            <div><span class="fdcr-tag fdcr-represent">Represent</span><span class="ctmf-name">Functional Prototype + Showcase One-Pager</span></div>
+            <span class="ctmf-chevron">+</span>
+          </div>
+          <div class="ctmf-body">
+            <p><strong>What it is:</strong> A working physical prototype that demonstrates the core functional behaviour (in this case, adjustable drag generation in water), combined with a double-sided showcase summary.</p>
+            <p style="margin-top:10px"><strong>How I used it:</strong> Built and pool-tested a 3D-printed fin array with an adjustable pitch mechanism. Measured drag at three resistance settings using a force gauge. The one-pager presented the mechanism, the measurements, and the training protocol implications.</p>
+            <p style="margin-top:10px"><strong>Assessment:</strong> The pool test was the most important moment of the project — theoretical drag calculations did not predict the actual force profile. Testing revealed a non-linear response at high pitch angles that changed our recommended training protocol.</p>
+          </div>
+        </div>
+
+        <div class="proj-photo-strip">
+          <div class="gal-label" style="margin-top:24px">Process photos</div>
+          <div class="gal-string">
+            <div class="pol" style="--rot:-1deg;--hang:10px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#90c4c0,#80b4b0)"></div><div class="pol-cap">Pool test session</div></div>
+            <div class="pol" style="--rot:2.5deg;--hang:6px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#a8c0c8,#98b0b8)"></div><div class="pol-cap">Drag force measurements</div></div>
+            <div class="pol" style="--rot:-2deg;--hang:14px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#b8c8d0,#a8b8c0)"></div><div class="pol-cap">Fin-array prototype</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       PAPER 8 — REFERENCE LIST
+  ══════════════════════════════════ -->
+  <div id="win-paper8" class="win paper-popup">
+    <div id="win-paper8-bar" class="win-bar">
+      <div class="win-bar-left"><span class="win-title">Reference List</span></div>
+      <button class="paper-close-btn" onclick="closeWin('paper8')">×</button>
+    </div>
+    <div class="win-body">
+      <div class="win-pane active">
+
+        <h2 class="sect-title">References</h2><hr class="sect-rule">
+        <p style="font-style:italic;color:var(--brown-lt);margin-bottom:24px">Praxis embedded-extract format · APA 7th Edition</p>
+
+        <div class="ref-list">
+
+          <div class="ref-item">
+            <span class="ref-num">[1]</span>
+            <div class="ref-body">
+              <p>Dym, C. L., Agogino, A. M., Eris, O., Frey, D. D., &amp; Leifer, L. J. (2005). Engineering design thinking, teaching, and learning. <em>Journal of Engineering Education, 94</em>(1), 103–120. <a href="https://doi.org/10.1002/j.2168-9830.2005.tb00832.x" target="_blank">https://doi.org/10.1002/j.2168-9830.2005.tb00832.x</a></p>
+              <blockquote><p>"Design thinking is a way of finding a solution to a problem, as opposed to identifying the solution… it is an iterative process." (p. 103)</p></blockquote>
+            </div>
+          </div>
+
+          <div class="ref-item">
+            <span class="ref-num">[2]</span>
+            <div class="ref-body">
+              <p>Cross, N. (2011). <em>Design thinking: Understanding how designers think and work.</em> Berg Publishers.</p>
+              <blockquote><p>"The design process is characterised by a co-evolution of problem and solution." (p. 12)</p></blockquote>
+            </div>
+          </div>
+
+          <div class="ref-item">
+            <span class="ref-num">[3]</span>
+            <div class="ref-body">
+              <p>University of Toronto, Faculty of Applied Science and Engineering. (2025). <em>ESC102: Engineering Science Praxis II — Course Notes.</em> University of Toronto.</p>
+              <blockquote><p>"The design space is the space of solutions restricted by your requirements. Requirements that are too vague expand this space to the point of meaninglessness." (Lecture 4)</p></blockquote>
+            </div>
+          </div>
+
+          <div class="ref-item">
+            <span class="ref-num">[4]</span>
+            <div class="ref-body">
+              <p>Pugh, S. (1991). <em>Total design: Integrated methods for successful product engineering.</em> Addison-Wesley.</p>
+              <blockquote><p>"The concept selection matrix is a tool for structured convergence — it is only as good as the criteria it uses." (p. 75)</p></blockquote>
+            </div>
+          </div>
+
+          <div class="ref-item">
+            <span class="ref-num">[5]</span>
+            <div class="ref-body">
+              <p>University of Toronto, Faculty of Applied Science and Engineering. (2025). <em>CIV102: Structures &amp; Materials — Laboratory Manual.</em> University of Toronto.</p>
+              <blockquote><p>"Failure by flexure, shear, and local buckling must be considered independently. The governing failure mode is the one that occurs at the lowest load." (p. 8)</p></blockquote>
+            </div>
+          </div>
+
+          <div class="ref-item">
+            <span class="ref-num">[6]</span>
+            <div class="ref-body">
+              <p>IDEO. (2015). <em>The field guide to human-centered design.</em> IDEO.org. <a href="https://www.designkit.org/resources/1" target="_blank">https://www.designkit.org/resources/1</a></p>
+              <blockquote><p>"Empathy is the centrepiece of a human-centered design process… It means suspending your assumptions." (p. 14)</p></blockquote>
+            </div>
+          </div>
+
+          <div class="ref-item">
+            <span class="ref-num">[7]</span>
+            <div class="ref-body">
+              <p>Ulrich, K. T., &amp; Eppinger, S. D. (2015). <em>Product design and development</em> (6th ed.). McGraw-Hill Education.</p>
+              <blockquote><p>"The morphological chart allows systematic exploration of the solution space by decomposing the design problem into independent sub-functions." (p. 118)</p></blockquote>
+            </div>
+          </div>
+
+          <div class="ref-item">
+            <span class="ref-num">[8]</span>
+            <div class="ref-body">
+              <p>Osborn, A. F. (1953). <em>Applied imagination: Principles and procedures of creative problem-solving.</em> Scribner.</p>
+              <blockquote><p>"Brainstorming… calls for a group to unleash its imagination — producing ideas in quantity." (p. 151)</p></blockquote>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </div>
 
 </div><!-- end ui-layer -->
 
-<!-- Local JavaScript -->
 <script src="app.js"></script>
-
 </body>
 </html>

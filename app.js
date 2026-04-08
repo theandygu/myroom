@@ -46,6 +46,9 @@ let realViewer = null;
 let hotspotAnimationFrameId = null;
 let syncAnimationFrameId = null;
 
+/* ════════════════════════════════
+   WINDOW MANAGEMENT
+════════════════════════════════ */
 function openWin(winId) {
   const win = document.getElementById('win-' + winId);
   if (!win) return;
@@ -86,12 +89,8 @@ function switchPane(winId, paneName) {
   const win = document.getElementById('win-' + winId);
   if (!win) return;
 
-  win.querySelectorAll('.win-pane').forEach((pane) => {
-    pane.classList.remove('active');
-  });
-  win.querySelectorAll('.win-nav-btn').forEach((btn) => {
-    btn.classList.remove('active');
-  });
+  win.querySelectorAll('.win-pane').forEach(pane => pane.classList.remove('active'));
+  win.querySelectorAll('.win-nav-btn').forEach(btn => btn.classList.remove('active'));
 
   const targetPane = win.querySelector('#pane-' + paneName);
   const targetBtn = win.querySelector('.win-nav-btn[data-pane="' + paneName + '"]');
@@ -100,6 +99,9 @@ function switchPane(winId, paneName) {
   if (targetBtn) targetBtn.classList.add('active');
 }
 
+/* ════════════════════════════════
+   DRAGGABLE WINDOWS
+════════════════════════════════ */
 function makeDraggable(winId) {
   const win = document.getElementById('win-' + winId);
   const bar = document.getElementById('win-' + winId + '-bar');
@@ -109,13 +111,13 @@ function makeDraggable(winId) {
   let ox = 0;
   let oy = 0;
 
-  bar.addEventListener('mousedown', (e) => {
-    if (e.target.closest('.win-dot, .paper-close-btn')) return;
+  bar.addEventListener('mousedown', e => {
+    if (e.target.closest('.win-dot, .paper-close-btn, .win-traffic')) return;
 
     if (!win.classList.contains('moved')) {
       const rect = win.getBoundingClientRect();
       win.style.left = rect.left + 'px';
-      win.style.top = rect.top + 'px';
+      win.style.top  = rect.top  + 'px';
       win.classList.add('moved');
     }
 
@@ -129,17 +131,14 @@ function makeDraggable(winId) {
     e.preventDefault();
   });
 
-  document.addEventListener('mousemove', (e) => {
+  document.addEventListener('mousemove', e => {
     if (!dragging) return;
-
     let nx = e.clientX - ox;
     let ny = e.clientY - oy;
-
-    nx = Math.max(0, Math.min(nx, window.innerWidth - win.offsetWidth));
+    nx = Math.max(0, Math.min(nx, window.innerWidth  - win.offsetWidth));
     ny = Math.max(0, Math.min(ny, window.innerHeight - win.offsetHeight));
-
     win.style.left = nx + 'px';
-    win.style.top = ny + 'px';
+    win.style.top  = ny + 'px';
   });
 
   document.addEventListener('mouseup', () => {
@@ -150,9 +149,53 @@ function makeDraggable(winId) {
   win.addEventListener('mousedown', () => bringToFront(winId));
 }
 
+/* ════════════════════════════════
+   CTMF ACCORDION
+════════════════════════════════ */
+function toggleCtmf(el) {
+  const isOpen = el.classList.contains('open');
+  // close all in this popup
+  const popup = el.closest('.win-pane, .win-body');
+  if (popup) popup.querySelectorAll('.ctmf-item').forEach(i => {
+    i.classList.remove('open');
+    const chevron = i.querySelector('.ctmf-chevron');
+    if (chevron) chevron.textContent = '+';
+  });
+  // toggle clicked
+  if (!isOpen) {
+    el.classList.add('open');
+    const chevron = el.querySelector('.ctmf-chevron');
+    if (chevron) chevron.textContent = '−';
+  }
+}
+
+/* ════════════════════════════════
+   TUTORIAL COMPLETION
+════════════════════════════════ */
+function completeTutorial() {
+  // Mark tutorial as explored in progress tracker
+  progressTracker.trackClick('paper1');
+
+  // Button feedback
+  const btn = document.getElementById('tut-done-btn');
+  if (btn) {
+    btn.textContent = '✓ Tutorial complete!';
+    btn.style.background = '#52b552';
+    btn.style.color = '#fff';
+    btn.style.borderColor = '#3a8a3a';
+    btn.disabled = true;
+  }
+
+  // Close tutorial after brief delay
+  setTimeout(() => closeWin('paper1'), 900);
+}
+
+/* ════════════════════════════════
+   PROGRESS TRACKER — 8 hotspots
+════════════════════════════════ */
 const progressTracker = {
   clickedHotspots: new Set(),
-  totalHotspots: 6,
+  totalHotspots: 8,
 
   trackClick(spotId) {
     this.clickedHotspots.add(spotId);
@@ -165,7 +208,7 @@ const progressTracker = {
   },
 
   updateProgress() {
-    const progressBar = document.getElementById('progress-bar');
+    const progressBar   = document.getElementById('progress-bar');
     const progressLabel = document.getElementById('progress-label');
     if (!progressBar || !progressLabel) return;
 
@@ -175,50 +218,54 @@ const progressTracker = {
   }
 };
 
+/* ════════════════════════════════
+   PANORAMA PROJECTION
+════════════════════════════════ */
 function getProjection(viewerRef) {
   const screenW = window.innerWidth;
   const screenH = window.innerHeight;
   const hfov = viewerRef.getHfov();
   const vfov = hfov / (screenW / screenH);
   return {
-    screenW,
-    screenH,
+    screenW, screenH,
     centerX: screenW / 2,
     centerY: screenH / 2,
-    currentYaw: viewerRef.getYaw(),
+    currentYaw:   viewerRef.getYaw(),
     currentPitch: viewerRef.getPitch(),
-    hfov,
-    vfov,
+    hfov, vfov,
     xPixelsPerDegree: screenW / hfov,
     yPixelsPerDegree: screenH / vfov
   };
 }
 
 function projectYawPitch(yaw, pitch, projection, extraBoundary = 0) {
-  let yawDiff = yaw - projection.currentYaw;
+  let yawDiff   = yaw   - projection.currentYaw;
   let pitchDiff = pitch - projection.currentPitch;
 
-  if (yawDiff > 180) yawDiff -= 360;
+  if (yawDiff > 180)  yawDiff -= 360;
   if (yawDiff < -180) yawDiff += 360;
 
-  const yawBoundary = (projection.hfov / 2) + extraBoundary;
+  const yawBoundary   = (projection.hfov / 2) + extraBoundary;
   const pitchBoundary = (projection.vfov / 2) + extraBoundary;
   const isVisible = Math.abs(yawDiff) < yawBoundary && Math.abs(pitchDiff) < pitchBoundary;
 
   return {
     isVisible,
-    x: projection.centerX + (yawDiff * projection.xPixelsPerDegree),
+    x: projection.centerX + (yawDiff   * projection.xPixelsPerDegree),
     y: projection.centerY - (pitchDiff * projection.yPixelsPerDegree)
   };
 }
 
+/* ════════════════════════════════
+   REVEAL MASK (sketch → real)
+════════════════════════════════ */
 const revealMask = {
   reveals: new Map(),
 
   applyMaskSize() {
     const base = document.getElementById('sketch-mask-base');
     if (!base) return;
-    base.setAttribute('width', String(window.innerWidth));
+    base.setAttribute('width',  String(window.innerWidth));
     base.setAttribute('height', String(window.innerHeight));
   },
 
@@ -231,9 +278,8 @@ const revealMask = {
     };
 
     const strokes = [];
-    const count = 16;
-    for (let i = 0; i < count; i += 1) {
-      const angle = rand() * Math.PI * 2;
+    for (let i = 0; i < 16; i++) {
+      const angle  = rand() * Math.PI * 2;
       const spread = 90 + rand() * 180;
       strokes.push({
         dx: Math.cos(angle) * spread * 0.68,
@@ -243,36 +289,25 @@ const revealMask = {
       });
     }
 
-    return {
-      rotation: (rand() * 50) - 25,
-      strokes
-    };
+    return { rotation: (rand() * 50) - 25, strokes };
   },
 
   revealAt(id, yaw, pitch) {
     if (this.reveals.has(id)) return;
-    this.reveals.set(id, {
-      yaw,
-      pitch,
-      brush: this.createBrush(id)
-    });
+    this.reveals.set(id, { yaw, pitch, brush: this.createBrush(id) });
     this.render();
   },
 
   revealAll() {
     const sketchLayer = document.getElementById('panorama-sketch');
-    if (sketchLayer) {
-      sketchLayer.classList.add('fully-revealed');
-    }
+    if (sketchLayer) sketchLayer.classList.add('fully-revealed');
   },
 
   clear() {
     this.reveals.clear();
     this.render();
     const sketchLayer = document.getElementById('panorama-sketch');
-    if (sketchLayer) {
-      sketchLayer.classList.remove('fully-revealed');
-    }
+    if (sketchLayer) sketchLayer.classList.remove('fully-revealed');
   },
 
   render() {
@@ -282,17 +317,16 @@ const revealMask = {
     const projection = getProjection(sketchViewer);
     holes.innerHTML = '';
 
-    this.reveals.forEach((reveal) => {
+    this.reveals.forEach(reveal => {
       const projected = projectYawPitch(reveal.yaw, reveal.pitch, projection, 90);
       if (!projected.isVisible) return;
 
       const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      group.setAttribute(
-        'transform',
+      group.setAttribute('transform',
         'translate(' + Math.round(projected.x) + ' ' + Math.round(projected.y) + ') rotate(' + reveal.brush.rotation + ')'
       );
 
-      reveal.brush.strokes.forEach((stroke) => {
+      reveal.brush.strokes.forEach(stroke => {
         const ellipse = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
         ellipse.setAttribute('cx', String(Math.round(stroke.dx)));
         ellipse.setAttribute('cy', String(Math.round(stroke.dy)));
@@ -315,6 +349,9 @@ const revealMask = {
   }
 };
 
+/* ════════════════════════════════
+   SYNC VIEWERS
+════════════════════════════════ */
 function syncRealToSketch() {
   if (!sketchViewer || !realViewer) return;
   realViewer.setYaw(sketchViewer.getYaw(), false);
@@ -327,14 +364,18 @@ function runSyncLoop() {
   syncAnimationFrameId = requestAnimationFrame(runSyncLoop);
 }
 
+/* ════════════════════════════════
+   HOTSPOT POSITION LOOP
+════════════════════════════════ */
 function updateHotspotPositions() {
   if (!sketchViewer) return;
   const projection = getProjection(sketchViewer);
 
-  document.querySelectorAll('.paper-hotspot').forEach((element) => {
-    const targetYaw = parseFloat(element.dataset.yaw);
+  document.querySelectorAll('.paper-hotspot').forEach(element => {
+    const targetYaw   = parseFloat(element.dataset.yaw);
     const targetPitch = parseFloat(element.dataset.pitch);
-    const projected = projectYawPitch(targetYaw, targetPitch, projection, 30);
+    const projected   = projectYawPitch(targetYaw, targetPitch, projection, 30);
+
     if (!projected.isVisible) {
       element.classList.add('hidden');
       return;
@@ -342,14 +383,16 @@ function updateHotspotPositions() {
 
     element.classList.remove('hidden');
     element.style.left = Math.round(projected.x - 30) + 'px';
-    element.style.top = Math.round(projected.y - 30) + 'px';
+    element.style.top  = Math.round(projected.y - 30) + 'px';
   });
 
   revealMask.render();
-
   hotspotAnimationFrameId = requestAnimationFrame(updateHotspotPositions);
 }
 
+/* ════════════════════════════════
+   INIT PANORAMA VIEWERS
+════════════════════════════════ */
 function initializeMainViewers() {
   sketchViewer = pannellum.viewer('panorama-sketch', {
     type: 'equirectangular',
@@ -379,7 +422,11 @@ function initializeMainViewers() {
   updateHotspotPositions();
 }
 
+/* ════════════════════════════════
+   DOM READY
+════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
+
   splashViewer = pannellum.viewer('splash-panorama', {
     type: 'equirectangular',
     panorama: 'room_real.jpg',
@@ -400,7 +447,8 @@ document.addEventListener('DOMContentLoaded', () => {
     revealMask.render();
   });
 
-  const splashScreen = document.getElementById('splash-screen');
+  /* ── SPLASH DISMISS ── */
+  const splashScreen  = document.getElementById('splash-screen');
   let splashDismissed = false;
 
   const hideSplash = () => {
@@ -420,9 +468,8 @@ document.addEventListener('DOMContentLoaded', () => {
       musicPlayer.init();
       musicPlayer.play();
 
-      setTimeout(() => {
-        openWin('paper4');
-      }, 100);
+      // Auto-open tutorial
+      setTimeout(() => openWin('paper1'), 100);
     }, 800);
   };
 
@@ -436,54 +483,73 @@ document.addEventListener('DOMContentLoaded', () => {
   splashScreen?.addEventListener('click', hideSplash);
   document.addEventListener('keydown', hideSplash);
 
+  /* ── HOTSPOT CLICK TRACKING ── */
+  // Maps hotspot DOM index (0-based) to progress IDs
+  const hotspotIds = ['paper1','paper2','paper3','paper4','paper5','paper6','paper7','paper8'];
+
   document.querySelectorAll('.paper-hotspot').forEach((hotspot, index) => {
+    const spotId = hotspotIds[index] || ('paper' + (index + 1));
     const originalOnclick = hotspot.onclick;
-    const spotId = 'paper' + (index + 1);
 
     hotspot.onclick = function(e) {
+      // Track progress
       progressTracker.trackClick(spotId);
 
+      // Trigger sketch reveal
       if (!this.dataset.revealed) {
-        const yaw = parseFloat(this.dataset.yaw || '0');
+        const yaw   = parseFloat(this.dataset.yaw   || '0');
         const pitch = parseFloat(this.dataset.pitch || '0');
         revealMask.revealAt(spotId, yaw, pitch);
         this.dataset.revealed = 'true';
       }
 
+      // If all 8 explored, reveal entire sketch
       if (progressTracker.clickedHotspots.size === progressTracker.totalHotspots) {
         revealMask.revealAll();
       }
 
-      if (originalOnclick) {
-        originalOnclick.call(this, e);
-      }
+      // Call original onclick (openWin)
+      if (originalOnclick) originalOnclick.call(this, e);
     };
   });
 
-  ['paper1', 'paper2', 'paper3', 'paper4', 'paper5', 'paper6', 'main'].forEach((id) => {
+  /* ── MAKE ALL WINDOWS DRAGGABLE ── */
+  ['paper1','paper2','paper3','paper4','paper5','paper6','paper7','paper8','main'].forEach(id => {
     makeDraggable(id);
   });
 
+  /* ── VOLUME SLIDER ── */
   const volumeSlider = document.getElementById('volume-slider');
-  const volumeLabel = document.getElementById('volume-label');
+  const volumeLabel  = document.getElementById('volume-label');
   if (volumeSlider && volumeLabel) {
-    volumeSlider.addEventListener('input', (e) => {
+    volumeSlider.addEventListener('input', e => {
       const vol = e.target.value;
       musicPlayer.setVolume(vol / 100);
       volumeLabel.textContent = vol + '%';
     });
   }
 
+  /* ── RESTART BUTTON ── */
   const restartBtn = document.getElementById('restart-btn');
   restartBtn?.addEventListener('click', () => {
     progressTracker.reset();
     revealMask.clear();
 
-    document.querySelectorAll('.paper-hotspot').forEach((hotspot) => {
+    document.querySelectorAll('.paper-hotspot').forEach(hotspot => {
       delete hotspot.dataset.revealed;
     });
 
-    ['paper1', 'paper2', 'paper3', 'paper4', 'paper5', 'paper6'].forEach((id) => {
+    // Re-enable tutorial button
+    const tutBtn = document.getElementById('tut-done-btn');
+    if (tutBtn) {
+      tutBtn.textContent = "I'm ready — start exploring →";
+      tutBtn.style.background = '';
+      tutBtn.style.color      = '';
+      tutBtn.style.borderColor = '';
+      tutBtn.disabled = false;
+    }
+
+    ['paper1','paper2','paper3','paper4','paper5','paper6','paper7','paper8'].forEach(id => {
       closeWin(id);
     });
   });
