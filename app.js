@@ -191,11 +191,11 @@ function completeTutorial() {
 }
 
 /* ════════════════════════════════
-   PROGRESS TRACKER — 8 hotspots
+   PROGRESS TRACKER — 7 hotspots
 ════════════════════════════════ */
 const progressTracker = {
   clickedHotspots: new Set(),
-  totalHotspots: 8,
+  totalHotspots: 7,
 
   trackClick(spotId) {
     this.clickedHotspots.add(spotId);
@@ -468,8 +468,20 @@ document.addEventListener('DOMContentLoaded', () => {
       musicPlayer.init();
       musicPlayer.play();
 
-      // Auto-open tutorial
-      setTimeout(() => openWin('paper1'), 100);
+      // Auto-open tutorial and trigger reveal effect for paper1
+      setTimeout(() => {
+        openWin('paper1');
+        // Simulate hotspot click for paper1 to trigger reveal
+        const paper1Hotspot = Array.from(document.querySelectorAll('.paper-hotspot')).find(h => (h.dataset.yaw === '0' && h.dataset.pitch === '0'));
+        if (paper1Hotspot && !paper1Hotspot.dataset.revealed) {
+          const yaw = parseFloat(paper1Hotspot.dataset.yaw || '0');
+          const pitch = parseFloat(paper1Hotspot.dataset.pitch || '0');
+          revealMask.revealAt('paper1', yaw, pitch);
+          paper1Hotspot.dataset.revealed = 'true';
+          // Update progress bar as if user clicked
+          progressTracker.trackClick('paper1');
+        }
+      }, 100);
     }, 800);
   };
 
@@ -485,7 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── HOTSPOT CLICK TRACKING ── */
   // Maps hotspot DOM index (0-based) to progress IDs
-  const hotspotIds = ['paper1','paper2','paper3','paper4','paper5','paper6','paper7','paper8'];
+  const hotspotIds = ['paper1','paper2','paper4','paper5','paper6','paper7','paper8'];
 
   document.querySelectorAll('.paper-hotspot').forEach((hotspot, index) => {
     const spotId = hotspotIds[index] || ('paper' + (index + 1));
@@ -503,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
         this.dataset.revealed = 'true';
       }
 
-      // If all 8 explored, reveal entire sketch
+      // If all explored, reveal entire sketch
       if (progressTracker.clickedHotspots.size === progressTracker.totalHotspots) {
         revealMask.revealAll();
       }
@@ -514,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── MAKE ALL WINDOWS DRAGGABLE ── */
-  ['paper1','paper2','paper3','paper4','paper5','paper6','paper7','paper8','main'].forEach(id => {
+  ['paper1','paper2','paper4','paper5','paper6','paper7','paper8','main'].forEach(id => {
     makeDraggable(id);
   });
 
@@ -549,7 +561,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tutBtn.disabled = false;
     }
 
-    ['paper1','paper2','paper3','paper4','paper5','paper6','paper7','paper8'].forEach(id => {
+    ['paper1','paper2','paper4','paper5','paper6','paper7','paper8'].forEach(id => {
       closeWin(id);
     });
   });
