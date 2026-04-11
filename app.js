@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── MAKE ALL WINDOWS DRAGGABLE ── */
-  ['paper1','paper2','paper4','paper5','paper6','paper7','paper8','main'].forEach(id => {
+  ['paper1','paper2','paper3','paper4','paper5','paper6','paper7','main'].forEach(id => {
     makeDraggable(id);
   });
 
@@ -561,7 +561,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tutBtn.disabled = false;
     }
 
-    ['paper1','paper2','paper4','paper5','paper6','paper7','paper8'].forEach(id => {
+    ['paper1','paper2','paper3','paper4','paper5','paper6','paper7'].forEach(id => {
       closeWin(id);
     });
   });
