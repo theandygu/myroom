@@ -540,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── MAKE ALL WINDOWS DRAGGABLE ── */
-  ['paper1','paper2','paper3','paper4','paper5','paper6','paper7','main'].forEach(id => {
+  ['paper1', 'paperack', 'paper2','paper3','paper4','paper5','paper6','paper7','main'].forEach(id => {
     makeDraggable(id);
   });
 

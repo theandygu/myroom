@@ -460,6 +460,39 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0d0a07; }
 .paper-popup .win-pane { padding: 0 34px 42px 96px !important; }
 
 /* ══════════════════════════════════════════
+   ACKNOWLEDGEMENTS
+══════════════════════════════════════════ */
+.ack-name-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.ack-person {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ack-name {
+  font-family: var(--f-serif);
+  font-size: 26px;
+  color: #2a1a0e;
+  font-style: normal;
+  line-height: 1.2;
+}
+
+.ack-role {
+  font-family: var(--f-pica);
+  font-size: 19px;
+  color: #5a3a22;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════
    SHARED INNER STYLES
 ══════════════════════════════════════════ */
 h2.sect-title { font-family: var(--f-serif); font-size: 48px; color: var(--ink); margin-bottom: 12px; margin-top: 0; line-height: 1.1; letter-spacing: 0.02em; font-weight: bold; }
