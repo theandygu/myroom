@@ -485,7 +485,7 @@ S
         <!-- Sticky note annotation -->
         <div class="sticky-note sticky-note--yellow" style="--sn-rot: -1.8deg">
           <span class="sn-label">note to self ✦</span>
-          <p>Updated Position: Jan 2026 → Apr 2026. I'm still largely influenced by jazz, but I've realised something broader: I am a mosaic of my interests. Even art and film give me a perspective of engineering that I carry into the real world.</p>
+          <p>Updated Position: Jan 2026 → Apr 2026. I'm still largely influenced by jazz, but I've realised something broader: I am a mosaic of my interests. Even art and film give me a perspective of engineering that I carry into the real world. The more we look through these perspectives, the more we can uncover.</p>
         </div>
 
         <!-- YouTube embed -->
@@ -584,35 +584,31 @@ S
         <!-- Sticky note annotation -->
         <div class="sticky-note sticky-note--yellow" style="--sn-rot:1.5deg">
           <span class="sn-label">annotation ✦</span>
-          <p>My position statement argues that design is a process of uncovering — filling in the blanks through exploration until something real comes into focus. This bridge was that argument made physical. Iteration 0 was a given sketch, a starting point rather than a solution, and its factor of safety below 1 made clear the real design work had not yet begun. Each iteration revealed a new failure mode, which demanded new understanding, which produced a new iteration. The hand-drawn cross-sections at each stage were not just documentation — they were thinking tools. And our narrative was specific from the start: build the lightest bridge that survives the moving load. That sentence oriented every tradeoff. A design without a clear narrative drifts; ours had a direction.</p>
+          <p>My position statement frames design as a process of uncovering through exploration. This bridge project made that argument physical: Iteration 0 was a starting point with a factor of safety below 1, proving that design work begins where given information ends. Each cycle revealed failure modes that drove deeper structural understanding. Our hand-drawn cross-sections functioned as thinking tools that guided our transition from received knowledge to constructed knowledge. By anchoring every tradeoff in the narrative of building the lightest bridge for a moving load, we maintained a clear design direction.</p>
         </div>
 
         <h3 class="ctmf-section-title">Concepts, Tools, Models & Frameworks</h3>
 
         
-        <!-- CTMF 1 — PIAA -->
         <div class="ctmf-item" onclick="toggleCtmf(this)">
           <div class="ctmf-header">
             <div>
               <span class="fdcr-tag fdcr-frame">Frame</span>
-              <span class="ctmf-name">PIAA: Perceive · Interpret · Assess · Act</span>
+              <span class="ctmf-name">PIAA: Perceive, Interpret, Assess, Act</span>
             </div>
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/bridge_calc.png" alt="MATLAB calculations" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Iteration cycles</div>
+              <img src="images/perceive.jpg" alt="Primary information from lecture" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Primary information from lecture</div>
             </div>
-            <p><strong>What it is:</strong> A decision-making cycle describing how designers move from observation to action — perceiving a condition, interpreting its structural meaning, assessing the available responses, and acting to modify the design.</p>
-            <p style="margin-top:10px"><strong>How I used it:</strong> PIAA was the natural rhythm of every iteration. We perceived a weakness in the factor of safety output, interpreted it by tracing it back to the relevant equation and identifying the controlling variable, assessed the tradeoffs of each possible fix in MATLAB, and then acted. The decision to add stiffeners is the clearest example: we perceived that Case 4 buckling had become critical after extending the webs, interpreted it through the effective column length relationship, assessed that stiffeners at high-shear locations would be most effective, and built accordingly.</p>
-            <p style="margin-top:10px"><strong>Assessment:</strong> PIAA was not a formal checklist — it was how iteration actually felt. Its value is in making that instinctive cycle conscious and repeatable. Looking back, the iterations where we skipped straight from perceiving to acting, without a proper interpret and assess phase, produced the least efficient changes.</p>
+            <p><strong>What it is:</strong> PIAA is a cognitive framework used to improve intentionality in decision making. It involves gathering sensory information (Perceive), exploring possible meanings through models (Interpret), evaluating the most appropriate response (Assess), and finally carrying out the chosen action (Act). This model ensures that engineering decisions are grounded in reasoning rather than immediate, unreflective reactions.</p>
+            <p style="margin-top:10px">PIAA was the natural rhythm of our bridge iteration cycles. We perceived a weakness in the factor of safety output from our MATLAB script and interpreted it by tracing the error back to the Case 4 buckling equation. We then assessed the trade-offs of different fixes, such as extending the webs or adding stiffeners, before acting to build the final pi-beam configuration. This deliberate process was what allowed us to reach a final factor of safety of 2.27.</p>
+            <p style="margin-top:10px">This experience taught me that skipping the interpret and assess phases leads to inefficient design changes. I realized that the "Perceive to Act" shortcut often results in wasted material and redundant iterations. In my future work, I will apply PIAA as a formal troubleshooting protocol during complex systems programming to ensure that I fully understand a bug's structural meaning before attempting a fix.</p>
           </div>
         </div>
 
-        
-
-        <!-- CTMF 1 — Mathematical Prototyping -->
         <div class="ctmf-item" onclick="toggleCtmf(this)">
           <div class="ctmf-header">
             <div>
@@ -623,16 +619,15 @@ S
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/bridge_calc.png" alt="MATLAB calculations" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">MATLAB calculations</div>
+              <img src="images/bridge_calc.png" alt="Hand calculations" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Hand calculations</div>
             </div>
-            <p><strong>What it is:</strong> Using equations and code as a design environment — building the bridge in MATLAB before touching any matboard, so that structural behaviour can be tested, compared, and optimized across hundreds of configurations in minutes.</p>
-            <p style="margin-top:10px"><strong>How I used it:</strong> Every failure formula — buckling, shear, flexure — was encoded into MATLAB so that changes to web height, flange thickness, or web separation could be evaluated across all failure modes simultaneously. The optimal web separation of 58 mm and glue tab length of 15 mm were not guessed; they were solved. Mathematical prototyping compressed the iteration cycle dramatically and gave physical intuition a rigorous feedback loop.</p>
-            <p style="margin-top:10px"><strong>Assessment:</strong> The single most powerful tool in the process. Its limitation is that the model is only as good as its assumptions — local glue joint failures and construction imperfections were not captured, which meant the predicted failure load and the physical one diverged. The math does not know what your hands do.</p>
+            <p><strong>What it is:</strong> A mathematical prototype represents the features of a design through equations and logic rather than physical materials. It allows designers to generate performance data and verify that a design meets specific requirements through rigorous calculation. This environment enables the testing and optimization of hundreds of configurations in a fraction of the time required for physical builds.</p>
+            <p style="margin-top:10px">Our team encoded every CIV102 failure formula for buckling, shear, and flexure into a MATLAB design environment. This enabled us to solve for an optimal web separation of 58 mm and a glue tab length of 15 mm rather than guessing. By using this prototype, we compressed our six major iteration cycles and could justify our final design choice for the 1395 N load through analytical verification.</p>
+            <p style="margin-top:10px">I learned that while math provides a powerful feedback loop, the model is only as good as its assumptions. Because our script did not account for local glue joint failures or construction imperfections, our physical results diverged from the predicted ones. In the future, I will integrate safety buffers into my mathematical models to account for the "hand-to-material" gap, ensuring my analytical prototypes are as robust as they are precise.</p>
           </div>
         </div>
 
-        <!-- CTMF 2 — Perry's Model -->
         <div class="ctmf-item" onclick="toggleCtmf(this)">
           <div class="ctmf-header">
             <div>
@@ -643,12 +638,12 @@ S
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/bridge.png" alt="MATLAB calculations" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Final Engineering Drawings</div>
+              <img src="images/bridge.png" alt="Bridge technical drawing" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Bridge technical drawing</div>
             </div>
-            <p><strong>What it is:</strong> Perry's model describes how learners progress from received knowledge — accepting facts as given — toward constructed knowledge, where they form independent positions through evidence and reasoning.</p>
-            <p style="margin-top:10px"><strong>How I used it:</strong> CIV102 lectures introduced the buckling equations and bending stress formula as received knowledge. Iteration 0 was given to us in the same spirit. But from Iteration 1 onward, the work became constructive: we had to decide which failure mode to address first, hypothesize that removing the bottom flange would shift the centroidal axis favorably, and reason independently that the gap between Case 1 and Case 2 buckling was worth closing before anything else. The equations stopped being a checklist and became a language we spoke back with our own ideas.</p>
-            <p style="margin-top:10px"><strong>Assessment:</strong> Perry's model captures what made this project genuinely educational: the transition from following a framework to building within it. The risk of staying in received knowledge mode is designing by imitation — iterating the professor's cross-section without understanding why. Pushing into constructed knowledge is what produced the pi-beam.</p>
+            <p><strong>What it is:</strong> A technical drawing is a formal, labeled representation of a design model that provides the precise dimensional and material information necessary for manufacturing. Unlike a sketch, which is used for early ideation, a technical drawing uses standardized conventions and CAD software to communicate exactly how a design should be built and assembled.</p>
+            <p style="margin-top:10px">I developed technical drawings to communicate the final pi-beam cross-section for the Tubby Tributaries bridge project. These drawings detailed the 120 mm web height, the placement of stiffeners at splice points, and the location of the central diaphragm. By providing labeled views and specific dimensions, I ensured that our team could translate our sixth MATLAB iteration into a physical matboard bridge with high fidelity.</p>
+            <p style="margin-top:10px">This project taught me that a design is only as strong as its communication. Without the standardized language of technical drawings, our complex structural features like the diaphragm and stiffeners would have been impossible to manufacture accurately. Moving forward, I will prioritize learning advanced CAD tools to create more detailed exploded views for my biomedical engineering projects, ensuring that assembly instructions are clear for every stakeholder.</p>
           </div>
         </div>
 
@@ -677,7 +672,7 @@ S
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(1.5deg)">
             <img src="images/knee_sleeve.png" alt="Knee sleeve hardware prototype" style="width:280px; height:280px; object-fit:cover; display:block;">
-            <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Hardware prototype</div>
+            <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final prototype</div>
           </div>
         </div>
 
@@ -696,27 +691,25 @@ S
 
         <h3 class="ctmf-section-title">Concepts, Tools, Models & Frameworks</h3>
 
-        <!-- CTMF 1 — Hoover Dam / Stakeholder Framing -->
         <div class="ctmf-item" onclick="toggleCtmf(this)">
           <div class="ctmf-header">
             <div>
-              <span class="fdcr-tag fdcr-represent">Represent</span>
-              <span class="ctmf-name">The Hoover Dam Model: Engineering as Argument</span>
+              <span class="fdcr-tag fdcr-frame">Frame</span>
+              <span class="ctmf-name">The Hoover Dam Model</span>
             </div>
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/stakeholder_map.jpg" alt="Stakeholder mapping" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Stakeholder mapping</div>
+              <img src="images/hoover_dam.png" alt="Stakeholder mapping" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Hoover Dam Model</div>
             </div>
-            <p><strong>What it is:</strong> The Hoover Dam model frames engineering design as a set of arguments about the world. Every modelling choice — what you measure, who you design for, what you leave out — reflects a value system. The dam's designers made arguments about whose needs mattered. Today, the dam struggles with low water levels, and its construction displaced Indigenous communities who were never recognized as stakeholders. The lesson: design encodes perspective, and that perspective has consequences.</p>
-            <p style="margin-top:10px"><strong>How I used it:</strong> The existing market for knee rehabilitation reflects the same blind spot. Lab-grade systems like Vicon and BTS GAITLAB cost upward of $50,000 and are limited to hospital settings. Consumer wearables track only accelerometer data, missing the EMG signals needed to detect muscle guarding and co-contraction. Neither system was built with the at-home rehabilitation patient as a genuine stakeholder. Applying the Hoover Dam lens forced us to ask: who is currently excluded by the way this problem has been framed? The answer shaped our entire design — a web-based, clinician-facing dashboard that makes data accessible to the people who actually need it.</p>
-            <p style="margin-top:10px"><strong>Assessment:</strong> The most important framing tool in this project. Without it, we risked building a technically impressive system that served no one outside a hospital. Its limitation is that it is easy to identify excluded stakeholders and harder to actually design for them — the empathy gap between framing and execution is real.</p>
+            <p><strong>What it is:</strong> This model frames engineering as a series of arguments about the world. It posits that every design choice reflects a specific value system and perception of reality. The Hoover Dam example illustrates how a colonial perspective failed to acknowledge Indigenous peoples as stakeholders, leading to displaced communities. It serves as a reminder that when we model the world, we are making an argument about whose needs matter most.</p>
+            <p style="margin-top:10px">I applied this lens to identify the major blind spot in ACL recovery. Current markets favor either $50,000 hospital grade systems or simplistic consumer wearables that miss critical EMG data. Neither effectively frames the at-home patient as a primary stakeholder. By using the Hoover Dam model, our team at UTBIOME argued that rehabilitation should be accessible. This perspective shifted our focus toward a web-based dashboard that prioritizes remote clinician monitoring and patient engagement over hospital-locked hardware.</p>
+            <p style="margin-top:10px">This was our most vital framing tool. It prevented us from building a technically impressive device that ignored the actual environment of use. Its primary limitation is the empathy gap. Identifying an excluded stakeholder is the first step, but the technical execution required to serve them remains a distinct and difficult challenge.</p>
           </div>
         </div>
 
-        <!-- CTMF 2 — Needs Goals Objectives -->
         <div class="ctmf-item" onclick="toggleCtmf(this)">
           <div class="ctmf-header">
             <div>
@@ -727,16 +720,15 @@ S
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/ngo.jpg" alt="NGO framework" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">NGO framework</div>
+              <img src="images/NGOs.png" alt="NGO framework" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">NGOs from our design report</div>
             </div>
-            <p><strong>What it is:</strong> A structured framework that moves from high-level stakeholder needs to measurable engineering objectives. Needs capture what the user actually requires. Goals translate those into design intentions. Objectives make them testable — specific, quantifiable targets that a design can be evaluated against.</p>
-            <p style="margin-top:10px"><strong>How I used it:</strong> The underlying need was clear: ACL rehabilitation outcomes are worse when clinicians cannot monitor patients remotely. The goal became delivering objective, accessible data to physiotherapists between clinic visits. From that goal, objectives followed — exercise classification accuracy above a target threshold, ROM tracking in degrees against clinical reference ranges from CDC normative data, and data persistence through connection loss via RAM or SD card storage. This hierarchy prevented us from designing for technical elegance at the expense of clinical utility. The question was never "what can we build?" but "what does recovery actually require?"</p>
-            <p style="margin-top:10px"><strong>Assessment:</strong> NGO was essential for keeping a multidisciplinary team aligned. Hardware, software, and clinical considerations each pulled in different directions — having shared, measurable objectives gave us a common language. The risk is treating objectives as a checklist rather than a design compass; the numbers matter, but so does the reasoning behind them.</p>
+            <p><strong>What it is:</strong> The NGO framework is a fundamental tool used to translate vague stakeholder expectations into measurable engineering terms. It functions as a hierarchy: the Need identifies the root problem, the Goals describe broad design intentions, and the Objectives provide specific, quantifiable targets. This structure ensures that every technical requirement is justified by a real-world necessity.</p>
+            <p style="margin-top:10px">For QuantiFlex, the underlying need was the lack of quantifiable data in remote ACL rehabilitation. Our goal was to deliver objective, accessible knee metrics to physiotherapists between clinic visits. We then established specific objectives to verify success, such as tracking Range of Motion (ROM) in degrees against clinical reference ranges and achieving exercise classification accuracy above a set threshold. This hierarchy stopped us from chasing technical elegance and kept our focus on what recovery actually requires.</p>
+            <p style="margin-top:10px">NGO was essential for maintaining alignment across our multidisciplinary team. It provided a common language for hardware and software sub-teams to communicate through measurable targets. The risk is treating these objectives as a mere checklist. The metrics are vital, but they must always be cross-referenced against the original stakeholder need to remain relevant.</p>
           </div>
         </div>
 
-        <!-- CTMF 3 — Functional Decomposition -->
         <div class="ctmf-item" onclick="toggleCtmf(this)">
           <div class="ctmf-header">
             <div>
@@ -747,16 +739,16 @@ S
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/functional_decomp.jpg" alt="Software architecture" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Software architecture</div>
+              <img src="images/function_decomp.jpg" alt="Software architecture" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Isolating hardware</div>
             </div>
-            <p><strong>What it is:</strong> A design method that breaks a complex system into its fundamental sub-functions, each of which can be designed, tested, and evaluated independently before being integrated into the whole.</p>
-            <p style="margin-top:10px"><strong>How I used it:</strong> Applied specifically to the software layer, which risked becoming an undifferentiated mass of code without a clear structure. Decomposing it revealed five distinct sub-functions: EMG and IMU signal input, real-time signal processing, exercise classification logic, session recording and data storage, and analytics and dashboard visualization. Each sub-function had its own requirements and could be developed in parallel across the team. The recording feature — naming sessions by patient, exercise, date, and session number — emerged from decomposition as a discrete problem with a discrete solution. So did the signal processing pipeline, where a 50Hz high-pass filter and RMS calculation were identified as the minimal viable operations to convert raw EMG into a clinically interpretable metric.</p>
-            <p style="margin-top:10px"><strong>Assessment:</strong> Functional decomposition was what made a project of this complexity manageable. Without it, integration failures would have been untraceable. Its limitation is that real systems have cross-cutting concerns — authentication, data privacy, and connection loss handling did not belong neatly to any single sub-function, and those seams required extra attention.</p>
+            <p><strong>What it is:</strong> Functional decomposition is a tool used to break a complex system into smaller, solution-neutral sub-functions. Each sub-function is expressed as a combination of a verb and an object, such as "Sense Motion" or "Filter Noise." By tracing the flow of energy, materials, and signals, designers can manage complicated problems in manageable chunks without prematurely committing to a specific hardware solution.</p>
+            <p style="margin-top:10px">I applied this to the QuantiFlex software layer to prevent it from becoming an unorganized mass of code. We identified five distinct sub-functions: signal input, real-time processing, exercise classification, data storage, and analytics visualization. This allowed us to develop the 50Hz high-pass filter and Root Mean Square (RMS) calculation as discrete signal processing operations. Decomposing the system this way allowed our software team to work in parallel on the backend and frontend without integration failures.</p>
+            <p style="margin-top:10px">This method was what made a project of this complexity manageable for our team. It allowed us to trace specific failures to individual sub-functions during testing. However, its limitation is that real systems have cross-cutting concerns. Privacy, authentication, and connection loss do not always belong to one "chunk," requiring extra attention during the final assembly.</p>
           </div>
         </div>
 
-
+        
 
       </div>
     </div>
@@ -783,7 +775,7 @@ S
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(-1deg)">
             <img src="images/prong_sleeve.png" alt="Visual diagram of the prong sleeve design" style="width:280px; height:280px; object-fit:cover; display:block;">
-            <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final design</div>
+            <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final recommended design</div>
           </div>
         </div>
 
@@ -817,7 +809,7 @@ S
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
               <img src="images/kolbs.png" alt="Prototype iteration" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Prototype testing</div>
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Kolb's Learning Cycle</div>
             </div>
             <p><strong>What it is:</strong> Kolb's theory posits that learning is cyclical, moving through four phases: Thinking, Acting, Experiencing, and Reflecting. Each phase feeds the next, and the cycle repeats with deepened understanding at every pass.</p>
             <p style="margin-top:10px">I began in the Thinking phase by sketching the design and predicting its retention force. Acting involved construction using household materials like elastic bands and tape, but the crux of my learning arrived during the Experiencing phase. I found that the suction force was unreliable and required moisture to seal, which raised significant safety and accessibility concerns. Reflection reframed this experience not as a failure but as evidence that the design space had shifted based on physical reality.</p>
@@ -892,7 +884,7 @@ S
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(1deg)">
             <img src="images/praxis_team.png" alt="Presenting Shark Pouch at Showcase" style="width:280px; height:280px; object-fit:cover; display:block;">
-            <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final prototype</div>
+            <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Presenting Shark Pouch at Showcase</div>
           </div>
         </div>
 
@@ -907,7 +899,6 @@ S
         <div class="sticky-note sticky-note--blue" style="--sn-rot:-1.5deg">
           <span class="sn-label">annotation ✦</span>
           <p>The Shark Pouch is a physical manifestation of my "mosaic" philosophy where engineering precision meets the narrative power of film and art. By reframing a technical problem like drag resistance into a human story about a "buddy" companion, I moved beyond a checklist of metrics to address the hidden requirement of swimmer engagement. Just as my position statement argues that visual language is as important as the idea it carries, the shark form was not a superficial addition. It was the deliberate stroke that revealed the solution. I treated the stakeholder feedback from Coach Aris like a jazz chord change by listening for the underlying tension: the need for passion in a grueling sport. This ensured the final design was not just a tool but a specialized experience.</p>
-
         </div>
 
         <h3 class="ctmf-section-title">Concepts, Tools, Models & Frameworks</h3>
@@ -924,7 +915,7 @@ S
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
               <img src="images/phys_demo.png" alt="Pugh analysis" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Team whiteboarding</div>
+              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Re-enacting swimmming motions together!</div>
             </div>
             <p><strong>What it is:</strong> Described by Google's Project Aristotle research, a Team B culture is one where members move fluidly between work and personal conversation, feel comfortable interjecting, and build genuine social bonds.</p>
             <p style="margin-top:10px">Our team made an explicit decision early in Praxis II to model ourselves after Team B, building on what we had learned in Praxis I. In practice this meant frequent in-person meetings over food, team games before working sessions, and a norm of sharing half-formed ideas without filtering them first. The result was that unfiltered diverging sessions produced concepts that would not have survived a more guarded environment — including the shark form itself, which started as a creative aside before becoming the design's defining feature. Team B also made the harder moments of the project more manageable: when we had to rescope after realizing the shark parachute interfered with kicking, the trust in the room meant that criticism landed as useful information rather than failure.</p>
@@ -965,7 +956,7 @@ S
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
               <img src="images/voting.png" alt="Pugh analysis" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Team whiteboarding</div>
+              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Voting application used</div>
             </div>
             <p><strong>What it is:</strong> Multi-voting is a structured convergence technique used to narrow a large idea set through progressive rounds of voting with varying rules.</p>
             <p style="margin-top:10px">Following our biomimicry and lotus blossom sessions, we faced over 70 ideas and avoided blunt elimination by employing a two-stage approach. The first round consisted of stacked voting where each person cast one vote to quickly surface consensus, cutting the pool to 12 candidates. The second round utilized weighted distribution, which functioned like placing coins in a bag by allowing team members to distribute a fixed number of points across the remaining options. This revealed nuanced preferences that binary voting often conceals and ensured that core components like the drawstring mechanism and carabiner attachment were genuinely defensible. This process brought us to six final ideas in a single session while ensuring that every team member could trace the outcome back to their own input.</p>
