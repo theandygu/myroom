@@ -6,7 +6,6 @@ const musicPlayer = {
     'music/laufey3.mp3',
     'music/laufey4.mp3',
     'music/laufey5.mp3',
-    'music/laufey5.mp3'
   ],
   currentTrack: 0,
   isPlaying: false,
@@ -195,7 +194,7 @@ function completeTutorial() {
 ════════════════════════════════ */
 const progressTracker = {
   clickedHotspots: new Set(),
-  totalHotspots: 7,
+  totalHotspots: 0,
 
   trackClick(spotId) {
     this.clickedHotspots.add(spotId);
@@ -426,6 +425,8 @@ function initializeMainViewers() {
    DOM READY
 ════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
+  const hotspotElements = Array.from(document.querySelectorAll('.paper-hotspot'));
+  progressTracker.totalHotspots = hotspotElements.length;
 
   splashViewer = pannellum.viewer('splash-panorama', {
     type: 'equirectangular',
@@ -496,33 +497,46 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', hideSplash);
 
   /* ── HOTSPOT CLICK TRACKING ── */
-  // Maps hotspot DOM index (0-based) to progress IDs
-  const hotspotIds = ['paper1','paper2','paper4','paper5','paper6','paper7','paper8'];
+  const activateHotspot = hotspot => {
+    const spotId = hotspot.dataset.winId;
+    if (!spotId) return;
 
-  document.querySelectorAll('.paper-hotspot').forEach((hotspot, index) => {
-    const spotId = hotspotIds[index] || ('paper' + (index + 1));
-    const originalOnclick = hotspot.onclick;
+    progressTracker.trackClick(spotId);
+    if (!hotspot.dataset.revealed) {
+      const yaw = parseFloat(hotspot.dataset.yaw || '0');
+      const pitch = parseFloat(hotspot.dataset.pitch || '0');
+      revealMask.revealAt(spotId, yaw, pitch);
+      hotspot.dataset.revealed = 'true';
+    }
+    if (progressTracker.clickedHotspots.size === progressTracker.totalHotspots) {
+      revealMask.revealAll();
+    }
+    openWin(spotId);
+  };
 
-    hotspot.onclick = function(e) {
-      // Track progress
-      progressTracker.trackClick(spotId);
+  hotspotElements.forEach(hotspot => {
+    let lastActivation = 0;
 
-      // Trigger sketch reveal
-      if (!this.dataset.revealed) {
-        const yaw   = parseFloat(this.dataset.yaw   || '0');
-        const pitch = parseFloat(this.dataset.pitch || '0');
-        revealMask.revealAt(spotId, yaw, pitch);
-        this.dataset.revealed = 'true';
-      }
+    const handleActivation = e => {
+      e.preventDefault();
+      e.stopPropagation();
 
-      // If all explored, reveal entire sketch
-      if (progressTracker.clickedHotspots.size === progressTracker.totalHotspots) {
-        revealMask.revealAll();
-      }
+      const now = Date.now();
+      if (now - lastActivation < 250) return;
+      lastActivation = now;
 
-      // Call original onclick (openWin)
-      if (originalOnclick) originalOnclick.call(this, e);
+      activateHotspot(hotspot);
     };
+
+    ['pointerdown', 'mousedown', 'touchstart'].forEach(eventName => {
+      hotspot.addEventListener(eventName, e => {
+        e.stopPropagation();
+      }, { passive: false });
+    });
+
+    ['pointerup', 'touchend', 'click'].forEach(eventName => {
+      hotspot.addEventListener(eventName, handleActivation, { passive: false });
+    });
   });
 
   /* ── MAKE ALL WINDOWS DRAGGABLE ── */

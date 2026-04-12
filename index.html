@@ -6,8 +6,7 @@
   <title>Andy's Room</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/record.png">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -46,7 +45,7 @@
 <div id="hotspots-container">
 
   <!-- paper1 · Tutorial · yaw 0 -->
-  <div class="paper-hotspot" data-yaw="0" data-pitch="0" onclick="openWin('paper1')" style="--crumple-rot:-4deg">
+  <div class="paper-hotspot" data-win-id="paper1" data-yaw="0" data-pitch="0" style="--crumple-rot:-4deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
         <defs><filter id="sh1"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
@@ -66,7 +65,7 @@
   </div>
 
   <!-- paper2 · Position in Context · yaw 45 -->
-  <div class="paper-hotspot" data-yaw="45" data-pitch="0" onclick="openWin('paper2')" style="--crumple-rot:3deg">
+  <div class="paper-hotspot" data-win-id="paper2" data-yaw="45" data-pitch="0" style="--crumple-rot:3deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
         <defs><filter id="sh2"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
@@ -87,7 +86,7 @@
   </div>
 
   <!-- paper3 · Matboard Bridge · yaw 135, pitch -20 -->
-  <div class="paper-hotspot" data-yaw="135" data-pitch="-20" onclick="openWin('paper3')" style="--crumple-rot:5deg">
+  <div class="paper-hotspot" data-win-id="paper3" data-yaw="135" data-pitch="-20" style="--crumple-rot:5deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
         <defs><filter id="sh3"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
@@ -108,7 +107,7 @@
   </div>
 
   <!-- paper4 · Knee Sleeve · yaw 180, pitch 15 -->
-  <div class="paper-hotspot" data-yaw="180" data-pitch="15" onclick="openWin('paper4')" style="--crumple-rot:-3deg">
+  <div class="paper-hotspot" data-win-id="paper4" data-yaw="180" data-pitch="15" style="--crumple-rot:-3deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
         <defs><filter id="sh4"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
@@ -128,7 +127,7 @@
   </div>
 
   <!-- paper5 · Praxis I Loose Outlets · yaw 225, pitch -25 -->
-  <div class="paper-hotspot" data-yaw="225" data-pitch="-25" onclick="openWin('paper5')" style="--crumple-rot:2deg">
+  <div class="paper-hotspot" data-win-id="paper5" data-yaw="225" data-pitch="-25" style="--crumple-rot:2deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
         <defs><filter id="sh5"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
@@ -149,7 +148,7 @@
   </div>
 
   <!-- paper6 · Praxis II Swim Resistance · yaw 270, pitch 20 -->
-  <div class="paper-hotspot" data-yaw="270" data-pitch="20" onclick="openWin('paper6')" style="--crumple-rot:-5deg">
+  <div class="paper-hotspot" data-win-id="paper6" data-yaw="270" data-pitch="20" style="--crumple-rot:-5deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
         <defs><filter id="sh6"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
@@ -169,7 +168,7 @@
   </div>
 
   <!-- paper7 · Reference List · yaw 315, pitch -10 -->
-  <div class="paper-hotspot" data-yaw="315" data-pitch="-10" onclick="openWin('paper7')" style="--crumple-rot:4deg">
+  <div class="paper-hotspot" data-win-id="paper7" data-yaw="315" data-pitch="-10" style="--crumple-rot:4deg">
     <div class="hs-card">
       <svg viewBox="0 0 58 70" xmlns="http://www.w3.org/2000/svg" class="crumpled-paper">
         <defs><filter id="sh7"><feDropShadow dx="2" dy="3" stdDeviation="2.5" flood-color="#000" flood-opacity="0.35"/></filter></defs>
@@ -216,7 +215,7 @@
             <span></span><span></span><span></span><span></span>
           </div>
         </div>
-        <span class="strip-count" id="progress-label">0/8</span>
+        <span class="strip-count" id="progress-label">0/7</span>
       </div>
     </div>
   </div>
@@ -257,107 +256,6 @@
   <button id="restart-btn" type="button" title="Restart reveal">restart</button>
 
   <!-- ══════════════════════════════════
-       MAIN WINDOW (studio / gallery / about)
-  ══════════════════════════════════ -->
-  <div id="win-main" class="win">
-    <div id="win-main-bar" class="win-bar">
-      <div class="win-bar-left">
-        <div class="win-traffic">
-          <div class="win-dot close" onclick="closeWin('main')"></div>
-          <div class="win-dot min"></div>
-          <div class="win-dot max"></div>
-        </div>
-        <span id="win-main-title" class="win-title">the studio</span>
-      </div>
-    </div>
-    <div class="win-nav">
-      <button class="win-nav-btn active" data-pane="studio" onclick="switchPane('main','studio')">studio</button>
-      <button class="win-nav-btn" data-pane="gallery" onclick="switchPane('main','gallery')">gallery</button>
-      <button class="win-nav-btn" data-pane="about" onclick="switchPane('main','about')">about</button>
-      <button class="win-nav-btn" data-pane="position" onclick="switchPane('main','position')">position</button>
-    </div>
-    <div class="win-body">
-      <div class="win-pane active" id="pane-studio">
-        <h2 class="sect-title">Design as Jazz</h2><hr class="sect-rule">
-        <p>Explore the room — each floating paper holds a piece of this portfolio. Click any paper icon you see to open it, drag windows to arrange your workspace, and look around with your mouse.</p>
-        <p style="margin-top:16px">The four design projects are scattered around the room. Each one is a record — a chord change, a solo, a vocabulary built from scratch.</p>
-        <div class="proj-overview-grid" style="margin-top:24px">
-          <div class="proj-overview-card" onclick="openWin('paper4')"><span class="poc-tag">CIV102</span><strong>Matboard Bridge</strong><p>Structural optimization under failure</p></div>
-          <div class="proj-overview-card" onclick="openWin('paper5')"><span class="poc-tag">UTBiome</span><strong>Rehabilitative Knee Sleeve</strong><p>Wearable biomedical device design</p></div>
-          <div class="proj-overview-card" onclick="openWin('paper6')"><span class="poc-tag">Praxis I</span><strong>Loose Outlets</strong><p>Electrical safety in residential homes</p></div>
-          <div class="proj-overview-card" onclick="openWin('paper7')"><span class="poc-tag">Praxis II</span><strong>Variable Swim Resistance</strong><p>Adaptive drag for competitive swimmers</p></div>
-        </div>
-      </div>
-      <div class="win-pane" id="pane-gallery">
-        <h2 class="sect-title">Process Gallery</h2><hr class="sect-rule">
-        <div class="gal-section">
-          <div class="gal-label">Matboard Bridge · CIV102</div>
-          <div class="gal-string">
-            <div class="pol" style="--rot:-3deg;--hang:10px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#d4c4a0,#c4b090)"></div><div class="pol-cap">Cross-section sketches</div></div>
-            <div class="pol" style="--rot:2deg;--hang:5px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#c8c0b0,#b8b0a0)"></div><div class="pol-cap">Gluing the I-beam</div></div>
-            <div class="pol" style="--rot:-1deg;--hang:12px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#ccc,#aaa)"></div><div class="pol-cap">Load test — 82N</div></div>
-          </div>
-        </div>
-        <div class="gal-section">
-          <div class="gal-label">Knee Sleeve · UTBiome</div>
-          <div class="gal-string">
-            <div class="pol" style="--rot:1deg;--hang:8px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#a0b4c8,#90a4b8)"></div><div class="pol-cap">Empathy map</div></div>
-            <div class="pol" style="--rot:-2deg;--hang:6px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#b0c4c0,#a0b4b0)"></div><div class="pol-cap">Foam prototype</div></div>
-          </div>
-        </div>
-        <div class="gal-section">
-          <div class="gal-label">Loose Outlets · Praxis I</div>
-          <div class="gal-string">
-            <div class="pol" style="--rot:-2deg;--hang:14px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#f0d890,#e0c880)"></div><div class="pol-cap">HMW brainstorm</div></div>
-            <div class="pol" style="--rot:3deg;--hang:4px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#d0c8b8,#c0b8a8)"></div><div class="pol-cap">Pugh chart</div></div>
-          </div>
-        </div>
-        <div class="gal-section">
-          <div class="gal-label">Swim Resistance · Praxis II</div>
-          <div class="gal-string">
-            <div class="pol" style="--rot:-1deg;--hang:10px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#90c4c0,#80b4b0)"></div><div class="pol-cap">Pool testing</div></div>
-            <div class="pol" style="--rot:2.5deg;--hang:6px"><div class="pol-clip"></div><div class="pol-img" style="width:120px;height:150px;background:linear-gradient(135deg,#b8c8d0,#a8b8c0)"></div><div class="pol-cap">Final prototype</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="win-pane" id="pane-about">
-        <h2 class="sect-title">About</h2><hr class="sect-rule">
-        <div class="about-grid">
-          <div>
-            <div class="gal-label">Position Statement · Jan 2026</div>
-            <div class="vid-frame">
-              <iframe src="https://www.youtube.com/embed/boVlLW7FeYs" title="Position Statement" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <p class="vid-cap">Jazz as a lens for engineering design · Praxis I</p>
-          </div>
-          <div>
-            <div class="gal-label">A Few Things</div>
-            <div class="about-card">
-              <p>I'm Andy — a first-year Engineering Science student at U of T, and a jazz musician who treats both disciplines the same way.</p>
-              <p>I design like I improvise: vocabulary first, then freedom. This portfolio is the record of my first year building things.</p>
-            </div>
-            <div class="tag-row">
-              <span class="tag">jazz</span><span class="tag">structures</span><span class="tag">biomedical</span>
-              <span class="tag">praxis</span><span class="tag">toronto</span><span class="tag">eng. sci. · 2T8</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="win-pane" id="pane-position">
-        <h2 class="sect-title">Position Statement</h2><hr class="sect-rule">
-        <div class="pos-body">
-          <p>I approach engineering design like I approach jazz — with the application of <em>practice, collaboration</em> and <em>creativity</em> to express oneself.</p>
-          <blockquote><p>"while the bridges I build collapse, I still approach design as applied creativity and an expression of my knowledge."</p></blockquote>
-          <p><strong>Ensemble.</strong> Jazz sensitivity adapts to ensemble size. I treat engineering teamwork the same way — listening to teammates one by one, without skipping or judging.</p>
-          <p><strong>Chord Changes.</strong> In jazz, the design space comes as chord changes. The fine-tuning of requirements matters — there's a sweet spot where creativity shines.</p>
-          <p><strong>Vocabulary.</strong> No need to reinvent the alphabet. I transcribe Chet Baker solos to build repertoire; I review failure equations to build design intuition.</p>
-          <p style="margin-top:18px;color:var(--brown-lt);font-style:italic">— Praxis I position statement · grade: 17.5/10</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════
        PAPER 1 — TUTORIAL
   ══════════════════════════════════ -->
   <div id="win-paper1" class="win paper-popup">
@@ -389,7 +287,7 @@
             </div>
             <div class="tut-step-text">
               <h3>Look Around</h3>
-              <p><strong>Click and drag</strong> anywhere in the background to rotate your view. Sweep left or right to pan through the room. Use your scroll wheel to zoom in or out.</p>
+              <p><strong>Click and drag</strong> anywhere in the sketch to rotate your view. Sweep left or right to pan through the room. Use your scroll wheel to zoom in or out.</p>
             </div>
           </div>
 
@@ -407,8 +305,8 @@
               </svg>
             </div>
             <div class="tut-step-text">
-              <h3>Find the Papers</h3>
-              <p><strong>Paper icons float in the room.</strong> Each crumpled page is a hotspot — click one to open a draggable window with project notes, reflections, or references. Every click fills the progress bar above.</p>
+              <h3>Find my Notes</h3>
+              <p><strong>Paper icons are floating around the room.</strong> Each page is a pop-up. Click it to open a draggable window with project notes, reflections, or references. Every click fills the progress bar above.</p>
             </div>
           </div>
 
@@ -429,40 +327,16 @@
               </svg>
             </div>
             <div class="tut-step-text">
-              <h3>Move Windows</h3>
-              <p><strong>Drag any window</strong> by its title bar to move it. You can have multiple windows open at once — the room stays interactive behind them. Close with the × button.</p>
-            </div>
-          </div>
-
-          <div class="tut-step tut-step--tip">
-            <div class="tut-step-icon" style="font-size:32px; display:flex; align-items:center; justify-content:center; width:64px; height:64px;">→</div>
-            <div class="tut-step-text">
               <h3>Quick Tip</h3>
-              <p>Start by looking to the <em>right</em> — that's where the first design projects appear. But don't stop there. Engineering can be discovered in all directions.</p>
+              <p>Start by looking to the <em>right</em>, that's where you'll find my revised position statement. But, just like how engineering design isn't linear, feel free to explore in all directions!</p>
             </div>
           </div>
-
-        </div>
-
-        <div class="tut-progress-explain">
-          <svg width="220" height="36" viewBox="0 0 220 36" xmlns="http://www.w3.org/2000/svg" aria-label="Progress bar illustration">
-            <rect width="220" height="36" fill="#f7f3ea" rx="2"/>
-            <rect x="0" y="0" width="80" height="36" fill="url(#progress-stripes)" rx="2"/>
-            <defs>
-              <pattern id="progress-stripes" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
-                <rect x="0" y="0" width="3" height="7" fill="#52b552"/>
-                <rect x="3" y="0" width="4" height="7" fill="transparent"/>
-              </pattern>
-            </defs>
-            <line x1="0" y1="12" x2="220" y2="12" stroke="#9ac0e8" stroke-width="0.7" opacity="0.5"/>
-            <text x="90" y="22" font-family="serif" font-size="11" fill="#6b4d34" font-style="italic">← this fills as you explore</text>
-          </svg>
-        </div>
 
         <button class="tut-done-btn" id="tut-done-btn" onclick="completeTutorial()">
-          I'm ready — start exploring →
+          I'm ready! Start exploring →
         </button>
 
+        </div>
       </div>
     </div>
   </div>
@@ -483,7 +357,7 @@
         <!-- Sticky note annotation -->
         <div class="sticky-note sticky-note--yellow" style="--sn-rot: -1.8deg">
           <span class="sn-label">note to self ✦</span>
-          <p>Updated position — Jan 2026 → Apr 2026. The jazz metaphor still holds, but I've realised something broader: I am a mosaic of my interests. Even art and film give me a perspective of engineering that I carry into the real world.</p>
+          <p>Updated Position: Jan 2026 → Apr 2026. I'm still largely influenced by jazz, but I've realised something broader: I am a mosaic of my interests. Even art and film give me a perspective of engineering that I carry into the real world.</p>
         </div>
 
         <!-- YouTube embed -->
@@ -499,30 +373,30 @@
           <h3>Introduction</h3>
         </div>
 
-        <p>My previous position statement argued that jazz informs how I design, through chord changes, ensemble sensitivity, and vocabulary. This remains true, but the semester has brought a broader realization: I am a mosaic of my interests. Art and film each offer a perspective of the engineering design process that I carry into real world, helping me sketch in the details and fill in the blanks for things that are unclear. At its core, design is an exploration, a process of colouring in and out of the lines until ideas come into focus.</p>
+        <p>My previous position statement argued that jazz informs how I design, through ensemble sensitivity, chord changes, and vocabulary. This remains true, but this past semester has brought a broader realization: I am a mosaic of my artistic interests. Other forms of expression, like art and film, each offer a perspective of the engineering design process that I carry into my design work, helping me sketch in the details and fill in the blanks for things that are unclear. At its core, design is an exploration, a process of colouring in and out of the lines to bring ideas into focus</p>
 
         <!-- Art section -->
         <div class="pos-section-header">
-          <h3>Art: Visualization as Shared Perspective</h3>
+          <h3>Art: Design through Perspectives</h3>
         </div>
 
         <div style="float:right; margin:0 0 16px 20px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(-1.5deg)">
-            <img src="images/art.png" alt="Jellyfish sketch from biomimicry diverging session" style="width:160px; height:160px; object-fit:cover; display:block;">
+            <img src="images/art.png" alt="Jellyfish sketch from biomimicry diverging session" style="width:200px; height:200px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:12px; font-family:var(--f-serif); color:#6b4d34">Jellyfish sketch · Biomimicry diverging session · Praxis II</div>
           </div>
         </div>
 
-        <p>A painter does not describe a landscape; they reveal it, one deliberate stroke at a time. This semester, drawing became less about communicating ideas and more about discovering them. Different visualizations reach different audiences and surface different kinds of feedback: rough sketches externalize ambiguity and invite pushback, technical drawings establish precision, and aesthetic renderings communicate feel. In our Praxis II work, presenting a sketch rather than describing an idea verbally changed the team dynamic entirely. Teammates could point at it, draw over it, and disagree with it cheaply, before anything was precious. Choosing the right visual language, I have found, is as important as the idea it carries.</p>
+        <p>A painter does not describe a landscape; they reveal it, one deliberate stroke at a time. This semester, visual mediums, like sketches, colors, technical drawings, and CAD work were essential in discovering and communicating ideas. Different visualizations reach different audiences and surface different kinds of feedback: rough sketches lay groundwork and invite pushback, technical drawings establish precision, and aesthetic renderings communicate feel. In our Praxis II work, presenting a sketch rather than describing an idea changed the team atmosphere and the type of communication that comes with it. Teammates could point at it, draw over it, and make their own renderings, before anything was precious. For example, when conducting the biomimicry diverging process, marker drawings were the carriers of function and feel. Using visual language is as important as the idea it carries.</p>
 
         <!-- Movies section -->
         <div class="pos-section-header">
-          <h3>Movies: Design as Narrative</h3>
+          <h3>Movies: Design as a Narrative</h3>
         </div>
 
         <div style="float:right; margin:0 0 16px 20px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(1.5deg)">
-            <img src="images/shark.png" alt="Swim resistance training device concept" style="width:160px; height:160px; object-fit:cover; display:block;">
+            <img src="images/shark.png" alt="Swim resistance training device concept" style="width:200px; height:200px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:12px; font-family:var(--f-serif); color:#6b4d34">Swim resistance concept · Praxis II · 2026</div>
           </div>
         </div>
@@ -567,7 +441,7 @@
         <!-- Featured image -->
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(-2deg)">
-            <img src="images/bridge.png" alt="Final matboard bridge" style="width:220px; height:220px; object-fit:cover; display:block;">
+            <img src="images/bridge.png" alt="Final matboard bridge" style="width:280px; height:280px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final pi-beam bridge</div>
           </div>
         </div>
@@ -597,9 +471,9 @@
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <img src="images/bridge_calc.png" alt="MATLAB calculations" style="width:140px; height:140px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">MATLAB calculations</div>
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
+              <img src="images/bridge_calc.png" alt="MATLAB calculations" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">MATLAB calculations</div>
             </div>
             <p><strong>What it is:</strong> Using equations and code as a design environment — building the bridge in MATLAB before touching any matboard, so that structural behaviour can be tested, compared, and optimized across hundreds of configurations in minutes.</p>
             <p style="margin-top:10px"><strong>How I used it:</strong> Every failure formula — buckling, shear, flexure — was encoded into MATLAB so that changes to web height, flange thickness, or web separation could be evaluated across all failure modes simultaneously. The optimal web separation of 58 mm and glue tab length of 15 mm were not guessed; they were solved. Mathematical prototyping compressed the iteration cycle dramatically and gave physical intuition a rigorous feedback loop.</p>
@@ -618,7 +492,7 @@
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <div style="width:140px; height:140px; background:linear-gradient(135deg,#d4c4a0,#a49080); box-shadow:1px 2px 4px rgba(0,0,0,0.1);"></div>
+              <img src="images/bridge_calc.png" alt="MATLAB calculations" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
               <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Design iterations</div>
             </div>
             <p><strong>What it is:</strong> Perry's model describes how learners progress from received knowledge — accepting facts as given — toward constructed knowledge, where they form independent positions through evidence and reasoning.</p>
@@ -638,7 +512,7 @@
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <div style="width:140px; height:140px; background:linear-gradient(135deg,#c8c0b0,#989080); box-shadow:1px 2px 4px rgba(0,0,0,0.1);"></div>
+              <img src="images/bridge_calc.png" alt="MATLAB calculations" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
               <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Iteration cycles</div>
             </div>
             <p><strong>What it is:</strong> A decision-making cycle describing how designers move from observation to action — perceiving a condition, interpreting its structural meaning, assessing the available responses, and acting to modify the design.</p>
@@ -673,7 +547,7 @@
         <!-- Featured image -->
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(1.5deg)">
-            <img src="images/knee_sleeve.jpg" alt="Knee sleeve hardware prototype" style="width:220px; height:220px; object-fit:cover; display:block;">
+            <img src="images/knee_sleeve.jpg" alt="Knee sleeve hardware prototype" style="width:280px; height:280px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Hardware prototype</div>
           </div>
         </div>
@@ -703,9 +577,9 @@
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <img src="images/stakeholder_map.jpg" alt="Stakeholder mapping" style="width:140px; height:140px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Stakeholder mapping</div>
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
+              <img src="images/stakeholder_map.jpg" alt="Stakeholder mapping" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Stakeholder mapping</div>
             </div>
             <p><strong>What it is:</strong> The Hoover Dam model frames engineering design as a set of arguments about the world. Every modelling choice — what you measure, who you design for, what you leave out — reflects a value system. The dam's designers made arguments about whose needs mattered. Today, the dam struggles with low water levels, and its construction displaced Indigenous communities who were never recognized as stakeholders. The lesson: design encodes perspective, and that perspective has consequences.</p>
             <p style="margin-top:10px"><strong>How I used it:</strong> The existing market for knee rehabilitation reflects the same blind spot. Lab-grade systems like Vicon and BTS GAITLAB cost upward of $50,000 and are limited to hospital settings. Consumer wearables track only accelerometer data, missing the EMG signals needed to detect muscle guarding and co-contraction. Neither system was built with the at-home rehabilitation patient as a genuine stakeholder. Applying the Hoover Dam lens forced us to ask: who is currently excluded by the way this problem has been framed? The answer shaped our entire design — a web-based, clinician-facing dashboard that makes data accessible to the people who actually need it.</p>
@@ -723,9 +597,9 @@
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <img src="images/ngo.jpg" alt="NGO framework" style="width:140px; height:140px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">NGO framework</div>
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
+              <img src="images/ngo.jpg" alt="NGO framework" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">NGO framework</div>
             </div>
             <p><strong>What it is:</strong> A structured framework that moves from high-level stakeholder needs to measurable engineering objectives. Needs capture what the user actually requires. Goals translate those into design intentions. Objectives make them testable — specific, quantifiable targets that a design can be evaluated against.</p>
             <p style="margin-top:10px"><strong>How I used it:</strong> The underlying need was clear: ACL rehabilitation outcomes are worse when clinicians cannot monitor patients remotely. The goal became delivering objective, accessible data to physiotherapists between clinic visits. From that goal, objectives followed — exercise classification accuracy above a target threshold, ROM tracking in degrees against clinical reference ranges from CDC normative data, and data persistence through connection loss via RAM or SD card storage. This hierarchy prevented us from designing for technical elegance at the expense of clinical utility. The question was never "what can we build?" but "what does recovery actually require?"</p>
@@ -743,9 +617,9 @@
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <img src="images/functional_decomp.jpg" alt="Software architecture" style="width:140px; height:140px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Software architecture</div>
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
+              <img src="images/functional_decomp.jpg" alt="Software architecture" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Software architecture</div>
             </div>
             <p><strong>What it is:</strong> A design method that breaks a complex system into its fundamental sub-functions, each of which can be designed, tested, and evaluated independently before being integrated into the whole.</p>
             <p style="margin-top:10px"><strong>How I used it:</strong> Applied specifically to the software layer, which risked becoming an undifferentiated mass of code without a clear structure. Decomposing it revealed five distinct sub-functions: EMG and IMU signal input, real-time signal processing, exercise classification logic, session recording and data storage, and analytics and dashboard visualization. Each sub-function had its own requirements and could be developed in parallel across the team. The recording feature — naming sessions by patient, exercise, date, and session number — emerged from decomposition as a discrete problem with a discrete solution. So did the signal processing pipeline, where a 50Hz high-pass filter and RMS calculation were identified as the minimal viable operations to convert raw EMG into a clinically interpretable metric.</p>
@@ -779,7 +653,7 @@
         <!-- Featured image -->
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(-1deg)">
-            <img src="images/outlet_prototype.jpg" alt="Outlet accessory prototype" style="width:220px; height:220px; object-fit:cover; display:block;">
+            <img src="images/outlet_prototype.jpg" alt="Outlet accessory prototype" style="width:280px; height:280px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final design</div>
           </div>
         </div>
@@ -809,9 +683,9 @@
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <img src="images/random_input.jpg" alt="Random Input session" style="width:140px; height:140px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Random Input session</div>
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
+              <img src="images/random_input.jpg" alt="Random Input session" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Random Input session</div>
             </div>
             <p><strong>What it is:</strong> A creative thinking strategy pioneered by Edward de Bono in which random nouns are generated and then morphed to fit within the solution space. The constraint of the word forces the mind out of familiar patterns and into genuinely novel territory.</p>
             <p style="margin-top:10px"><strong>How I used it:</strong> Our team generated nouns including love, glacier, and Brachiosaurus, then linked each to potential outlet solutions. Brachiosaurus, with its long neck and bracket-like posture, led directly to a concept using a physical bracket to prevent plug withdrawal. Beyond the ideas themselves, Random Input broke the Anchoring Effect — the cognitive bias that causes teams to pivot all concepts off a single reference design. It also produced a Team B dynamic: the absurdity of the nouns lowered everyone's filter, made the room feel safe, and opened space for ideas that would otherwise have been self-censored before they were spoken.</p>
@@ -829,9 +703,9 @@
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <img src="images/prototype.jpg" alt="Prototype iteration" style="width:140px; height:140px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Prototype testing</div>
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
+              <img src="images/prototype.jpg" alt="Prototype iteration" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Prototype testing</div>
             </div>
             <p><strong>What it is:</strong> Kolb's theory posits that learning is cyclical, moving through four phases: Thinking, Acting, Experiencing, and Reflecting. Each phase feeds the next, and the cycle repeats with deepened understanding at every pass.</p>
             <p style="margin-top:10px"><strong>How I used it:</strong> Prototyping a suction cup attachment walked me through all four phases in a single afternoon. I began in Thinking — sketching a suction-based design and predicting how it would increase retention force. Acting came with construction, taping elastic bands to a suction cup with materials from home. The crux of learning arrived at Experiencing: the suction force was far less reliable than anticipated. The cup required moisture to seal, was difficult to remove, and raised immediate concerns around accessibility and safety requirements. Reflection then reframed the prototype not as a failure but as evidence — the design space had shifted, and the next iteration needed to start from what the physical world had revealed, not from what the sketch had assumed.</p>
@@ -849,9 +723,9 @@
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <img src="images/pugh.jpg" alt="Pugh analysis" style="width:140px; height:140px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Pugh analysis</div>
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
+              <img src="images/pugh.jpg" alt="Pugh analysis" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Pugh analysis</div>
             </div>
             <p><strong>What it is:</strong> A structured comparison matrix that evaluates multiple design concepts against a common set of weighted requirements. Each concept is scored relative to a datum — typically the baseline or reference design — as better, worse, or equivalent across each criterion.</p>
             <p style="margin-top:10px"><strong>How I used it:</strong> After diverging, we had several distinct concepts on the table: the prong sleeve, a suction cup attachment, an adhesive friction pad, and a bracket mechanism. The Pugh chart mapped each against our four requirement goals — safety, axial retention, usability, and portability. What the chart revealed was not always what intuition predicted. The suction cup, which had felt promising during ideation, scored poorly across both safety and usability once the requirements were applied systematically. The prong sleeve, by contrast, satisfied the most criteria across the most goals. The chart also surfaced hybrid possibilities: the friction pad's material properties informed the final sleeve design, even though the pad concept itself was set aside.</p>
@@ -885,7 +759,7 @@
         <!-- Featured image -->
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(1deg)">
-            <img src="images/shark.jpg" alt="Shark pouch prototype" style="width:220px; height:220px; object-fit:cover; display:block;">
+            <img src="images/shark.jpg" alt="Shark pouch prototype" style="width:280px; height:280px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final prototype</div>
           </div>
         </div>
@@ -915,9 +789,9 @@
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:140px;">
-              <img src="images/art.png" alt="Biomimicry sketches" style="width:140px; height:140px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
-              <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Biomimicry sketches</div>
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
+              <img src="images/art.png" alt="Biomimicry sketches" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Biomimicry sketches</div>
             </div>
             <p><strong>What it is:</strong> Biomimicry is a design strategy that looks to biological systems for structural, mechanical, or behavioural solutions. Rather than inventing from scratch, it asks: has nature already solved this problem?</p>
             <p style="margin-top:10px"><strong>How I used it:</strong> Two biological references shaped the Shark Pouch directly. The baby shark swimming position — tucked beneath its mother — inspired the placement of the pouch at the swimmer's underside, where it generates drag without interfering with arm or leg movement. The kangaroo pouch inspired the soft, open-mouthed pouch form itself. Beyond these specific references, the broader biomimicry session generated a wide design space: jellyfish, manta rays, and hagfish all contributed ideas around drag-inducing geometry and flexible material behaviour. The lotus blossom technique used alongside biomimicry produced over 70 distinct ideas from these natural starting points. Biomimicry worked here because the problem — moving efficiently through water while generating controlled resistance — is one that aquatic animals have been solving for millions of years.</p>
