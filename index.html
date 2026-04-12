@@ -510,7 +510,7 @@ S
 
         <div style="float:right; margin:0 0 16px 20px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(-1.5deg)">
-            <img src="images/art.png" alt="Jellyfish sketch from biomimicry diverging session" style="width:200px; height:200px; object-fit:cover; display:block;">
+            <img src="images/art.png" alt="Jellyfish sketch from biomimicry diverging session" style="width:300px; height:300px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:12px; font-family:var(--f-serif); color:#6b4d34">Jellyfish sketch · Biomimicry diverging session · Praxis II</div>
           </div>
         </div>
@@ -524,7 +524,7 @@ S
 
         <div style="float:right; margin:0 0 16px 20px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(1.5deg)">
-            <img src="images/shark.png" alt="Swim resistance training buddy" style="width:200px; height:200px; object-fit:cover; display:block;">
+            <img src="images/shark.png" alt="Swim resistance training buddy" style="width:300px; height:300px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:12px; font-family:var(--f-serif); color:#6b4d34">Swim resistance concept · Praxis II · 2026</div>
           </div>
         </div>
@@ -569,7 +569,7 @@ S
         <!-- Featured image -->
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(-2deg)">
-            <img src="images/bridge_group.jpeg" alt="Final matboard bridge" style="width:280px; height:280px; object-fit:cover; display:block;">
+            <img src="images/bridge_group.jpeg" alt="Final matboard bridge" style="width:500px; height:400px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final pi-beam bridge</div>
           </div>
         </div>
@@ -604,8 +604,8 @@ S
               <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Primary information from lecture</div>
             </div>
             <p><strong>What it is:</strong> PIAA is a cognitive framework used to improve intentionality in decision making. It involves gathering sensory information (Perceive), exploring possible meanings through models (Interpret), evaluating the most appropriate response (Assess), and finally carrying out the chosen action (Act). This model ensures that engineering decisions are grounded in reasoning rather than immediate, unreflective reactions.</p>
-            <p style="margin-top:10px">PIAA was the natural rhythm of our bridge iteration cycles. We perceived a weakness in the factor of safety output from our MATLAB script and interpreted it by tracing the error back to the Case 4 buckling equation. We then assessed the trade-offs of different fixes, such as extending the webs or adding stiffeners, before acting to build the final pi-beam configuration. This deliberate process was what allowed us to reach a final factor of safety of 2.27.</p>
-            <p style="margin-top:10px">This experience taught me that skipping the interpret and assess phases leads to inefficient design changes. I realized that the "Perceive to Act" shortcut often results in wasted material and redundant iterations. In my future work, I will apply PIAA as a formal troubleshooting protocol during complex systems programming to ensure that I fully understand a bug's structural meaning before attempting a fix.</p>
+            <p style="margin-top:10px">PIAA was the natural rhythm of our bridge iteration cycles. The perception phase manifested early on, even in lectures with Prof. Bentz where he illustrated design calculations and strategies. During our own process, we perceived a weakness in the factor of safety output from our MATLAB script and interpreted it by tracing the error back to the Case 4 buckling equation. We then assessed the trade-offs of different fixes, such as extending the webs or adding stiffeners, before acting to build the final pi-beam configuration. This deliberate process was what allowed us to reach a final factor of safety of 2.27.</p>
+            <p style="margin-top:10px">This experience taught me that skipping the interpret and assess phases leads to inefficient design changes. I realized that the "Perceive to Act" shortcut often results in wasted material and redundant iterations. In my future work, I will apply PIAA as a formal troubleshooting protocol during my teamwork processes to ensure that I fully understand an issues root cause before attempting a fix.</p>
           </div>
         </div>
 
@@ -619,12 +619,12 @@ S
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/bridge_calc.png" alt="Hand calculations" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <img src="images/bridge_calc.png" alt="Hand calculations" style="width:320px; height:400px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
               <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Hand calculations</div>
             </div>
             <p><strong>What it is:</strong> A mathematical prototype represents the features of a design through equations and logic rather than physical materials. It allows designers to generate performance data and verify that a design meets specific requirements through rigorous calculation. This environment enables the testing and optimization of hundreds of configurations in a fraction of the time required for physical builds.</p>
-            <p style="margin-top:10px">Our team encoded every CIV102 failure formula for buckling, shear, and flexure into a MATLAB design environment. This enabled us to solve for an optimal web separation of 58 mm and a glue tab length of 15 mm rather than guessing. By using this prototype, we compressed our six major iteration cycles and could justify our final design choice for the 1395 N load through analytical verification.</p>
-            <p style="margin-top:10px">I learned that while math provides a powerful feedback loop, the model is only as good as its assumptions. Because our script did not account for local glue joint failures or construction imperfections, our physical results diverged from the predicted ones. In the future, I will integrate safety buffers into my mathematical models to account for the "hand-to-material" gap, ensuring my analytical prototypes are as robust as they are precise.</p>
+            <p style="margin-top:10px">Our team began by making hand calculations to determine the strength of our first design iteration. From there, we encoded every CIV102 failure formula for buckling, shear, and flexure into a MATLAB design environment. This enabled us to solve for an optimal web separation of 58 mm and a glue tab length of 15 mm rather than guessing. By using this prototype, we compressed our six major iteration cycles and could justify our final design choice for the 1395 N load through analytical verification.</p>
+            <p style="margin-top:10px">I learned that while math provides a powerful feedback loop, the model is only as good as its assumptions. Because our script did not account for local glue joint failures or construction imperfections, our physical results diverged from the predicted ones. In the future, I will integrate additional safety buffers into my mathematical models to account for the "hand-to-material" gap, ensuring my analytical prototypes are as robust as they are precise.</p>
           </div>
         </div>
 
@@ -638,7 +638,7 @@ S
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/bridge.png" alt="Bridge technical drawing" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <img src="images/bridge.png" alt="Bridge technical drawing" style="width:320px; height:400px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
               <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Bridge technical drawing</div>
             </div>
             <p><strong>What it is:</strong> A technical drawing is a formal, labeled representation of a design model that provides the precise dimensional and material information necessary for manufacturing. Unlike a sketch, which is used for early ideation, a technical drawing uses standardized conventions and CAD software to communicate exactly how a design should be built and assembled.</p>
@@ -671,7 +671,7 @@ S
         <!-- Featured image -->
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(1.5deg)">
-            <img src="images/knee_sleeve.png" alt="Knee sleeve hardware prototype" style="width:280px; height:280px; object-fit:cover; display:block;">
+            <img src="images/knee_sleeve.png" alt="Knee sleeve hardware prototype" style="width:400px; height:400px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final prototype</div>
           </div>
         </div>
@@ -700,13 +700,13 @@ S
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/hoover_dam.png" alt="Stakeholder mapping" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:500px;">
+              <img src="images/hoover_dam.png" alt="Stakeholder mapping" style="width:500px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
               <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Hoover Dam Model</div>
             </div>
             <p><strong>What it is:</strong> This model frames engineering as a series of arguments about the world. It posits that every design choice reflects a specific value system and perception of reality. The Hoover Dam example illustrates how a colonial perspective failed to acknowledge Indigenous peoples as stakeholders, leading to displaced communities. It serves as a reminder that when we model the world, we are making an argument about whose needs matter most.</p>
             <p style="margin-top:10px">I applied this lens to identify the major blind spot in ACL recovery. Current markets favor either $50,000 hospital grade systems or simplistic consumer wearables that miss critical EMG data. Neither effectively frames the at-home patient as a primary stakeholder. By using the Hoover Dam model, our team at UTBIOME argued that rehabilitation should be accessible. This perspective shifted our focus toward a web-based dashboard that prioritizes remote clinician monitoring and patient engagement over hospital-locked hardware.</p>
-            <p style="margin-top:10px">This was our most vital framing tool. It prevented us from building a technically impressive device that ignored the actual environment of use. Its primary limitation is the empathy gap. Identifying an excluded stakeholder is the first step, but the technical execution required to serve them remains a distinct and difficult challenge.</p>
+            <p style="margin-top:10px">This was our most vital framing tool. It prevented us from building a technically impressive device that ignored the actual environment of use. Its primary limitation is the empathy gap. Identifying an excluded stakeholder is the first step, but the technical execution required to serve them remains a distinct and difficult challenge. In the future, I will communicate with my team members to use the Hoover Dam Model to accurately frame the communities involved with our design process.</p>
           </div>
         </div>
 
@@ -719,13 +719,13 @@ S
             <span class="ctmf-chevron">+</span>
           </div>
           <div class="ctmf-body">
-            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/NGOs.png" alt="NGO framework" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+            <div style="float:right; margin:0 0 16px 20px; text-align:center; width:450px;">
+              <img src="images/NGOs.png" alt="NGO framework" style="width:450px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
               <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">NGOs from our design report</div>
             </div>
             <p><strong>What it is:</strong> The NGO framework is a fundamental tool used to translate vague stakeholder expectations into measurable engineering terms. It functions as a hierarchy: the Need identifies the root problem, the Goals describe broad design intentions, and the Objectives provide specific, quantifiable targets. This structure ensures that every technical requirement is justified by a real-world necessity.</p>
             <p style="margin-top:10px">For QuantiFlex, the underlying need was the lack of quantifiable data in remote ACL rehabilitation. Our goal was to deliver objective, accessible knee metrics to physiotherapists between clinic visits. We then established specific objectives to verify success, such as tracking Range of Motion (ROM) in degrees against clinical reference ranges and achieving exercise classification accuracy above a set threshold. This hierarchy stopped us from chasing technical elegance and kept our focus on what recovery actually requires.</p>
-            <p style="margin-top:10px">NGO was essential for maintaining alignment across our multidisciplinary team. It provided a common language for hardware and software sub-teams to communicate through measurable targets. The risk is treating these objectives as a mere checklist. The metrics are vital, but they must always be cross-referenced against the original stakeholder need to remain relevant.</p>
+            <p style="margin-top:10px">NGO was essential for maintaining alignment across our multidisciplinary team. It provided a common language for hardware and software sub-teams to communicate through measurable targets. The risk is treating these objectives as a mere checklist. The metrics are vital, but they must always be cross-referenced against the original stakeholder need to remain relevant. In future work, establishing clear, consistent goals that are attainable and relevant will be at the forefront of my framing process.</p>
           </div>
         </div>
 
@@ -743,8 +743,8 @@ S
               <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Isolating hardware</div>
             </div>
             <p><strong>What it is:</strong> Functional decomposition is a tool used to break a complex system into smaller, solution-neutral sub-functions. Each sub-function is expressed as a combination of a verb and an object, such as "Sense Motion" or "Filter Noise." By tracing the flow of energy, materials, and signals, designers can manage complicated problems in manageable chunks without prematurely committing to a specific hardware solution.</p>
-            <p style="margin-top:10px">I applied this to the QuantiFlex software layer to prevent it from becoming an unorganized mass of code. We identified five distinct sub-functions: signal input, real-time processing, exercise classification, data storage, and analytics visualization. This allowed us to develop the 50Hz high-pass filter and Root Mean Square (RMS) calculation as discrete signal processing operations. Decomposing the system this way allowed our software team to work in parallel on the backend and frontend without integration failures.</p>
-            <p style="margin-top:10px">This method was what made a project of this complexity manageable for our team. It allowed us to trace specific failures to individual sub-functions during testing. However, its limitation is that real systems have cross-cutting concerns. Privacy, authentication, and connection loss do not always belong to one "chunk," requiring extra attention during the final assembly.</p>
+            <p style="margin-top:10px">I applied this to the QuantiFlex software and hardware layers to prevent it from being a massive, inoeprable system. On the hardware side, we needed to diverge on proper wiring and equipment to use that would be compatible with the WebServer. We broke down each component into independent functions, like motion sensing, which led to effective equipment chosen. On the software side, we identified five distinct sub-functions: signal input, real-time processing, exercise classification, data storage, and analytics visualization. This allowed us to develop multiple ideas that pertain to each classification, leading to features like a high-pass filter and Root Mean Square (RMS) calculation as discrete signal processing operations. Decomposing the system this way allowed our team to diverge on the hardware and software independently.</p>
+            <p style="margin-top:10px">This method was what made a project of this complexity manageable for our team. It allowed us to trace specific failures to individual sub-functions during testing. I will keep this diverging method in mind, especially in multi-disciplinary teams, such that each sub-function of a design can be iterated on to improve the hollistic design.</p>
           </div>
         </div>
 
@@ -774,7 +774,7 @@ S
         <!-- Featured image -->
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(-1deg)">
-            <img src="images/prong_sleeve.png" alt="Visual diagram of the prong sleeve design" style="width:280px; height:280px; object-fit:cover; display:block;">
+            <img src="images/prong_sleeve.png" alt="Visual diagram of the prong sleeve design" style="width:400px; height:420px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Final recommended design</div>
           </div>
         </div>
@@ -848,11 +848,11 @@ S
           </div>
           <div class="ctmf-body">
             <div style="float:right; margin:0 0 16px 20px; text-align:center; width:320px;">
-              <img src="images/pugh.png" alt="Pugh analysis" style="width:320px; height:320px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
+              <img src="images/pugh.png" alt="Pugh analysis" style="width:320px; height:400px; object-fit:cover; box-shadow:1px 2px 4px rgba(0,0,0,0.1); display:block;">
               <div style="font-size:21px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Pugh analysis</div>
             </div>
             <p><strong>What it is:</strong> A structured comparison matrix that evaluates multiple design concepts against a common set of weighted requirements. Each concept is scored relative to a baseline or reference design, as better, worse, or equivalent across each criterion.</p>
-            <p style="margin-top:10px">After diverging, I had several distinct concepts on the table, including the prong sleeve, a suction cup attachment, and an adhesive friction pad. I used a Pugh chart to map each against our four requirement goals of safety, axial retention, usability, and portability. The chart revealed that the suction cup, which felt promising during ideation, actually scored poorly across both safety and usability once the requirements were applied systematically. By contrast, the prong sleeve satisfied the most criteria, and the chart even surfaced hybrid possibilities like using the friction pad's material properties in the final sleeve. I learned that the Pugh chart is most valuable as a conversation tool because filling it in forced my team to agree on requirement definitions before scoring.</p>
+            <p style="margin-top:10px">After diverging, I had several distinct concepts on the table, including the prong sleeve, a suction cup attachment, and an adhesive friction pad. I used a Pugh chart to map each against our requirement goals like safety, axial retention, usability, and portability. The chart revealed that the suction cup, which felt promising during ideation, actually scored poorly across both safety and usability once the requirements were applied systematically. By contrast, the prong sleeve satisfied the most criteria, and the chart even surfaced hybrid possibilities like using the friction pad's material properties in the final sleeve. I learned that the Pugh chart is most valuable as a conversation tool because filling it in forced my team to agree on requirement definitions before scoring.</p>
             <p style="margin-top:10px">This experience taught me that systematic evaluation is essential for surfacing disagreements that might otherwise stay hidden until the wrong concept is built. In my future work, I intend to use weighted decision matrices to ensure that critical factors like safety are prioritized over secondary goals like portability. I also plan to conduct stakeholder verification alongside these charts to ensure our scoring reflects the true needs of the user rather than just internal team consensus.</p>
           </div>
         </div>
@@ -883,7 +883,7 @@ S
         <!-- Featured image -->
         <div style="float:right; margin:0 0 20px 24px; text-align:center">
           <div style="padding:12px; background:#fcfbf5; box-shadow:2px 4px 8px rgba(0,0,0,0.15); transform:rotate(1deg)">
-            <img src="images/praxis_team.png" alt="Presenting Shark Pouch at Showcase" style="width:280px; height:280px; object-fit:cover; display:block;">
+            <img src="images/praxis_team.png" alt="Presenting Shark Pouch at Showcase" style="width:400px; height:400px; object-fit:cover; display:block;">
             <div style="text-align:center; padding-top:10px; font-size:14px; font-family:var(--f-serif); color:#6b4d34">Presenting Shark Pouch at Showcase</div>
           </div>
         </div>
@@ -918,7 +918,7 @@ S
               <div style="font-size:12px; padding-top:8px; font-family:var(--f-serif); color:#6b4d34">Re-enacting swimmming motions together!</div>
             </div>
             <p><strong>What it is:</strong> Described by Google's Project Aristotle research, a Team B culture is one where members move fluidly between work and personal conversation, feel comfortable interjecting, and build genuine social bonds.</p>
-            <p style="margin-top:10px">Our team made an explicit decision early in Praxis II to model ourselves after Team B, building on what we had learned in Praxis I. In practice this meant frequent in-person meetings over food, team games before working sessions, and a norm of sharing half-formed ideas without filtering them first. The result was that unfiltered diverging sessions produced concepts that would not have survived a more guarded environment — including the shark form itself, which started as a creative aside before becoming the design's defining feature. Team B also made the harder moments of the project more manageable: when we had to rescope after realizing the shark parachute interfered with kicking, the trust in the room meant that criticism landed as useful information rather than failure.</p>
+            <p style="margin-top:10px">Our team made an explicit decision early in Praxis II to model ourselves after Team B, building on what we had learned in Praxis I. In practice this meant frequent in-person meetings over food, team games before working sessions, and a norm of sharing half-formed ideas without filtering them first. The result was that unfiltered diverging sessions produced concepts that would not have survived a more guarded environment; including the shark form itself, which started as a creative aside before becoming the design's defining feature. Team B also made the harder moments of the project more manageable: when we had to rescope after realizing the shark parachute interfered with kicking, the trust in the room meant that criticism landed as useful information rather than failure.</p>
             <p style="margin-top:10px">This experience taught me that psychological safety is the primary engine for high-performance engineering teams, as building social capital through casual interaction directly increases a team's capacity for risk-taking during the design process. I realized that the most effective dynamic is a hybrid model that utilizes the social comfort of a Team B culture for creative divergence but pivots to a locked-in Team A structure when deadlines require silent, focused efficiency. Furthermore, I discovered that physical proximity and synchronous work are invaluable for maintaining this momentum, allowing for the immediate communication and consultation necessary to sustain a shared commitment to a project. Moving forward in my future work, I intend to implement clearer signals for when to transition between these social and productivity modes by using structured rituals, such as timers for silent work blocks, to ensure that social bonds are always matched by a disciplined commitment to deliverables. I also plan to systematically document conflict resolution and "useful information" gained during failures to ensure that technical setbacks are captured as design iterations rather than lost moments. Ultimately, I will continue to prioritize in-person collaboration whenever possible to maintain the creative synergy and unfiltered communication required to solve complex engineering problems.</p>        
           </div>
         </div>
@@ -983,151 +983,76 @@ S
       <div class="win-pane active">
 
         <h2 class="sect-title">References</h2><hr class="sect-rule">
-        <p style="font-style:italic;color:var(--brown-lt);margin-bottom:24px">Praxis embedded-extract format · APA 7th Edition</p>
-
+      
         <div class="ref-list">
 
           <div class="ref-item">
             <span class="ref-num">[1]</span>
             <div class="ref-body">
-              <p>BTS Bioengineering. (n.d.). <em>BTS GAITLAB: Complete laboratory for multifactorial motion analysis.</em> Retrieved from <a href="https://www.btsbioengineering.com/products/bts-gaitlab/" target="_blank">https://www.btsbioengineering.com/products/bts-gaitlab/</a></p>
-              <blockquote><p>Used as prior art in the UTBiome project to establish the gap between laboratory-grade motion capture systems and accessible, at-home rehabilitation tools.</p></blockquote>
+              <p>Cherry, K. (2021). <em>What is a cognitive bias?</em> Verywell Mind. <a href="https://www.verywellmind.com/what-is-a-cognitive-bias-2794963" target="_blank">https://www.verywellmind.com/what-is-a-cognitive-bias-2794963</a></p>
             </div>
           </div>
 
           <div class="ref-item">
             <span class="ref-num">[2]</span>
             <div class="ref-body">
-              <p>Cherry, K. (2021). <em>What is a cognitive bias?</em> Verywell Mind. <a href="https://www.verywellmind.com/what-is-a-cognitive-bias-2794963" target="_blank">https://www.verywellmind.com/what-is-a-cognitive-bias-2794963</a></p>
-              <blockquote><p>"A cognitive bias is a systematic error in thinking that occurs when people are processing and interpreting information in the world around them."</p></blockquote>
+              <p>de Bono, E. (n.d.). <em>Random input.</em> Creativiteach. <a href="https://creativiteach.me/creative-thinking-strategies/random-input/" target="_blank">https://creativiteach.me/creative-thinking-strategies/random-input/</a></p>
             </div>
           </div>
 
           <div class="ref-item">
             <span class="ref-num">[3]</span>
             <div class="ref-body">
-              <p>Cross, N. (2011). <em>Design thinking: Understanding how designers think and work.</em> Berg Publishers.</p>
-              <blockquote><p>"The design process is characterised by a co-evolution of problem and solution." (p. 12)</p></blockquote>
+              <p>The Decision Lab. (n.d.). <em>Anchoring bias.</em> <a href="https://thedecisionlab.com/biases/anchoring-bias" target="_blank">https://thedecisionlab.com/biases/anchoring-bias</a></p>
             </div>
           </div>
 
           <div class="ref-item">
             <span class="ref-num">[4]</span>
             <div class="ref-body">
-              <p>de Bono, E. (n.d.). <em>Random input.</em> Creativiteach. <a href="https://creativiteach.me/creative-thinking-strategies/random-input/" target="_blank">https://creativiteach.me/creative-thinking-strategies/random-input/</a></p>
-              <blockquote><p>Random Input is a lateral thinking technique in which an unrelated noun is introduced to a problem to provoke unexpected connections and break anchoring patterns.</p></blockquote>
+              <p>Duhigg, C. (2016, February 28). What Google learned from its quest to build the perfect team. <em>The New York Times Magazine.</em> <a href="https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html" target="_blank">https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html</a></p>
             </div>
           </div>
 
           <div class="ref-item">
             <span class="ref-num">[5]</span>
             <div class="ref-body">
-              <p>The Decision Lab. (n.d.). <em>Anchoring bias.</em> <a href="https://thedecisionlab.com/biases/anchoring-bias" target="_blank">https://thedecisionlab.com/biases/anchoring-bias</a></p>
-              <blockquote><p>"The anchoring effect is a cognitive bias that causes us to rely too heavily on the first piece of information we are given about a topic."</p></blockquote>
+              <p>Experiential Learning Institute. (n.d.). <em>What is experiential learning?</em> <a href="https://experientiallearninginstitute.org/what-is-experiential-learning/" target="_blank">https://experientiallearninginstitute.org/what-is-experiential-learning/</a></p>
             </div>
           </div>
 
           <div class="ref-item">
             <span class="ref-num">[6]</span>
             <div class="ref-body">
-              <p>Duhigg, C. (2016, February 28). What Google learned from its quest to build the perfect team. <em>The New York Times Magazine.</em> <a href="https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html" target="_blank">https://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html</a></p>
-              <blockquote><p>Google's Project Aristotle found that psychological safety — the shared belief that the team is safe for interpersonal risk-taking — was the single most important factor in team effectiveness.</p></blockquote>
+              <p>Osborn, A. F. (1953). <em>Applied imagination: Principles and procedures of creative problem-solving.</em> Scribner.</p>
             </div>
           </div>
 
           <div class="ref-item">
             <span class="ref-num">[7]</span>
             <div class="ref-body">
-              <p>Dym, C. L., Agogino, A. M., Eris, O., Frey, D. D., &amp; Leifer, L. J. (2005). Engineering design thinking, teaching, and learning. <em>Journal of Engineering Education, 94</em>(1), 103–120. <a href="https://doi.org/10.1002/j.2168-9830.2005.tb00832.x" target="_blank">https://doi.org/10.1002/j.2168-9830.2005.tb00832.x</a></p>
-              <blockquote><p>"Design thinking is a way of finding a solution to a problem, as opposed to identifying the solution… it is an iterative process." (p. 103)</p></blockquote>
+              <p>Pugh, S. (1991). <em>Total design: Integrated methods for successful product engineering.</em> Addison-Wesley.</p>
             </div>
           </div>
 
           <div class="ref-item">
             <span class="ref-num">[8]</span>
             <div class="ref-body">
-              <p>Experiential Learning Institute. (n.d.). <em>What is experiential learning?</em> <a href="https://experientiallearninginstitute.org/what-is-experiential-learning/" target="_blank">https://experientiallearninginstitute.org/what-is-experiential-learning/</a></p>
-              <blockquote><p>Kolb's experiential learning cycle describes four stages — Concrete Experience, Reflective Observation, Abstract Conceptualization, and Active Experimentation — through which learning deepens with each iteration.</p></blockquote>
+              <p>Ulrich, K. T., &amp; Eppinger, S. D. (2015). <em>Product design and development</em> (6th ed.). McGraw-Hill Education.</p>
             </div>
           </div>
 
           <div class="ref-item">
             <span class="ref-num">[9]</span>
             <div class="ref-body">
-              <p>IDEO. (2015). <em>The field guide to human-centered design.</em> IDEO.org. <a href="https://www.designkit.org/resources/1" target="_blank">https://www.designkit.org/resources/1</a></p>
-              <blockquote><p>"Empathy is the centrepiece of a human-centered design process… It means suspending your assumptions." (p. 14)</p></blockquote>
+              <p>University of Toronto, Faculty of Applied Science and Engineering. (2025). <em>ESC101: Engineering Science Praxis I — Course Notes.</em> University of Toronto.</p>
             </div>
           </div>
 
           <div class="ref-item">
             <span class="ref-num">[10]</span>
             <div class="ref-body">
-              <p>Koul, M., Thanki, R., Koul, R., Fujarski, S., Radhakrishnan, S., &amp; Jodbhavi, S. (2025). An AI-driven video based goniometer for knee joint range of motion (ROM) assessment: Reliability and validity compared to traditional goniometry. <em>Computers in Biology and Medicine, 196</em>(Pt B), Article 110848. <a href="https://doi.org/10.1016/j.compbiomed.2025.110848" target="_blank">https://doi.org/10.1016/j.compbiomed.2025.110848</a></p>
-              <blockquote><p>Used as prior art in the UTBiome project to contextualize the limitations of goniometry and the emerging role of AI-assisted ROM measurement in clinical rehabilitation.</p></blockquote>
-            </div>
-          </div>
-
-          <div class="ref-item">
-            <span class="ref-num">[11]</span>
-            <div class="ref-body">
-              <p>Mutsuzaki, H., &amp; Watanabe, A. (2017). Knee range of motion and clinical outcomes after total knee arthroplasty. <em>Journal of Physical Therapy Science, 29</em>(4), 746–749.</p>
-              <blockquote><p>ROM and muscle activation assessed by clinicians are critical parameters for diagnosing musculoskeletal disorders and guiding rehabilitation post-operatively.</p></blockquote>
-            </div>
-          </div>
-
-          <div class="ref-item">
-            <span class="ref-num">[12]</span>
-            <div class="ref-body">
-              <p>Osborn, A. F. (1953). <em>Applied imagination: Principles and procedures of creative problem-solving.</em> Scribner.</p>
-              <blockquote><p>"Brainstorming… calls for a group to unleash its imagination — producing ideas in quantity." (p. 151)</p></blockquote>
-            </div>
-          </div>
-
-          <div class="ref-item">
-            <span class="ref-num">[13]</span>
-            <div class="ref-body">
-              <p>Pugh, S. (1991). <em>Total design: Integrated methods for successful product engineering.</em> Addison-Wesley.</p>
-              <blockquote><p>"The concept selection matrix is a tool for structured convergence — it is only as good as the criteria it uses." (p. 75)</p></blockquote>
-            </div>
-          </div>
-
-          <div class="ref-item">
-            <span class="ref-num">[14]</span>
-            <div class="ref-body">
-              <p>Ulrich, K. T., &amp; Eppinger, S. D. (2015). <em>Product design and development</em> (6th ed.). McGraw-Hill Education.</p>
-              <blockquote><p>"The morphological chart allows systematic exploration of the solution space by decomposing the design problem into independent sub-functions." (p. 118)</p></blockquote>
-            </div>
-          </div>
-
-          <div class="ref-item">
-            <span class="ref-num">[15]</span>
-            <div class="ref-body">
-              <p>University of Toronto, Faculty of Applied Science and Engineering. (2025). <em>CIV102: Structures &amp; Materials — Laboratory Manual.</em> University of Toronto.</p>
-              <blockquote><p>"Failure by flexure, shear, and local buckling must be considered independently. The governing failure mode is the one that occurs at the lowest load." (p. 8)</p></blockquote>
-            </div>
-          </div>
-
-          <div class="ref-item">
-            <span class="ref-num">[16]</span>
-            <div class="ref-body">
-              <p>University of Toronto, Faculty of Applied Science and Engineering. (2025). <em>ESC101: Engineering Science Praxis I — Course Notes.</em> University of Toronto.</p>
-              <blockquote><p>Source of the Hoover Dam model, PIAA framework, Perry's model of learning, and the FDCR design process as taught in the Praxis sequence.</p></blockquote>
-            </div>
-          </div>
-
-          <div class="ref-item">
-            <span class="ref-num">[17]</span>
-            <div class="ref-body">
               <p>University of Toronto, Faculty of Applied Science and Engineering. (2025). <em>ESC102: Engineering Science Praxis II — Course Notes.</em> University of Toronto.</p>
-              <blockquote><p>"The design space is the space of solutions restricted by your requirements. Requirements that are too vague expand this space to the point of meaninglessness." (Lecture 4)</p></blockquote>
-            </div>
-          </div>
-
-          <div class="ref-item">
-            <span class="ref-num">[18]</span>
-            <div class="ref-body">
-              <p>Vicon Motion Systems Ltd. (n.d.). <em>Clinical gait analysis.</em> <a href="https://www.vicon.com/applications/life-sciences/" target="_blank">https://www.vicon.com/applications/life-sciences/</a></p>
-              <blockquote><p>Used as prior art in the UTBiome project to illustrate that existing gold-standard motion capture systems cost upward of $50,000 and are inaccessible for daily in-home monitoring.</p></blockquote>
             </div>
           </div>
 
